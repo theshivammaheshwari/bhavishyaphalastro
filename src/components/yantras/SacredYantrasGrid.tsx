@@ -32,21 +32,12 @@ export function SacredYantrasGrid({
             <span>{t.yantrasBadge}</span>
           </div>
 
-<<<<<<< HEAD
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
-            Sacred Yantras & Yantra Pendants
-          </h2>
-
-          <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
-            Every Yantra and Sacred Pendant is consecrated with authentic Vedic Pran Pratishtha rituals by our scholars before dispatch. Fixed at an accessible single price of <strong className="text-gold-300 font-semibold">₹3,999/-</strong> each.
-=======
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
             {t.yantrasTitle}
           </h2>
 
-          <p className="text-sm sm:text-base text-gold-200/70 font-light leading-relaxed">
+          <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
             {t.yantrasSub}
->>>>>>> 4108060c96899416c8060143303606bfec745c97
           </p>
 
           {/* Filter Buttons */}
@@ -71,11 +62,7 @@ export function SacredYantrasGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-<<<<<<< HEAD
-              Wall / Altar (13)
-=======
               {t.filterYantras} (13)
->>>>>>> 4108060c96899416c8060143303606bfec745c97
             </button>
             <button
               type="button"
@@ -86,8 +73,7 @@ export function SacredYantrasGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-<<<<<<< HEAD
-              Pendants (7)
+              {t.filterPendants} (7)
             </button>
           </div>
 
@@ -102,9 +88,6 @@ export function SacredYantrasGrid({
               className="px-2.5 py-1 rounded-lg bg-white/5 border border-gold-500/20 text-gold-300 font-semibold"
             >
               {mobileView === "carousel" ? "Switch to 2-Col Grid" : "Switch to Swipe View"}
-=======
-              {t.filterPendants} (7)
->>>>>>> 4108060c96899416c8060143303606bfec745c97
             </button>
           </div>
         </div>

@@ -119,44 +119,26 @@ export function BookingModal({
 
   return (
     <AnimatePresence>
-<<<<<<< HEAD
-      <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-5 bg-black/85 backdrop-blur-md">
-        <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 50, scale: 0.98 }}
-          transition={{ type: "spring", damping: 26, stiffness: 280 }}
-          className="relative w-full sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-[2rem] sm:rounded-3xl bg-celestial-950 border-t sm:border border-gold-500/35 shadow-2xl p-5 sm:p-8 pb-8 sm:pb-8"
-        >
-          {/* Mobile Bottom Sheet Pull Handle */}
-          <div className="w-12 h-1.5 rounded-full bg-gold-400/30 mx-auto mb-4 sm:hidden" />
-
-          {/* Close Button */}
-          <button
-            type="button"
-            onClick={onClose}
-            className="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gold-300 border border-gold-500/20 flex items-center justify-center transition-colors"
-            aria-label="Close booking modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
-=======
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/90 backdrop-blur-2xl"
+        className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6 bg-black/90 backdrop-blur-2xl"
         onClick={(e) => {
           if (e.target === e.currentTarget) handleResetAndClose();
         }}
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className={`relative w-full bg-celestial-950 border border-gold-500/30 shadow-2xl transition-all duration-300 flex flex-col ${
+          initial={{ opacity: 0, y: 50, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 50, scale: 0.98 }}
+          transition={{ type: "spring", damping: 26, stiffness: 280 }}
+          className={`relative w-full bg-celestial-950 border-t sm:border border-gold-500/30 shadow-2xl transition-all duration-300 flex flex-col ${
             isFullscreen
               ? "fixed inset-0 w-screen h-screen max-w-none max-h-none rounded-none z-50 overflow-y-auto"
-              : "max-w-2xl max-h-[92vh] rounded-3xl overflow-y-auto"
+              : "rounded-t-[2rem] sm:rounded-3xl max-w-2xl max-h-[92vh] overflow-y-auto"
           }`}
         >
+          {/* Mobile Bottom Sheet Pull Handle */}
+          <div className="w-12 h-1.5 rounded-full bg-gold-400/30 mx-auto my-2.5 sm:hidden" />
+
           {/* Top Bar with Prominent Back Button & Fullscreen */}
           <div className="sticky top-0 z-20 flex items-center justify-between px-5 py-3.5 bg-celestial-900/95 backdrop-blur-md border-b border-gold-500/25">
             <button
@@ -166,7 +148,6 @@ export function BookingModal({
             >
               <span>{language === "hi" ? "← वापस जाएं (Back)" : "← Back / Close"}</span>
             </button>
->>>>>>> 4108060c96899416c8060143303606bfec745c97
 
             <div className="flex items-center gap-2">
               <button

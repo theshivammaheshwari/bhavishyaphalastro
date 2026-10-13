@@ -26,12 +26,8 @@ export function ServicesGrid({
 }: {
   onOpenBooking: (serviceName?: string) => void;
 }) {
-<<<<<<< HEAD
-  const [activeTab, setActiveTab] = useState<"services" | "products" | "tools">("services");
-=======
   const { language, t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<"services" | "products">("services");
->>>>>>> 4108060c96899416c8060143303606bfec745c97
+  const [activeTab, setActiveTab] = useState<"services" | "products" | "tools">("services");
 
   return (
     <section id="services" className="py-16 sm:py-24 relative bg-celestial-950/80 border-t border-gold-500/15">
@@ -43,21 +39,12 @@ export function ServicesGrid({
             <span>{t.servicesBadge}</span>
           </div>
 
-<<<<<<< HEAD
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
-            Comprehensive Guidance & Sacred Remedies
-          </h2>
-
-          <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
-            Choose from our specialized one-to-one astrology consultancy sessions or explore authenticated Vedic remedies.
-=======
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
             {t.servicesTitle}
           </h2>
 
-          <p className="text-sm sm:text-base text-gold-200/70 font-light leading-relaxed">
+          <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
             {t.servicesSub}
->>>>>>> 4108060c96899416c8060143303606bfec745c97
           </p>
 
           {/* Interactive Category Switcher Segmented Tabs */}

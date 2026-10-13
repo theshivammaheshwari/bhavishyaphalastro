@@ -24,7 +24,6 @@ export default function Home() {
     "All Life Comprehensive Consultancy (₹5,100/-)"
   );
 
-<<<<<<< HEAD
   useEffect(() => {
     const handleGlobalBooking = (e: Event) => {
       const customEvent = e as CustomEvent<{ service?: string }>;
@@ -37,10 +36,9 @@ export default function Home() {
     window.addEventListener("open-booking-modal", handleGlobalBooking);
     return () => window.removeEventListener("open-booking-modal", handleGlobalBooking);
   }, []);
-=======
+
   const [yantraModalOpen, setYantraModalOpen] = useState(false);
   const [selectedYantra, setSelectedYantra] = useState<YantraItem | null>(null);
->>>>>>> 4108060c96899416c8060143303606bfec745c97
 
   const handleOpenBooking = (serviceName?: string) => {
     if (serviceName) setSelectedService(serviceName);
