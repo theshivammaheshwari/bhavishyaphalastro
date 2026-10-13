@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HeroSection } from "@/components/hero/HeroSection";
+import { AppQuickHub } from "@/components/home/AppQuickHub";
 import { AboutSection } from "@/components/about/AboutSection";
 import { ServicesGrid } from "@/components/services/ServicesGrid";
 import { SacredYantrasGrid } from "@/components/yantras/SacredYantrasGrid";
@@ -20,6 +21,19 @@ export default function Home() {
     "All Life Comprehensive Consultancy (₹5,100/-)"
   );
 
+  useEffect(() => {
+    const handleGlobalBooking = (e: Event) => {
+      const customEvent = e as CustomEvent<{ service?: string }>;
+      if (customEvent.detail?.service) {
+        setSelectedService(customEvent.detail.service);
+      }
+      setBookingModalOpen(true);
+    };
+
+    window.addEventListener("open-booking-modal", handleGlobalBooking);
+    return () => window.removeEventListener("open-booking-modal", handleGlobalBooking);
+  }, []);
+
   const handleOpenBooking = (serviceName?: string) => {
     if (serviceName) setSelectedService(serviceName);
     setBookingModalOpen(true);
@@ -35,7 +49,10 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroSection onOpenBooking={handleOpenBooking} />
 
-      {/* 2. Interactive Kundli Hub Banner */}
+      {/* 2. App-Style Quick Action Hub */}
+      <AppQuickHub onOpenBooking={handleOpenBooking} />
+
+      {/* 3. Interactive Kundli Hub Banner */}
       <section className="py-8 bg-gradient-to-r from-wine-950/90 via-celestial-900/90 to-wine-950/90 border-y border-gold-500/20 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="flex items-center gap-4">

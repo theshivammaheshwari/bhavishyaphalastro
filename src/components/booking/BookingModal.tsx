@@ -86,18 +86,22 @@ export function BookingModal({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/90 backdrop-blur-xl">
+      <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-5 bg-black/85 backdrop-blur-md">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-celestial-950 border border-gold-500/30 shadow-2xl p-6 sm:p-8"
+          initial={{ opacity: 0, y: 50, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 50, scale: 0.98 }}
+          transition={{ type: "spring", damping: 26, stiffness: 280 }}
+          className="relative w-full sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-[2rem] sm:rounded-3xl bg-celestial-950 border-t sm:border border-gold-500/35 shadow-2xl p-5 sm:p-8 pb-8 sm:pb-8"
         >
+          {/* Mobile Bottom Sheet Pull Handle */}
+          <div className="w-12 h-1.5 rounded-full bg-gold-400/30 mx-auto mb-4 sm:hidden" />
+
           {/* Close Button */}
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gold-300 border border-gold-500/20 flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gold-300 border border-gold-500/20 flex items-center justify-center transition-colors"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />

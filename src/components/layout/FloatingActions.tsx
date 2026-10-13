@@ -21,7 +21,7 @@ export function FloatingActions() {
   };
 
   return (
-    <aside aria-label="Quick contact actions" className="fixed right-4 sm:right-6 bottom-6 z-40 flex flex-col items-center gap-3">
+    <aside aria-label="Quick contact actions" className="fixed right-3 sm:right-6 bottom-20 sm:bottom-6 z-40 flex flex-col items-center gap-3">
       {/* Scroll to Top */}
       {showScrollTop && (
         <button

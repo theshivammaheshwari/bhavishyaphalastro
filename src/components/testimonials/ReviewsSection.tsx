@@ -23,7 +23,13 @@ export function ReviewsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+        {/* Mobile swipe hint */}
+        <div className="flex sm:hidden items-center justify-between text-[11px] text-gold-400/80 px-1 mt-6 -mb-4">
+          <span>Client Stories</span>
+          <span>Swipe reviews →</span>
+        </div>
+
+        <div className="flex sm:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-14 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar">
           {TESTIMONIALS.map((t, idx) => (
             <motion.div
               key={t.id}
@@ -31,7 +37,7 @@ export function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 shadow-xl backdrop-blur-xl flex flex-col justify-between group transition-all"
+              className="w-[84vw] max-w-[340px] sm:w-auto flex-shrink-0 snap-center p-5 sm:p-7 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 shadow-xl backdrop-blur-xl flex flex-col justify-between group transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

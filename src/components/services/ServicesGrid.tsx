@@ -25,32 +25,32 @@ export function ServicesGrid({
 }: {
   onOpenBooking: (serviceName?: string) => void;
 }) {
-  const [activeTab, setActiveTab] = useState<"services" | "products">("services");
+  const [activeTab, setActiveTab] = useState<"services" | "products" | "tools">("services");
 
   return (
-    <section id="services" className="py-24 relative bg-celestial-950/80 border-t border-gold-500/15">
+    <section id="services" className="py-16 sm:py-24 relative bg-celestial-950/80 border-t border-gold-500/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-gold-300 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
             <span>Consultancy & Remedial Science</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
             Comprehensive Guidance & Sacred Remedies
           </h2>
 
-          <p className="text-sm sm:text-base text-gold-200/70 font-light leading-relaxed">
-            Choose from our specialized one-to-one astrology consultancy sessions or explore authenticated, energized Vedic remedial products.
+          <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
+            Choose from our specialized one-to-one astrology consultancy sessions or explore authenticated Vedic remedies.
           </p>
 
-          {/* Interactive Category Switcher Tabs */}
-          <div className="inline-flex p-1.5 rounded-2xl bg-white/5 border border-gold-500/20 backdrop-blur-xl mt-4">
+          {/* Interactive Category Switcher Segmented Tabs */}
+          <div className="inline-flex p-1 rounded-2xl bg-white/5 border border-gold-500/20 backdrop-blur-xl mt-3 sm:mt-4 max-w-full overflow-x-auto no-scrollbar">
             <button
               type="button"
               onClick={() => setActiveTab("services")}
-              className={`px-6 py-2.5 rounded-xl font-serif text-xs sm:text-sm font-bold transition-all ${
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-serif text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
                 activeTab === "services"
                   ? "bg-gradient-to-r from-wine-700 to-wine-600 text-gold-100 shadow-lg shadow-wine-900/50 border border-gold-400/40"
                   : "text-gold-200/70 hover:text-gold-200"
@@ -61,7 +61,7 @@ export function ServicesGrid({
             <button
               type="button"
               onClick={() => setActiveTab("products")}
-              className={`px-6 py-2.5 rounded-xl font-serif text-xs sm:text-sm font-bold transition-all ${
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-serif text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
                 activeTab === "products"
                   ? "bg-gradient-to-r from-wine-700 to-wine-600 text-gold-100 shadow-lg shadow-wine-900/50 border border-gold-400/40"
                   : "text-gold-200/70 hover:text-gold-200"
@@ -69,14 +69,31 @@ export function ServicesGrid({
             >
               Remedial Products
             </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab("tools")}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-serif text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
+                activeTab === "tools"
+                  ? "bg-gradient-to-r from-wine-700 to-wine-600 text-gold-100 shadow-lg shadow-wine-900/50 border border-gold-400/40"
+                  : "text-gold-200/70 hover:text-gold-200"
+              }`}
+            >
+              Free Kundli Tools
+            </button>
           </div>
         </div>
 
         {/* Tab 1: Consultancy Services Content */}
         {activeTab === "services" && (
-          <div className="mt-14 space-y-16">
-            {/* 4 Primary Service Pillars */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-10 sm:mt-14 space-y-12 sm:space-y-16">
+            {/* Mobile swipe hint */}
+            <div className="flex sm:hidden items-center justify-between text-[11px] text-gold-400/80 px-1 -mb-6">
+              <span>Primary Pillars</span>
+              <span>Swipe cards →</span>
+            </div>
+
+            {/* 4 Primary Service Pillars - Horizontal swipe on mobile, grid on desktop */}
+            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar">
               {MAIN_SERVICES.map((srv, idx) => (
                 <motion.div
                   key={srv.id}
@@ -84,9 +101,9 @@ export function ServicesGrid({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 group flex flex-col shadow-xl"
+                  className="w-[82vw] max-w-[310px] sm:w-auto flex-shrink-0 snap-center rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 group flex flex-col shadow-xl"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-44 sm:h-48 overflow-hidden">
                     <Image
                       src={srv.image}
                       alt={srv.title}
@@ -101,15 +118,15 @@ export function ServicesGrid({
                     )}
                   </div>
 
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="font-serif font-bold text-lg text-gold-200 group-hover:text-gold-300 transition-colors">
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                    <h3 className="font-serif font-bold text-base sm:text-lg text-gold-200 group-hover:text-gold-300 transition-colors">
                       {srv.title}
                     </h3>
-                    <p className="text-xs text-gold-200/70 mt-2 leading-relaxed flex-1">
+                    <p className="text-xs text-gold-200/70 mt-1.5 sm:mt-2 leading-relaxed flex-1">
                       {srv.description}
                     </p>
 
-                    <div className="mt-5 pt-4 border-t border-gold-500/15 flex items-center justify-between">
+                    <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-gold-500/15 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={() => onOpenBooking(srv.title)}
@@ -162,11 +179,17 @@ export function ServicesGrid({
                 </a>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+              {/* Mobile swipe hint */}
+              <div className="flex sm:hidden items-center justify-between text-[11px] text-gold-400/80 px-1 mt-4 -mb-3">
+                <span>6 Specialized Consultations</span>
+                <span>Swipe packages →</span>
+              </div>
+
+              <div className="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-5 mt-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 -mx-3 px-3 sm:mx-0 sm:px-0 no-scrollbar">
                 {ASTRO_CONSULTATION_PACKAGES.map((pkg) => (
                   <div
                     key={pkg.id}
-                    className="p-5 rounded-2xl bg-white/5 border border-gold-500/15 hover:border-gold-400/40 transition-all flex flex-col sm:flex-row gap-4 group"
+                    className="w-[85vw] max-w-[340px] sm:w-auto flex-shrink-0 snap-center p-4 sm:p-5 rounded-2xl bg-white/5 border border-gold-500/15 hover:border-gold-400/40 transition-all flex flex-col sm:flex-row gap-4 group"
                   >
                     <div className="relative w-full sm:w-36 h-36 rounded-xl overflow-hidden flex-shrink-0 border border-gold-500/20">
                       <Image
@@ -234,8 +257,14 @@ export function ServicesGrid({
 
         {/* Tab 2: Remedial Products Content */}
         {activeTab === "products" && (
-          <div className="mt-14 space-y-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-10 sm:mt-14 space-y-12">
+            {/* Mobile swipe hint */}
+            <div className="flex sm:hidden items-center justify-between text-[11px] text-gold-400/80 px-1 -mb-8">
+              <span>Energized Products</span>
+              <span>Swipe products →</span>
+            </div>
+
+            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar">
               {REMEDIAL_PRODUCTS.map((prod, idx) => (
                 <motion.div
                   key={prod.id}
@@ -243,9 +272,9 @@ export function ServicesGrid({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 group flex flex-col shadow-xl"
+                  className="w-[82vw] max-w-[310px] sm:w-auto flex-shrink-0 snap-center rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 group flex flex-col shadow-xl"
                 >
-                  <div className="relative h-52 overflow-hidden">
+                  <div className="relative h-48 sm:h-52 overflow-hidden">
                     <Image
                       src={prod.image}
                       alt={prod.title}
@@ -258,18 +287,18 @@ export function ServicesGrid({
                     </span>
                   </div>
 
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="font-serif font-bold text-lg text-gold-200 group-hover:text-gold-300 transition-colors">
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                    <h3 className="font-serif font-bold text-base sm:text-lg text-gold-200 group-hover:text-gold-300 transition-colors">
                       {prod.title}
                     </h3>
                     <span className="text-[11px] text-gold-400 font-medium block mt-0.5">
                       {prod.subtitle}
                     </span>
-                    <p className="text-xs text-gold-200/70 mt-2.5 leading-relaxed flex-1">
+                    <p className="text-xs text-gold-200/70 mt-2 sm:mt-2.5 leading-relaxed flex-1">
                       {prod.description}
                     </p>
 
-                    <div className="mt-5 pt-4 border-t border-gold-500/15 flex items-center justify-between">
+                    <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-gold-500/15 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={() => onOpenBooking(`Order Remedial Product: ${prod.title}`)}
@@ -296,12 +325,12 @@ export function ServicesGrid({
             </div>
 
             {/* Direct Link to Sacred Yantras */}
-            <div className="p-8 rounded-3xl bg-gradient-to-r from-wine-950 via-celestial-900 to-wine-950 border border-gold-500/30 text-center flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-wine-950 via-celestial-900 to-wine-950 border border-gold-500/30 text-center flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
               <div className="text-left">
                 <span className="text-xs text-gold-400 font-bold uppercase tracking-widest">
                   Featured Vedic Collection
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-gold-100 mt-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 mt-1">
                   Consecrated Sacred Yantras & Yantra Pendants
                 </h3>
                 <p className="text-xs sm:text-sm text-gold-200/70 mt-1">
@@ -316,6 +345,76 @@ export function ServicesGrid({
                 <span>View Full Yantra Catalog</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
+            </div>
+          </div>
+        )}
+
+        {/* Tab 3: Free Kundli Tools Content */}
+        {activeTab === "tools" && (
+          <div className="mt-10 sm:mt-14 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="p-6 rounded-2xl bg-white/5 border border-gold-500/20 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-gold-400/20 text-gold-300">
+                    Calculators
+                  </span>
+                  <h4 className="font-serif text-lg font-bold text-gold-100 mt-2">
+                    Lagna Kundli Generator
+                  </h4>
+                  <p className="text-xs text-gold-200/70 mt-1.5 leading-relaxed">
+                    Compute your precise Vedic ascendant, Rashi, Nakshatra, and full planetary positions.
+                  </p>
+                </div>
+                <a
+                  href="/kundli"
+                  className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-gold-300 hover:text-gold-100"
+                >
+                  <span>Open Kundli Hub</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-white/5 border border-gold-500/20 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300">
+                    Matchmaking
+                  </span>
+                  <h4 className="font-serif text-lg font-bold text-gold-100 mt-2">
+                    Ashtakoota 36-Point Guna Milan
+                  </h4>
+                  <p className="text-xs text-gold-200/70 mt-1.5 leading-relaxed">
+                    Check compatibility across Nadi, Bhakoot, Gana, Maitri, and Yoni dosha mitigations.
+                  </p>
+                </div>
+                <a
+                  href="/kundli?tab=milan"
+                  className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-rose-300 hover:text-rose-100"
+                >
+                  <span>Check Kundli Match</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-white/5 border border-gold-500/20 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300">
+                    Daily Insights
+                  </span>
+                  <h4 className="font-serif text-lg font-bold text-gold-100 mt-2">
+                    Daily Horoscope (Rashifal)
+                  </h4>
+                  <p className="text-xs text-gold-200/70 mt-1.5 leading-relaxed">
+                    Personalized daily planetary influences on career, health, finances, and relationships.
+                  </p>
+                </div>
+                <a
+                  href="/kundli?tab=horoscope"
+                  className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-indigo-300 hover:text-indigo-100"
+                >
+                  <span>Read Daily Horoscope</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         )}
