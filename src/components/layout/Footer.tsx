@@ -4,8 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, Instagram, MapPin, Sparkles, MessageCircle, ArrowUp } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
+  const { language, t } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -195,17 +197,17 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gold-400/60">
-          <p>© {new Date().getFullYear()} Bhavishyaphal Astrology Services. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Bhavishyaphal Astrology Services. {t.rightsReserved}</p>
 
           <div className="flex items-center gap-6">
             <span>Confidential & Ethical Consultations</span>
             <button
               type="button"
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-gold-300 hover:text-gold-100 transition-colors p-1.5 rounded-lg hover:bg-white/5"
+              className="flex items-center gap-1.5 text-gold-300 hover:text-gold-100 transition-colors p-1.5 rounded-lg hover:bg-white/5 cursor-pointer"
               aria-label="Scroll to top"
             >
-              <span>Back to Top</span>
+              <span>{language === "hi" ? "ऊपर जाएं" : "Back to Top"}</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>

@@ -6,12 +6,14 @@ import { motion } from "framer-motion";
 import { ShoppingBag, MessageCircle, Sparkles, Compass, Shield } from "lucide-react";
 import { SACRED_YANTRAS, YantraItem } from "@/lib/site-data";
 import { formatCurrency } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function SacredYantrasGrid({
   onBuyYantra,
 }: {
   onBuyYantra: (yantra: YantraItem) => void;
 }) {
+  const { language, t } = useLanguage();
   const [filter, setFilter] = useState<"all" | "yantra" | "pendant">("all");
 
   const filteredItems = SACRED_YANTRAS.filter((item) => {
@@ -26,15 +28,15 @@ export function SacredYantrasGrid({
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-gold-300 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span>Consecrated Vedic Geometries</span>
+            <span>{t.yantrasBadge}</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
-            Sacred Yantras & Yantra Pendants
+            {t.yantrasTitle}
           </h2>
 
           <p className="text-sm sm:text-base text-gold-200/70 font-light leading-relaxed">
-            Every Yantra and Sacred Pendant is consecrated with authentic Vedic Pran Pratishtha rituals by our scholars before dispatch. Fixed at an accessible single price of <strong className="text-gold-300 font-semibold">₹3,999/-</strong> each.
+            {t.yantrasSub}
           </p>
 
           {/* Filter Buttons */}
@@ -48,7 +50,7 @@ export function SacredYantrasGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-              All Items ({SACRED_YANTRAS.length})
+              {t.filterAll} ({SACRED_YANTRAS.length})
             </button>
             <button
               type="button"
@@ -59,7 +61,7 @@ export function SacredYantrasGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-              Wall / Altar Yantras (13)
+              {t.filterYantras} (13)
             </button>
             <button
               type="button"
@@ -70,7 +72,7 @@ export function SacredYantrasGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-              Wearable Pendants (7)
+              {t.filterPendants} (7)
             </button>
           </div>
         </div>
@@ -123,7 +125,7 @@ export function SacredYantrasGrid({
                     className="w-full py-2.5 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-amber-400 hover:from-gold-200 hover:to-amber-300 transition-all shadow-md shadow-gold-500/20 flex items-center justify-center gap-1.5"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
-                    <span>Order Now ({formatCurrency(item.price)})</span>
+                    <span>{t.orderNowBtn} ({formatCurrency(item.price)})</span>
                   </button>
 
                   <a
@@ -135,7 +137,7 @@ export function SacredYantrasGrid({
                     className="w-full py-2 rounded-xl text-[11px] font-semibold text-gold-300 hover:text-gold-100 hover:bg-white/5 border border-gold-500/20 transition-colors flex items-center justify-center gap-1.5"
                   >
                     <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>WhatsApp Order</span>
+                    <span>{t.whatsAppOrderBtn}</span>
                   </a>
                 </div>
               </div>
@@ -146,7 +148,7 @@ export function SacredYantrasGrid({
         {/* Note at Bottom */}
         <div className="mt-12 p-4 rounded-2xl bg-white/5 border border-gold-500/15 max-w-3xl mx-auto text-center text-xs text-gold-200/70 leading-relaxed">
           <strong className="text-gold-300 font-semibold block sm:inline">Gotra & Name Consecration:</strong>{" "}
-          Each yantra order includes personalized Vedic Pran Pratishtha energization performed specifically with your Name, Gotra and Nakshatra before secure dispatch.
+          {t.yantraConsecrationNotice}
         </div>
       </div>
     </section>

@@ -4,8 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, Check, ShieldCheck, HeartHandshake, PhoneCall, Sparkles } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: string) => void }) {
+  const { language, t } = useLanguage();
+
   return (
     <section id="about" className="py-20 relative bg-celestial-950/60 border-t border-gold-500/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -97,19 +100,19 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-gold-400 uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>About Bhavishyaphal Astrology Services</span>
+                <span>{t.aboutBadge}</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-gold-100 mt-2 leading-tight">
-                Traditional Vedic Wisdom With A Calm, Practical Approach
+                {t.aboutTitle}
               </h2>
             </div>
 
             <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-light">
-              Led by <strong className="text-gold-300 font-semibold">{SITE_CONFIG.founder}</strong>, Bhavishyaphal Astrology Services combines classical Vedic methods, KP timing calculations, and Vastu principles with modern psychological clarity.
+              {t.aboutBio1}
             </p>
 
             <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-light">
-              Every consultation is strictly private and centers on empowering your decision-making. We never use fear-based tactics or pressure you into superstitious remedies. Instead, we reveal realistic possibilities, favorable planetary timing, and grounded remedial actions.
+              {t.aboutBio2}
             </p>
 
             {/* Checklist of 4 Core Pillars */}
@@ -119,8 +122,8 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-gold-200">Personal One-to-One Session</h4>
-                  <p className="text-[11px] text-gold-300/70 mt-0.5">Direct discussion with Astrologer Swati Pandey.</p>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature1Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature1Desc}</p>
                 </div>
               </div>
 
@@ -129,8 +132,12 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                   <ShieldCheck className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-gold-200">Complete Privacy & Trust</h4>
-                  <p className="text-[11px] text-gold-300/70 mt-0.5">Your personal questions remain 100% confidential.</p>
+                  <h4 className="text-xs font-bold text-gold-200">
+                    {language === "hi" ? "पूर्ण गोपनीयता व सम्मान" : "Complete Privacy & Trust"}
+                  </h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">
+                    {language === "hi" ? "आपकी सभी जन्म विवरणी और प्रश्न पूर्णतः सुरक्षित रहते हैं।" : "Your personal questions remain 100% confidential."}
+                  </p>
                 </div>
               </div>
 
@@ -139,8 +146,8 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                   <HeartHandshake className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-gold-200">Clear & Practical Remedies</h4>
-                  <p className="text-[11px] text-gold-300/70 mt-0.5">Simple mantras, donations, and consecrated yantras.</p>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature2Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature2Desc}</p>
                 </div>
               </div>
 
@@ -149,8 +156,8 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                   <Award className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-gold-200">Proven Track Record</h4>
-                  <p className="text-[11px] text-gold-300/70 mt-0.5">Awarded by cricket icons, gurus & state ministers.</p>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature3Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature3Desc}</p>
                 </div>
               </div>
             </div>
@@ -160,9 +167,9 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
               <button
                 type="button"
                 onClick={() => onOpenBooking("All Life Comprehensive Consultancy")}
-                className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-lg shadow-gold-500/25 transition-all"
+                className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-lg shadow-gold-500/25 transition-all cursor-pointer"
               >
-                Schedule A Private Session
+                {t.aboutCta}
               </button>
 
               <a
