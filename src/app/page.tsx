@@ -11,16 +11,20 @@ import { ReviewsSection } from "@/components/testimonials/ReviewsSection";
 import { FaqSection } from "@/components/faq/FaqSection";
 import { BookingSection } from "@/components/booking/BookingSection";
 import { BookingModal } from "@/components/booking/BookingModal";
+import { YantraOrderModal } from "@/components/yantras/YantraOrderModal";
 import { YantraItem } from "@/lib/site-data";
 import Link from "next/link";
 import { Stars, ArrowRight, ShieldCheck, Award } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string>(
     "All Life Comprehensive Consultancy (₹5,100/-)"
   );
 
+<<<<<<< HEAD
   useEffect(() => {
     const handleGlobalBooking = (e: Event) => {
       const customEvent = e as CustomEvent<{ service?: string }>;
@@ -33,6 +37,10 @@ export default function Home() {
     window.addEventListener("open-booking-modal", handleGlobalBooking);
     return () => window.removeEventListener("open-booking-modal", handleGlobalBooking);
   }, []);
+=======
+  const [yantraModalOpen, setYantraModalOpen] = useState(false);
+  const [selectedYantra, setSelectedYantra] = useState<YantraItem | null>(null);
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 
   const handleOpenBooking = (serviceName?: string) => {
     if (serviceName) setSelectedService(serviceName);
@@ -40,8 +48,8 @@ export default function Home() {
   };
 
   const handleBuyYantra = (yantra: YantraItem) => {
-    setSelectedService(`Sacred Yantra Order: ${yantra.title} (₹${yantra.price}/-)`);
-    setBookingModalOpen(true);
+    setSelectedYantra(yantra);
+    setYantraModalOpen(true);
   };
 
   return (
@@ -61,10 +69,10 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-serif text-lg sm:text-xl font-bold text-gold-100">
-                Generate Your Vedic Kundli & Match Horoscopes Online
+                {t.bannerTitle}
               </h3>
               <p className="text-xs text-gold-300/80">
-                Explore our free 7-in-1 calculator hub: Birth Charts, 36-Point Guna Milan, Daily Horoscopes & Numerology.
+                {t.bannerSub}
               </p>
             </div>
           </div>
@@ -73,7 +81,7 @@ export default function Home() {
             href="/kundli"
             className="px-6 py-3 rounded-xl font-serif text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-xl shadow-gold-500/20 flex-shrink-0 flex items-center gap-2 transform hover:-translate-y-0.5 transition-all"
           >
-            <span>Launch Kundli Hub</span>
+            <span>{t.bannerCta}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -100,11 +108,18 @@ export default function Home() {
       {/* 9. Direct Contact & Booking Form */}
       <BookingSection />
 
-      {/* Booking / Checkout Modal */}
+      {/* Booking / Checkout Modal for Consultations */}
       <BookingModal
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
         initialService={selectedService}
+      />
+
+      {/* Dedicated Fullscreen Yantra Order Modal */}
+      <YantraOrderModal
+        isOpen={yantraModalOpen}
+        onClose={() => setYantraModalOpen(false)}
+        yantra={selectedYantra}
       />
     </div>
   );

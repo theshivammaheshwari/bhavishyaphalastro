@@ -17,8 +17,11 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-data";
 import { HeroCosmicWheel } from "./HeroCosmicWheel";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function HeroSection({ onOpenBooking }: { onOpenBooking: (serviceName?: string) => void }) {
+  const { language, t } = useLanguage();
+
   return (
     <section className="relative pt-8 sm:pt-14 pb-20 overflow-hidden">
       {/* Background Gradients */}
@@ -37,20 +40,21 @@ export function HeroSection({ onOpenBooking }: { onOpenBooking: (serviceName?: s
             {/* National Recognition Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold backdrop-blur-md shadow-sm">
               <Award className="w-4 h-4 text-gold-400" />
-              <span>India&apos;s Most Trusted & Accurate Astrologer of the Year</span>
+              <span>{t.heroBadge}</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gold-100 leading-[1.12] tracking-tight">
-              Understand Your Path Through the Language of the{" "}
+              {t.heroTitle1}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-400 drop-shadow-[0_2px_15px_rgba(244,200,102,0.3)]">
-                Stars
-              </span>
+                {t.heroTitle2}
+              </span>{" "}
+              {t.heroTitle3}
             </h1>
 
             {/* Subtitle */}
             <p className="text-gold-200/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Personalized, confidential guidance through <strong className="text-gold-300 font-semibold">Vedic Astrology</strong>, <strong className="text-gold-300 font-semibold">KP System</strong>, <strong className="text-gold-300 font-semibold">Palmistry</strong> and <strong className="text-gold-300 font-semibold">Vastu</strong> for marriage, relationships, education, career, litigation, and important life milestones.
+              {t.heroSub}
             </p>
 
             {/* CTA Action Buttons */}
@@ -58,10 +62,10 @@ export function HeroSection({ onOpenBooking }: { onOpenBooking: (serviceName?: s
               <button
                 type="button"
                 onClick={() => onOpenBooking("All Life Comprehensive Consultancy")}
-                className="px-6 py-3.5 rounded-xl text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-xl shadow-gold-500/25 hover:shadow-gold-500/40 transform hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-xl shadow-gold-500/25 hover:shadow-gold-500/40 transform hover:-translate-y-0.5 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Consultation</span>
+                <span>{t.heroCtaBook}</span>
               </button>
 
               <Link
@@ -69,7 +73,7 @@ export function HeroSection({ onOpenBooking }: { onOpenBooking: (serviceName?: s
                 className="px-6 py-3.5 rounded-xl text-sm font-bold text-gold-200 bg-white/5 hover:bg-gold-500/15 border border-gold-500/30 backdrop-blur-md hover:border-gold-400/60 transition-all flex items-center gap-2"
               >
                 <Stars className="w-4 h-4 text-gold-400" />
-                <span>Free Kundli & Matching Hub</span>
+                <span>{t.heroCtaKundli}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -80,7 +84,7 @@ export function HeroSection({ onOpenBooking }: { onOpenBooking: (serviceName?: s
                 className="px-4 py-3.5 rounded-xl text-sm font-semibold text-emerald-300 bg-emerald-950/40 border border-emerald-500/30 hover:bg-emerald-900/40 transition-colors flex items-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400 fill-emerald-400" />
-                <span>WhatsApp Now</span>
+                <span>WhatsApp</span>
               </a>
             </div>
 

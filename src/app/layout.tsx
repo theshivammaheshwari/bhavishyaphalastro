@@ -5,7 +5,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CelestialBackground } from "@/components/layout/CelestialBackground";
 import { FloatingActions } from "@/components/layout/FloatingActions";
+<<<<<<< HEAD
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
+=======
+import { LanguageProvider } from "@/context/LanguageContext";
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 import { SITE_CONFIG } from "@/lib/site-data";
 
 const cinzel = Cinzel({
@@ -78,6 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cinzel.variable} ${manrope.variable} scroll-smooth dark`}>
+<<<<<<< HEAD
       <body className="min-h-screen bg-celestial-950 text-gold-100 flex flex-col font-sans antialiased selection:bg-gold-400 selection:text-celestial-950 pb-16 md:pb-0">
         <CelestialBackground />
         <Navbar />
@@ -85,6 +90,16 @@ export default function RootLayout({
         <Footer />
         <FloatingActions />
         <MobileBottomNav />
+=======
+      <body className="min-h-screen bg-celestial-950 text-gold-100 flex flex-col font-sans antialiased selection:bg-gold-400 selection:text-celestial-950">
+        <LanguageProvider>
+          <CelestialBackground />
+          <Navbar />
+          <main className="flex-1 relative z-10">{children}</main>
+          <Footer />
+          <FloatingActions />
+        </LanguageProvider>
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
       </body>
     </html>
   );

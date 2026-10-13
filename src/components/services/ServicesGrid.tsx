@@ -19,13 +19,19 @@ import {
   SITE_CONFIG,
 } from "@/lib/site-data";
 import { formatCurrency } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ServicesGrid({
   onOpenBooking,
 }: {
   onOpenBooking: (serviceName?: string) => void;
 }) {
+<<<<<<< HEAD
   const [activeTab, setActiveTab] = useState<"services" | "products" | "tools">("services");
+=======
+  const { language, t } = useLanguage();
+  const [activeTab, setActiveTab] = useState<"services" | "products">("services");
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 
   return (
     <section id="services" className="py-16 sm:py-24 relative bg-celestial-950/80 border-t border-gold-500/15">
@@ -34,15 +40,24 @@ export function ServicesGrid({
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-gold-300 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span>Consultancy & Remedial Science</span>
+            <span>{t.servicesBadge}</span>
           </div>
 
+<<<<<<< HEAD
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
             Comprehensive Guidance & Sacred Remedies
           </h2>
 
           <p className="text-xs sm:text-base text-gold-200/70 font-light leading-relaxed">
             Choose from our specialized one-to-one astrology consultancy sessions or explore authenticated Vedic remedies.
+=======
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gold-100 leading-tight">
+            {t.servicesTitle}
+          </h2>
+
+          <p className="text-sm sm:text-base text-gold-200/70 font-light leading-relaxed">
+            {t.servicesSub}
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
           </p>
 
           {/* Interactive Category Switcher Segmented Tabs */}
@@ -56,7 +71,7 @@ export function ServicesGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-              Consultancy Services
+              {t.tabConsultancy}
             </button>
             <button
               type="button"
@@ -67,7 +82,7 @@ export function ServicesGrid({
                   : "text-gold-200/70 hover:text-gold-200"
               }`}
             >
-              Remedial Products
+              {t.tabRemedial}
             </button>
             <button
               type="button"

@@ -1,10 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Calendar, Phone, Mail, MapPin, Clock, MessageCircle, QrCode, CheckCircle, Sparkles } from "lucide-react";
+import {
+  X,
+  ArrowLeft,
+  Calendar,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+  QrCode,
+  CheckCircle,
+  Sparkles,
+  Maximize2,
+  Minimize2,
+} from "lucide-react";
 import { ASTRO_CONSULTATION_PACKAGES, SITE_CONFIG } from "@/lib/site-data";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function BookingModal({
   isOpen,
@@ -32,11 +47,24 @@ export function BookingModal({
   const [submitted, setSubmitted] = useState(false);
   const [showUpiQr, setShowUpiQr] = useState(false);
 
+  const { language, t } = useLanguage();
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   useEffect(() => {
     if (initialService) {
       setFormData((prev) => ({ ...prev, service: initialService }));
     }
   }, [initialService]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -67,7 +95,6 @@ export function BookingModal({
           colors: ["#f4c866", "#ef6c14", "#6d0909", "#ffffff"],
         });
       } else {
-        // Fallback success
         setSubmitted(true);
       }
     } catch {
@@ -82,10 +109,17 @@ export function BookingModal({
     return `https://wa.me/919116055424?text=${text}`;
   };
 
+  const handleResetAndClose = () => {
+    setSubmitted(false);
+    setIsFullscreen(false);
+    onClose();
+  };
+
   if (!isOpen) return null;
 
   return (
     <AnimatePresence>
+<<<<<<< HEAD
       <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-5 bg-black/85 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.98 }}
@@ -106,21 +140,70 @@ export function BookingModal({
           >
             <X className="w-5 h-5" />
           </button>
+=======
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/90 backdrop-blur-2xl"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) handleResetAndClose();
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          className={`relative w-full bg-celestial-950 border border-gold-500/30 shadow-2xl transition-all duration-300 flex flex-col ${
+            isFullscreen
+              ? "fixed inset-0 w-screen h-screen max-w-none max-h-none rounded-none z-50 overflow-y-auto"
+              : "max-w-2xl max-h-[92vh] rounded-3xl overflow-y-auto"
+          }`}
+        >
+          {/* Top Bar with Prominent Back Button & Fullscreen */}
+          <div className="sticky top-0 z-20 flex items-center justify-between px-5 py-3.5 bg-celestial-900/95 backdrop-blur-md border-b border-gold-500/25">
+            <button
+              type="button"
+              onClick={handleResetAndClose}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 font-semibold text-xs transition-colors"
+            >
+              <span>{language === "hi" ? "← वापस जाएं (Back)" : "← Back / Close"}</span>
+            </button>
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 
-          {!submitted ? (
-            <div>
-              <div className="space-y-1 mb-6">
-                <div className="inline-flex items-center gap-1.5 text-xs text-gold-400 font-bold uppercase tracking-wider">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Private Consultation Session</span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setIsFullscreen(!isFullscreen)}
+                className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-gold-300 border border-gold-500/20 text-xs font-medium transition-colors"
+              >
+                {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+                <span>{isFullscreen ? "Standard" : "Fullscreen"}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleResetAndClose}
+                className="w-8 h-8 rounded-full bg-white/5 hover:bg-rose-500/20 text-gold-300 hover:text-rose-300 border border-gold-500/20 flex items-center justify-center transition-colors"
+                aria-label="Close booking modal"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="p-6 sm:p-8 flex-1">
+            {!submitted ? (
+              <div>
+                <div className="space-y-1 mb-6">
+                  <div className="inline-flex items-center gap-1.5 text-xs text-gold-400 font-bold uppercase tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>{t.bookingBadge}</span>
+                  </div>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-gold-100">
+                    {t.bookingTitle}
+                  </h3>
+                  <p className="text-xs text-gold-200/70">
+                    {t.bookingSub}
+                  </p>
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-gold-100">
-                  Book Your Vedic Consultation
-                </h3>
-                <p className="text-xs text-gold-200/70">
-                  Share your birth details below. Your session will be structured with utmost privacy.
-                </p>
-              </div>
 
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 {/* Name & Phone */}
@@ -326,8 +409,17 @@ export function BookingModal({
                     className="px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/30 transition-colors flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-4 h-4 fill-emerald-400" />
-                    <span>Instant WhatsApp Connect</span>
+                    <span>WhatsApp Connect</span>
                   </a>
+
+                  <button
+                    type="button"
+                    onClick={handleResetAndClose}
+                    className="px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-gold-300 bg-white/5 hover:bg-white/10 border border-gold-500/25 transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    <span>{language === "hi" ? "वापस जाएं (Back)" : "Cancel & Go Back"}</span>
+                  </button>
                 </div>
               </form>
             </div>
@@ -386,8 +478,21 @@ export function BookingModal({
                   </p>
                 </div>
               )}
+
+              {/* Prominent Back Button on Confirmation Screen */}
+              <div className="pt-3 flex justify-center">
+                <button
+                  type="button"
+                  onClick={handleResetAndClose}
+                  className="px-8 py-3 rounded-xl font-serif text-xs sm:text-sm font-bold text-gold-200 bg-gold-500/15 hover:bg-gold-500/25 border border-gold-500/30 transition-colors flex items-center gap-2"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  <span>{language === "hi" ? "← मुख्य वेबसाइट पर वापस जाएं" : "← Back to Website"}</span>
+                </button>
+              </div>
             </div>
           )}
+          </div>
         </motion.div>
       </div>
     </AnimatePresence>

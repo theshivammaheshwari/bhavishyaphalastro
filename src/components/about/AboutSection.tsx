@@ -5,9 +5,14 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, Check, ShieldCheck, HeartHandshake, PhoneCall, Sparkles, ChevronDown } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: string) => void }) {
+<<<<<<< HEAD
   const [expandedMobile, setExpandedMobile] = useState(false);
+=======
+  const { language, t } = useLanguage();
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 
   return (
     <section id="about" className="py-14 sm:py-20 relative bg-celestial-950/60 border-t border-gold-500/10">
@@ -103,14 +108,22 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-gold-400 uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
+<<<<<<< HEAD
                 <span>About Bhavishyaphal Astrology</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-gold-100 mt-2 leading-tight">
                 Traditional Vedic Wisdom With Practical Clarity
+=======
+                <span>{t.aboutBadge}</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-gold-100 mt-2 leading-tight">
+                {t.aboutTitle}
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
               </h2>
             </div>
 
             <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-light">
+<<<<<<< HEAD
               Led by <strong className="text-gold-300 font-semibold">{SITE_CONFIG.founder}</strong>, Bhavishyaphal combines classical Vedic horoscopes, KP timing calculations, and Vastu principles with modern psychological guidance.
             </p>
 
@@ -119,6 +132,14 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
               <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-light">
                 Every consultation is strictly private and centers on empowering your decision-making. We never use fear-based tactics or superstitious remedies. Instead, we reveal realistic planetary timing and grounded solutions.
               </p>
+=======
+              {t.aboutBio1}
+            </p>
+
+            <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-light">
+              {t.aboutBio2}
+            </p>
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
 
               {/* Checklist of 4 Core Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -131,6 +152,7 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                     <p className="text-[11px] text-gold-300/70 mt-0.5">Direct discussion with Astrologer Swati Pandey.</p>
                   </div>
                 </div>
+<<<<<<< HEAD
 
                 <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 border border-gold-500/15 flex items-start gap-3">
                   <div className="w-6 h-6 rounded-lg bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
@@ -160,10 +182,16 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                     <h4 className="text-xs font-bold text-gold-200">Proven Track Record</h4>
                     <p className="text-[11px] text-gold-300/70 mt-0.5">Awarded by cricket icons, gurus & state ministers.</p>
                   </div>
+=======
+                <div>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature1Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature1Desc}</p>
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
                 </div>
               </div>
             </div>
 
+<<<<<<< HEAD
             {/* Mobile Expand / Collapse Button */}
             <div className="sm:hidden pt-1">
               <button
@@ -174,6 +202,41 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
                 <span>{expandedMobile ? "Show Less" : "Read Full Story & Honors (4 Pillars)"}</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedMobile ? "rotate-180" : ""}`} />
               </button>
+=======
+              <div className="p-3.5 rounded-xl bg-white/5 border border-gold-500/15 flex items-start gap-3">
+                <div className="w-6 h-6 rounded-lg bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gold-200">
+                    {language === "hi" ? "पूर्ण गोपनीयता व सम्मान" : "Complete Privacy & Trust"}
+                  </h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">
+                    {language === "hi" ? "आपकी सभी जन्म विवरणी और प्रश्न पूर्णतः सुरक्षित रहते हैं।" : "Your personal questions remain 100% confidential."}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-white/5 border border-gold-500/15 flex items-start gap-3">
+                <div className="w-6 h-6 rounded-lg bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                  <HeartHandshake className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature2Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature2Desc}</p>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-white/5 border border-gold-500/15 flex items-start gap-3">
+                <div className="w-6 h-6 rounded-lg bg-gold-400/15 border border-gold-400/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                  <Award className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gold-200">{t.aboutFeature3Title}</h4>
+                  <p className="text-[11px] text-gold-300/70 mt-0.5">{t.aboutFeature3Desc}</p>
+                </div>
+              </div>
+>>>>>>> 4108060c96899416c8060143303606bfec745c97
             </div>
 
             {/* CTAs */}
@@ -181,9 +244,9 @@ export function AboutSection({ onOpenBooking }: { onOpenBooking: (serviceName?: 
               <button
                 type="button"
                 onClick={() => onOpenBooking("All Life Comprehensive Consultancy")}
-                className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-lg shadow-gold-500/25 transition-all"
+                className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-gold-300 to-amber-400 hover:from-gold-200 hover:to-amber-300 shadow-lg shadow-gold-500/25 transition-all cursor-pointer"
               >
-                Schedule A Private Session
+                {t.aboutCta}
               </button>
 
               <a
