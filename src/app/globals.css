@@ -3,21 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --background: #06020c;
+  --background: #080410;
   --foreground: #fff9f0;
+  --palette-accent: #F1E135;
+  --palette-accent-warm: #E8D420;
+  --palette-yellow: #F7EE7A;
+  --palette-glass-bg: rgba(22, 18, 9, 0.85);
+  --palette-glass-border: rgba(241, 225, 53, 0.18);
+  --palette-glass-hover: rgba(241, 225, 53, 0.28);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Luxury Gold & Wine Selection */
+/* Custom Astrotalk Luxury Gold & Warm Selection */
 ::selection {
-  background: #f4c866;
-  color: #12041f;
+  background: #F1E135;
+  color: #120e06;
 }
 
 /* Custom Scrollbar */

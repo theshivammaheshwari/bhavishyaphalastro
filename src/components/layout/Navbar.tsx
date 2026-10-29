@@ -29,6 +29,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [galleryDropdownOpen, setGalleryDropdownOpen] = useState(false);
+  const [consultDropdownOpen, setConsultDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +45,7 @@ export function Navbar() {
       if (e.key === "Escape") {
         setMobileMenuOpen(false);
         setGalleryDropdownOpen(false);
+        setConsultDropdownOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -161,117 +163,77 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links — Unified baseline alignment */}
-          <ul className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-wrap justify-center">
+          <ul className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-wrap justify-center font-sans">
             <li>
               <Link
                 href="/"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
               >
                 {t.navHome}
               </Link>
             </li>
-            <li>
-              <Link
-                href="/#about"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
-              >
-                {t.navAbout}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#services"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
-              >
-                {t.navServices}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#sacred-yantras"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
-              >
-                {t.navYantras}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/kundli"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-semibold text-gold-300 bg-gold-500/10 border border-gold-500/25 hover:bg-gold-500/20 transition-colors inline-flex items-center justify-center gap-1.5 shadow-sm shadow-gold-500/10"
-              >
-                <Stars className="w-3.5 h-3.5 text-gold-400 animate-spin" style={{ animationDuration: "12s" }} />
-                <span>{t.navKundli}</span>
-              </Link>
-            </li>
 
-            {/* Gallery Dropdown */}
+            {/* Consultations Dropdown */}
             <li
               className="relative"
-              onMouseEnter={() => setGalleryDropdownOpen(true)}
-              onMouseLeave={() => setGalleryDropdownOpen(false)}
+              onMouseEnter={() => setConsultDropdownOpen(true)}
+              onMouseLeave={() => setConsultDropdownOpen(false)}
             >
               <button
                 type="button"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center gap-1"
-                aria-expanded={galleryDropdownOpen}
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center gap-1"
+                aria-expanded={consultDropdownOpen}
               >
-                <span>{t.navGallery}</span>
+                <span>Consultations</span>
                 <ChevronDown
                   className={cn(
-                    "w-3.5 h-3.5 transition-transform duration-200 text-gold-400",
-                    galleryDropdownOpen && "rotate-180"
+                    "w-3.5 h-3.5 transition-transform duration-200 text-astrotalk-yellow",
+                    consultDropdownOpen && "rotate-180"
                   )}
                 />
               </button>
 
               <AnimatePresence>
-                {galleryDropdownOpen && (
+                {consultDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: 8, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-56 rounded-xl bg-celestial-900/98 backdrop-blur-2xl border border-gold-500/25 shadow-2xl shadow-black/80 py-2 z-50"
+                    className="absolute top-full left-0 mt-1 w-60 rounded-2xl bg-celestial-900/98 backdrop-blur-2xl border border-astrotalk-yellow/25 shadow-2xl shadow-black/80 py-2 z-50 font-sans"
                   >
                     <Link
-                      href="/#gallery-awards"
-                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-200 hover:text-gold-400 hover:bg-white/5 transition-colors"
-                      onClick={() => setGalleryDropdownOpen(false)}
+                      href="/talk-to-astrologer"
+                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-100 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors"
+                      onClick={() => setConsultDropdownOpen(false)}
                     >
-                      <Award className="w-4 h-4 text-gold-400" />
-                      <span>{t.galleryAwards}</span>
+                      <Phone className="w-4 h-4 text-astrotalk-yellow" />
+                      <div className="flex flex-col">
+                        <span className="font-bold">Talk to Astrologer</span>
+                        <span className="text-[10px] text-gold-300/60">Voice & Video Call with Experts</span>
+                      </div>
                     </Link>
                     <Link
-                      href="/#gallery-clients"
-                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-200 hover:text-gold-400 hover:bg-white/5 transition-colors"
-                      onClick={() => setGalleryDropdownOpen(false)}
+                      href="/chat-with-astrologer"
+                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-100 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors"
+                      onClick={() => setConsultDropdownOpen(false)}
                     >
-                      <Users className="w-4 h-4 text-gold-400" />
-                      <span>{t.galleryClients}</span>
+                      <MessageCircle className="w-4 h-4 text-astrotalk-yellow" />
+                      <div className="flex flex-col">
+                        <span className="font-bold">Chat with Astrologer</span>
+                        <span className="text-[10px] text-gold-300/60">Instant Q&A with Swati Pandey</span>
+                      </div>
                     </Link>
                     <Link
-                      href="/#gallery-articles"
-                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-200 hover:text-gold-400 hover:bg-white/5 transition-colors"
-                      onClick={() => setGalleryDropdownOpen(false)}
+                      href="/services"
+                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-100 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors"
+                      onClick={() => setConsultDropdownOpen(false)}
                     >
-                      <FileText className="w-4 h-4 text-gold-400" />
-                      <span>{t.galleryPress}</span>
-                    </Link>
-                    <Link
-                      href="/#gallery-astrologers"
-                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-200 hover:text-gold-400 hover:bg-white/5 transition-colors"
-                      onClick={() => setGalleryDropdownOpen(false)}
-                    >
-                      <Sparkles className="w-4 h-4 text-gold-400" />
-                      <span>{t.galleryAstrologers}</span>
-                    </Link>
-                    <Link
-                      href="/#gallery-social"
-                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-gold-200 hover:text-gold-400 hover:bg-white/5 transition-colors"
-                      onClick={() => setGalleryDropdownOpen(false)}
-                    >
-                      <HeartHandshake className="w-4 h-4 text-gold-400" />
-                      <span>{t.gallerySocial}</span>
+                      <Sparkles className="w-4 h-4 text-astrotalk-yellow" />
+                      <div className="flex flex-col">
+                        <span className="font-bold">All Consultation Packages</span>
+                        <span className="text-[10px] text-gold-300/60">8 Life & Business Suites</span>
+                      </div>
                     </Link>
                   </motion.div>
                 )}
@@ -280,8 +242,45 @@ export function Navbar() {
 
             <li>
               <Link
-                href="/#reviews"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+                href="/about"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+              >
+                {t.navAbout}
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/kundli"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-semibold text-astrotalk-yellow bg-astrotalk-yellow/10 border border-astrotalk-yellow/30 hover:bg-astrotalk-yellow/20 transition-colors inline-flex items-center justify-center gap-1.5 shadow-sm shadow-astrotalk-yellow/10"
+              >
+                <Stars className="w-3.5 h-3.5 text-astrotalk-yellow animate-spin" style={{ animationDuration: "12s" }} />
+                <span>Free Kundli &amp; Matching</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/yantras"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+              >
+                {t.navYantras}
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/gallery"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+              >
+                {t.navGallery}
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/reviews"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
               >
                 {t.navReviews}
               </Link>
@@ -289,15 +288,15 @@ export function Navbar() {
             <li>
               <Link
                 href="/blog"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
               >
                 {t.navBlog}
               </Link>
             </li>
             <li>
               <Link
-                href="/#contact"
-                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-gold-300 hover:bg-white/5 transition-colors inline-flex items-center justify-center"
+                href="/contact"
+                className="whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-gold-100/90 hover:text-astrotalk-yellow hover:bg-white/5 transition-colors inline-flex items-center justify-center"
               >
                 {t.navContact}
               </Link>
@@ -399,73 +398,94 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 font-sans">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navHome}
               </Link>
               <Link
-                href="/#about"
+                href="/talk-to-astrologer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-semibold text-astrotalk-yellow bg-astrotalk-yellow/10 border border-astrotalk-yellow/30 flex items-center justify-between"
               >
-                {t.navAbout}
+                <span className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-astrotalk-yellow" />
+                  <span>Talk to Astrologer</span>
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-celestial-950 font-bold uppercase">
+                  Online
+                </span>
               </Link>
               <Link
-                href="/#services"
+                href="/chat-with-astrologer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors flex items-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>Chat with Astrologer</span>
+              </Link>
+              <Link
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navServices}
               </Link>
               <Link
-                href="/#sacred-yantras"
+                href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
-                {t.navYantras}
+                {t.navAbout}
               </Link>
               <Link
                 href="/kundli"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-300 bg-gold-500/15 border border-gold-500/30 flex items-center justify-between"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-astrotalk-yellow bg-celestial-900 border border-gold-500/25 flex items-center justify-between"
               >
                 <span className="flex items-center gap-2">
-                  <Stars className="w-4 h-4 text-gold-400" />
+                  <Stars className="w-4 h-4 text-astrotalk-yellow" />
                   <span>{t.navKundli}</span>
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-gold-400 text-celestial-950 font-bold uppercase">
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-astrotalk-yellow text-celestial-950 font-bold uppercase">
                   Free
                 </span>
               </Link>
               <Link
-                href="/#gallery"
+                href="/yantras"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
+              >
+                {t.navYantras}
+              </Link>
+              <Link
+                href="/gallery"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navGallery}
               </Link>
               <Link
-                href="/#reviews"
+                href="/reviews"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navReviews}
               </Link>
               <Link
                 href="/blog"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navBlog}
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-gold-300 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-medium text-gold-100 hover:bg-gold-500/10 hover:text-astrotalk-yellow transition-colors"
               >
                 {t.navContact}
               </Link>

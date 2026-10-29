@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Manrope } from "next/font/google";
+import { Cinzel, Poppins, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -16,10 +16,17 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-poppins",
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+  weight: ["400"],
   display: "swap",
 });
 
@@ -78,8 +85,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${manrope.variable} scroll-smooth dark`}>
-      <body className="min-h-screen bg-celestial-950 text-gold-100 flex flex-col font-sans antialiased selection:bg-gold-400 selection:text-celestial-950 pb-16 md:pb-0">
+    <html lang="en" className={`${poppins.variable} ${dmSerif.variable} ${cinzel.variable} scroll-smooth dark`}>
+      <body className="min-h-screen bg-celestial-950 text-gold-100 flex flex-col font-sans antialiased selection:bg-astrotalk-yellow selection:text-astrotalk-darker pb-16 md:pb-0">
         <LanguageProvider>
           <CelestialBackground />
           <Navbar />

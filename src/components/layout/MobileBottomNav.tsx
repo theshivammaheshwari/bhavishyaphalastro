@@ -30,31 +30,33 @@ export function MobileBottomNav({
       isActive: pathname === "/",
     },
     {
-      id: "kundli",
-      label: "Kundli Hub",
-      icon: Sparkles,
-      href: "/kundli",
-      isActive: pathname ? pathname.startsWith("/kundli") : false,
+      id: "talk",
+      label: "Talk",
+      icon: PhoneCall,
+      href: "/talk-to-astrologer",
+      isActive: pathname === "/talk-to-astrologer",
     },
     {
-      id: "consult",
-      label: "Consult",
-      icon: PhoneCall,
+      id: "kundli",
+      label: "Kundli",
+      icon: Sparkles,
+      href: "/kundli",
       isSpecial: true,
-      action: handleBookingClick,
+      isActive: pathname ? pathname.startsWith("/kundli") : false,
     },
     {
       id: "yantras",
       label: "Yantras",
       icon: ShoppingBag,
-      href: "/#sacred-yantras",
-      isActive: false,
+      href: "/yantras",
+      isActive: pathname === "/yantras",
     },
     {
       id: "chat",
-      label: "WhatsApp",
+      label: "Chat",
       icon: MessageCircle,
-      externalHref: SITE_CONFIG.whatsappLink,
+      href: "/chat-with-astrologer",
+      isActive: pathname === "/chat-with-astrologer",
       badge: "Live",
     },
   ];
@@ -68,22 +70,21 @@ export function MobileBottomNav({
         {navItems.map((item) => {
           const Icon = item.icon;
 
-          // Special Center Button (Consult Now)
+          // Special Center Button (Free Kundli Hub)
           if (item.isSpecial) {
             return (
-              <button
+              <Link
                 key={item.id}
-                type="button"
-                onClick={item.action}
+                href="/kundli"
                 className="relative -top-3 flex flex-col items-center group focus:outline-none"
               >
-                <div className="w-13 h-13 p-3 rounded-full bg-gradient-to-tr from-gold-400 via-amber-400 to-amber-200 text-celestial-950 shadow-xl shadow-gold-500/40 border-2 border-celestial-950 flex items-center justify-center transform group-active:scale-95 transition-transform animate-pulse">
+                <div className="w-13 h-13 p-3 rounded-full bg-gradient-to-tr from-astrotalk-yellow via-amber-400 to-amber-300 text-celestial-950 shadow-xl shadow-astrotalk-yellow/40 border-2 border-celestial-950 flex items-center justify-center transform group-active:scale-95 transition-transform animate-pulse">
                   <Icon className="w-6 h-6 stroke-[2.5]" />
                 </div>
-                <span className="text-[10px] font-bold text-gold-300 mt-0.5 tracking-tight">
-                  Consult
+                <span className="text-[10px] font-bold text-astrotalk-yellow mt-0.5 tracking-tight">
+                  {item.label}
                 </span>
-              </button>
+              </Link>
             );
           }
 
@@ -114,22 +115,8 @@ export function MobileBottomNav({
             </div>
           );
 
-          if (item.externalHref) {
-            return (
-              <a
-                key={item.id}
-                href={item.externalHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus:outline-none"
-              >
-                {buttonContent}
-              </a>
-            );
-          }
-
           return (
-            <Link key={item.id} href={item.href || "/"} className="focus:outline-none">
+            <Link key={item.id} href={item.href} className="focus:outline-none">
               {buttonContent}
             </Link>
           );

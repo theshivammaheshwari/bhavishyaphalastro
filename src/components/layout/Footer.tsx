@@ -61,90 +61,90 @@ export function Footer() {
           </div>
 
           {/* Col 2: Services */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-gold-300 uppercase tracking-wider relative inline-block">
+          <div className="space-y-3 font-sans">
+            <h4 className="font-serif font-bold text-sm text-astrotalk-yellow uppercase tracking-wider relative inline-block">
               Astrology Services
-              <span className="block h-0.5 w-8 bg-gold-400 mt-1 rounded-full" />
+              <span className="block h-0.5 w-8 bg-astrotalk-yellow mt-1 rounded-full" />
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> All Life Comprehensive Reading
+                <Link href="/talk-to-astrologer" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Talk to Astrologer (Voice &amp; Video)
                 </Link>
               </li>
               <li>
-                <Link href="/kundli" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Kundli Milan & Guna Milan
+                <Link href="/chat-with-astrologer" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Chat with Astrologer Online
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Marriage Timing & Soulmate
+                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> All Life Comprehensive Reading
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Career, Job vs Business
+                <Link href="/kundli" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Kundli Milan &amp; Guna Milan
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Child Birth Timing & Muhurat
+                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Marriage Timing &amp; Soulmate
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Vastu Consultancy & Feng Shui
+                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Career, Job vs Business Direction
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Palmistry & Numerology
+                <Link href="/about" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> About Astrologer Swati Pandey
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Col 3: Sacred Yantras & Hub */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-gold-300 uppercase tracking-wider relative inline-block">
-              Sacred Products & Hub
-              <span className="block h-0.5 w-8 bg-gold-400 mt-1 rounded-full" />
+          <div className="space-y-3 font-sans">
+            <h4 className="font-serif font-bold text-sm text-astrotalk-yellow uppercase tracking-wider relative inline-block">
+              Sacred Products &amp; Pages
+              <span className="block h-0.5 w-8 bg-astrotalk-yellow mt-1 rounded-full" />
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/#sacred-yantras" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Consecrated Shri Yantra (₹3,999)
+                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Consecrated Shri Yantra (₹3,999)
                 </Link>
               </li>
               <li>
-                <Link href="/#sacred-yantras" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Kubera & Mahalakshmi Yantras
+                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Kubera &amp; Mahalakshmi Yantras
                 </Link>
               </li>
               <li>
-                <Link href="/#sacred-yantras" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Energized Sacred Pendants
+                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Energized Sacred Pendants
                 </Link>
               </li>
               <li>
-                <Link href="/kundli" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Free Kundli Generator
+                <Link href="/gallery" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> VIP Gallery &amp; National Honors
                 </Link>
               </li>
               <li>
-                <Link href="/kundli" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> 36-Point Guna Milan Match
+                <Link href="/reviews" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Client Reviews &amp; Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/kundli" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Daily 12-Zodiac Horoscope
+                <Link href="/contact" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Contact &amp; Appointment Desk
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-gold-300 transition-colors flex items-center gap-1.5">
-                  <span className="text-gold-400">›</span> Astrology Research Journal
+                <Link href="/blog" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
+                  <span className="text-astrotalk-yellow">›</span> Astrology Research Journal
                 </Link>
               </li>
             </ul>
