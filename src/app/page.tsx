@@ -319,19 +319,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Astrotalk-Style "Talk to Astrologer" Showcase Preview */}
+      {/* 4. Astrotalk-Style Consultation Showcase Preview */}
       <section className="py-14 sm:py-20 bg-celestial-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
             <div>
               <span className="text-astrotalk-yellow text-xs font-bold uppercase tracking-wider">
-                Live Consultations
+                Direct Consultations
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-1">
-                Talk to Certified Vedic Astrologers
+                Consult with Astrologer Swati Pandey
               </h2>
               <p className="text-xs sm:text-sm text-gold-300/70 mt-1 max-w-xl font-sans">
-                Connect with verified astrological experts for marriage, career, finance, and health dilemmas.
+                National Award Winner • Conferred by Sh Nayan Mongia Ji • 100% Confidential 1-on-1 Consultations
               </p>
             </div>
 
@@ -339,21 +339,21 @@ export default function Home() {
               href="/talk-to-astrologer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-astrotalk-yellow/15 border border-astrotalk-yellow/30 text-xs sm:text-sm font-bold text-astrotalk-yellow hover:bg-astrotalk-yellow hover:text-celestial-950 transition-colors w-fit"
             >
-              <span>View All Astrologers</span>
+              <span>Explore All Consultation Modes</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* Astrologers 2-Card Preview */}
+          {/* 2-Card Consultation Modes Preview */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Lead Astrologer Card */}
+            {/* Mode 1: Voice & Video Call */}
             <div className="rounded-3xl p-6 bg-gradient-to-br from-celestial-900 via-celestial-950 to-wine-950/80 border-2 border-astrotalk-yellow/40 shadow-xl flex flex-col justify-between">
               <div>
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-astrotalk-yellow shadow-md flex-shrink-0">
                     <Image
                       src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
-                      alt="Astrologer Swati Pandey"
+                      alt="Astrologer Swati Pandey - Voice & Video Call Consultation"
                       fill
                       className="object-cover"
                     />
@@ -362,10 +362,10 @@ export default function Home() {
                   <div>
                     <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-astrotalk-yellow/15 text-astrotalk-yellow text-[10px] font-bold uppercase tracking-wider mb-1">
                       <Award className="w-3 h-3" />
-                      <span>National Awardee • Lead</span>
+                      <span>Phone &amp; Video Call • 1-on-1</span>
                     </span>
-                    <h3 className="font-serif text-lg font-bold text-white">Astrologer Swati Pandey</h3>
-                    <p className="text-xs text-gold-300/80">India&apos;s Most Trusted Astrologer of the Year</p>
+                    <h3 className="font-serif text-lg font-bold text-white">Direct Phone Consultation</h3>
+                    <p className="text-xs text-gold-300/80">Detailed discussion on horoscope, career, marriage &amp; remedies</p>
                     <div className="flex items-center gap-2 text-xs mt-1 text-astrotalk-yellow font-bold">
                       <Star className="w-3.5 h-3.5 fill-astrotalk-yellow stroke-none" />
                       <span>4.99 ★</span>
@@ -375,7 +375,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {["Vedic Jyotish", "KP System", "Kundli Milan", "Lal Kitab", "Vastu"].map((s, i) => (
+                  {["All Life Horoscope", "Kundli Milan", "Career & Business", "Lal Kitab", "Vastu"].map((s, i) => (
                     <span key={i} className="px-2 py-0.5 rounded bg-celestial-950 border border-gold-500/15 text-[11px] text-gold-200">
                       {s}
                     </span>
@@ -385,8 +385,8 @@ export default function Home() {
 
               <div className="pt-4 border-t border-gold-500/15 flex items-center justify-between gap-3">
                 <div>
-                  <div className="text-[10px] text-gold-300/60 uppercase">Session Rate</div>
-                  <div className="text-astrotalk-yellow font-serif font-bold text-base">₹5,100 / Session</div>
+                  <div className="text-[10px] text-gold-300/60 uppercase">Starting From</div>
+                  <div className="text-astrotalk-yellow font-serif font-bold text-base">₹1,100 - ₹5,100</div>
                 </div>
                 <div className="flex items-center gap-2">
                   <button
@@ -398,45 +398,44 @@ export default function Home() {
                     <span>Call Now</span>
                   </button>
                   <Link
-                    href="/chat-with-astrologer"
-                    className="px-4 py-2 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 flex items-center gap-1.5"
+                    href="/talk-to-astrologer"
+                    className="px-4 py-2 rounded-xl text-xs font-semibold text-gold-200 bg-white/5 border border-gold-500/20 hover:bg-white/10 flex items-center gap-1.5"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Chat Now</span>
+                    <span>View Sessions &rarr;</span>
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Senior Acharya Card */}
-            <div className="rounded-3xl p-6 bg-celestial-900/60 border border-gold-500/20 hover:border-gold-500/40 shadow-xl flex flex-col justify-between">
+            {/* Mode 2: Instant WhatsApp Chat */}
+            <div className="rounded-3xl p-6 bg-celestial-900/60 border border-gold-500/20 hover:border-astrotalk-yellow/40 shadow-xl flex flex-col justify-between">
               <div>
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-gold-500/30 flex-shrink-0">
+                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-emerald-500/40 shadow-md flex-shrink-0">
                     <Image
-                      src="/images/WhatsApp-Image-2026-08-07-at-2.12.57-PM-2_59.jpeg"
-                      alt="Acharya Ramesh Shastri"
+                      src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
+                      alt="Astrologer Swati Pandey - WhatsApp Chat Consultation"
                       fill
                       className="object-cover"
                     />
                     <span className="absolute bottom-1 right-1 w-3 h-3 rounded-full bg-emerald-400 border border-celestial-950" />
                   </div>
                   <div>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-300 text-[10px] font-bold uppercase tracking-wider mb-1">
-                      <span>Senior Vedic Scholar</span>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-bold uppercase tracking-wider mb-1">
+                      <MessageCircle className="w-3 h-3 text-emerald-400" />
+                      <span>Instant WhatsApp Chat</span>
                     </span>
-                    <h3 className="font-serif text-lg font-bold text-white">Acharya Ramesh Shastri</h3>
-                    <p className="text-xs text-gold-300/80">Senior Vedic &amp; Prashna Specialist</p>
-                    <div className="flex items-center gap-2 text-xs mt-1 text-astrotalk-yellow font-bold">
-                      <Star className="w-3.5 h-3.5 fill-astrotalk-yellow stroke-none" />
-                      <span>4.97 ★</span>
-                      <span className="text-gold-300/60 font-normal">(8,200+ Consultations)</span>
+                    <h3 className="font-serif text-lg font-bold text-white">Chat with Astrologer Swati</h3>
+                    <p className="text-xs text-gold-300/80">Fast written replies, quick queries, Muhurat &amp; gemstone advice</p>
+                    <div className="flex items-center gap-2 text-xs mt-1 text-emerald-400 font-bold">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Typical reply in &lt; 2 mins</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {["Parashari Jyotish", "Prashna Shastra", "Muhurat", "Dosha Remedies"].map((s, i) => (
+                  {["Specific Question", "Gemstone Advice", "Quick Remedy", "Compatibility", "Muhurat"].map((s, i) => (
                     <span key={i} className="px-2 py-0.5 rounded bg-celestial-950 border border-gold-500/15 text-[11px] text-gold-200">
                       {s}
                     </span>
@@ -446,24 +445,25 @@ export default function Home() {
 
               <div className="pt-4 border-t border-gold-500/15 flex items-center justify-between gap-3">
                 <div>
-                  <div className="text-[10px] text-gold-300/60 uppercase">Session Rate</div>
-                  <div className="text-astrotalk-yellow font-serif font-bold text-base">₹2,100 / Session</div>
+                  <div className="text-[10px] text-gold-300/60 uppercase">Mode</div>
+                  <div className="text-emerald-400 font-serif font-bold text-base">Direct WhatsApp</div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Link
-                    href="/talk-to-astrologer"
+                    href="/chat-with-astrologer"
                     className="px-4 py-2 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 shadow-md flex items-center gap-1.5"
                   >
-                    <PhoneCall className="w-3.5 h-3.5" />
-                    <span>Call Now</span>
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Start Chat</span>
                   </Link>
-                  <Link
-                    href="/chat-with-astrologer"
+                  <a
+                    href={SITE_CONFIG.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 py-2 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 flex items-center gap-1.5"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Chat</span>
-                  </Link>
+                    <span>WhatsApp Now</span>
+                  </a>
                 </div>
               </div>
             </div>

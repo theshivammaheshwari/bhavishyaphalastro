@@ -10,153 +10,60 @@ import {
   ShieldCheck,
   CheckCircle,
   Search,
-  Filter,
   Sparkles,
   Award,
   Clock,
   Languages,
-  UserCheck,
+  CheckCircle2,
+  Calendar,
+  Lock,
+  ArrowRight,
+  HelpCircle,
   Zap,
 } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/site-data";
+import { SITE_CONFIG, ASTRO_CONSULTATION_PACKAGES, MAIN_SERVICES, ServiceItem } from "@/lib/site-data";
 import { BookingModal } from "@/components/booking/BookingModal";
 import { useLanguage } from "@/context/LanguageContext";
-
-interface AstrologerProfile {
-  id: string;
-  name: string;
-  title: string;
-  badge?: string;
-  isLead?: boolean;
-  avatar: string;
-  rating: number;
-  reviewsCount: number;
-  experienceYears: number;
-  skills: string[];
-  languages: string[];
-  priceFormatted: string;
-  priceRaw: number;
-  isOnline: boolean;
-  specialtyTag: string;
-  bio: string;
-}
 
 export default function TalkToAstrologerPage() {
   const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
-  const [selectedAstrologer, setSelectedAstrologer] = useState("Astrologer Swati Pandey");
+  const [selectedSession, setSelectedSession] = useState("All Life Comprehensive Consultancy (₹5,100/-)");
 
-  const handleConnect = (astrologerName: string, actionType: "call" | "chat") => {
-    setSelectedAstrologer(`${astrologerName} (${actionType.toUpperCase()} Session)`);
+  const handleBookSession = (sessionTitle: string, price?: number) => {
+    const formatted = price ? `${sessionTitle} (₹${price.toLocaleString("en-IN")}/-)` : sessionTitle;
+    setSelectedSession(formatted);
     setBookingModalOpen(true);
   };
 
-  const astrologers: AstrologerProfile[] = [
-    {
-      id: "swati-pandey",
-      name: "Astrologer Swati Pandey",
-      title: "India's Most Trusted & Accurate Astrologer of the Year",
-      badge: "Lead Astrologer • National Awardee",
-      isLead: true,
-      avatar: "/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg",
-      rating: 4.99,
-      reviewsCount: 12540,
-      experienceYears: 12,
-      skills: ["Vedic Astrology", "KP System", "Kundli Milan", "Lal Kitab Remedies", "Vastu Shastra", "Palmistry"],
-      languages: ["Hindi", "English"],
-      priceFormatted: "₹5,100 / Full Session",
-      priceRaw: 5100,
-      isOnline: true,
-      specialtyTag: "all",
-      bio: "Conferred national honor by Sh Nayan Mongia Ji. Felicitated by Gurudev GD Vashist & Sh Arun Bansal. Trusted by CMs, MPs & celebrities.",
-    },
-    {
-      id: "ramesh-shastri",
-      name: "Acharya Ramesh Shastri",
-      title: "Senior Vedic & Prashna Kundli Specialist",
-      badge: "Vedic Scholar",
-      avatar: "/images/WhatsApp-Image-2026-08-07-at-2.12.57-PM-2_59.jpeg",
-      rating: 4.97,
-      reviewsCount: 8210,
-      experienceYears: 15,
-      skills: ["Parashari Jyotish", "Prashna Shastra", "Muhurat", "Dosha Nivaran"],
-      languages: ["Hindi", "Sanskrit"],
-      priceFormatted: "₹2,100 / Session",
-      priceRaw: 2100,
-      isOnline: true,
-      specialtyTag: "life",
-      bio: "15+ years in rigorous planetary math and horary astrology for critical life decisions.",
-    },
-    {
-      id: "priya-sharma",
-      name: "Acharya Priya Sharma",
-      title: "Kundli Milan & Relationship Counselor",
-      badge: "Matchmaking Expert",
-      avatar: "/images/WhatsApp-Image-2026-08-07-at-2.12.59-PM_54.jpeg",
-      rating: 4.98,
-      reviewsCount: 6420,
-      experienceYears: 9,
-      skills: ["Ashtakoota Milan", "Mangal Dosh", "Marriage Timing", "Navamsha D9"],
-      languages: ["Hindi", "English"],
-      priceFormatted: "₹1,500 / Session",
-      priceRaw: 1500,
-      isOnline: true,
-      specialtyTag: "marriage",
-      bio: "Specialist in 36-Guna matching, Nadi Dosh cancellations, and marital harmony remedies.",
-    },
-    {
-      id: "devendra-kumar",
-      name: "Pandit Devendra Kumar",
-      title: "Corporate Vastu & Career Astrologer",
-      badge: "Vastu Architect",
-      avatar: "/images/WhatsApp-Image-2026-08-07-at-2.13.06-PM-1_39.jpeg",
-      rating: 4.96,
-      reviewsCount: 5930,
-      experienceYears: 14,
-      skills: ["Commercial Vastu", "10th House Karma Bhava", "Business Expansion", "Litigation"],
-      languages: ["Hindi", "English"],
-      priceFormatted: "₹2,499 / Session",
-      priceRaw: 2499,
-      isOnline: true,
-      specialtyTag: "career",
-      bio: "Advising enterprise founders, corporate offices, and factory setups without demolition.",
-    },
-    {
-      id: "sunita-joshi",
-      name: "Dr. Sunita Joshi",
-      title: "Vedic Numerologist & Lal Kitab Astrologer",
-      badge: "Numerology Master",
-      avatar: "/images/WhatsApp-Image-2026-08-07-at-2.13.00-PM-3_49.jpeg",
-      rating: 4.97,
-      reviewsCount: 7120,
-      experienceYears: 11,
-      skills: ["Chaldean Numerology", "Mobile Number Correction", "Lal Kitab Remedies", "Gemology"],
-      languages: ["Hindi", "English"],
-      priceFormatted: "₹1,100 / Session",
-      priceRaw: 1100,
-      isOnline: true,
-      specialtyTag: "numerology",
-      bio: "Specialist in destiny number harmonization, auspicious naming, and gemstone energy.",
-    },
+  const consultationSessions: ServiceItem[] = [
+    ...ASTRO_CONSULTATION_PACKAGES,
+    ...MAIN_SERVICES,
   ];
 
   const filterTabs = [
-    { id: "all", label: "All Astrologers" },
+    { id: "all", label: "All Sessions" },
+    { id: "life", label: "Horoscope & Life" },
     { id: "marriage", label: "Love & Marriage" },
-    { id: "career", label: "Career & Business" },
-    { id: "life", label: "Life & Kundli" },
-    { id: "numerology", label: "Numerology & Vastu" },
+    { id: "career", label: "Career & Finance" },
+    { id: "vastu", label: "Vastu & Palmistry" },
   ];
 
-  const filtered = astrologers.filter((a) => {
-    const matchesFilter = activeFilter === "all" || a.specialtyTag === activeFilter || a.isLead;
+  const filteredSessions = consultationSessions.filter((s) => {
+    const matchesFilter =
+      activeFilter === "all" ||
+      (activeFilter === "life" && (s.id === "all-life" || s.id === "gemstone" || s.id === "astro-consultancy")) ||
+      (activeFilter === "marriage" && (s.id === "kundli-milan" || s.id === "marriage-time" || s.id === "child-birth")) ||
+      (activeFilter === "career" && (s.id === "career-business" || s.id === "litigation" || s.id === "education")) ||
+      (activeFilter === "vastu" && (s.id === "vastu-consultancy" || s.id === "palmistry" || s.id === "numerology"));
+
     const matchesSearch =
       searchQuery === "" ||
-      a.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      a.skills.some((s) => s.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      a.title.toLowerCase().includes(searchQuery.toLowerCase());
+      s.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      s.description.toLowerCase().includes(searchQuery.toLowerCase());
+
     return matchesFilter && matchesSearch;
   });
 
@@ -175,13 +82,13 @@ export default function TalkToAstrologerPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Verified Astrologers Online Now</span>
+              <span>Astrologer Swati Pandey Available for Direct Calls</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-              Talk to <span className="text-transparent bg-clip-text bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-500">Best Astrologers</span>
+              Talk to <span className="text-transparent bg-clip-text bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-500">Astrologer Swati Pandey</span>
             </h1>
             <p className="text-xs sm:text-sm text-gold-200/80 mt-2 max-w-2xl font-sans">
-              Connect instantly via confidential phone call or video consultation with Astrologer Swati Pandey and certified Vedic scholars.
+              Connect directly via confidential 1-on-1 voice or video call. India&apos;s Most Trusted &amp; Accurate Astrologer of the Year • Conferred by Sh Nayan Mongia Ji.
             </p>
           </div>
 
@@ -192,178 +99,264 @@ export default function TalkToAstrologerPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search astrologer, skill or problem..."
+              placeholder="Search topic (e.g. Marriage, Career)..."
               className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-celestial-900/80 border border-gold-500/25 text-xs sm:text-sm text-white placeholder-gold-300/40 focus:outline-none focus:border-astrotalk-yellow transition-colors"
             />
           </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center justify-start gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-          {filterTabs.map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                activeFilter === tab.id
-                  ? "bg-astrotalk-yellow text-celestial-950 shadow-lg shadow-astrotalk-yellow/20"
-                  : "bg-celestial-900/80 text-gold-200/80 hover:text-white border border-gold-500/20 hover:border-gold-500/40"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Astrologers List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 sm:mb-24">
-          {filtered.map((astro) => (
-            <div
-              key={astro.id}
-              className={`rounded-3xl p-5 sm:p-6 transition-all relative flex flex-col justify-between ${
-                astro.isLead
-                  ? "bg-gradient-to-br from-celestial-900 via-celestial-950 to-wine-950/80 border-2 border-astrotalk-yellow/40 shadow-2xl shadow-astrotalk-yellow/10"
-                  : "bg-celestial-900/60 border border-gold-500/20 hover:border-gold-500/40"
-              }`}
-            >
-              <div>
-                {/* Top Row: Avatar + Details */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-astrotalk-yellow/40 shadow-md">
-                    <Image
-                      src={astro.avatar}
-                      alt={astro.name}
-                      fill
-                      className="object-cover"
-                    />
-                    {astro.isOnline && (
-                      <span
-                        className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-celestial-950"
-                        title="Online Now"
-                      />
-                    )}
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    {astro.badge && (
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-astrotalk-yellow/15 text-astrotalk-yellow text-[10px] font-bold uppercase tracking-wider mb-1">
-                        <Award className="w-3 h-3" />
-                        <span>{astro.badge}</span>
-                      </div>
-                    )}
-
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-white truncate">
-                      {astro.name}
-                    </h3>
-
-                    <p className="text-[11px] text-gold-300/80 line-clamp-1 font-sans">
-                      {astro.title}
-                    </p>
-
-                    {/* Rating & Orders */}
-                    <div className="flex items-center gap-3 text-xs mt-1.5 flex-wrap">
-                      <div className="flex items-center gap-1 text-astrotalk-yellow font-bold">
-                        <Star className="w-3.5 h-3.5 fill-astrotalk-yellow stroke-none" />
-                        <span>{astro.rating}</span>
-                        <span className="text-gold-300/60 text-[11px]">({astro.reviewsCount.toLocaleString("en-IN")})</span>
-                      </div>
-                      <span className="text-gold-500/40">•</span>
-                      <div className="text-gold-200/80 text-[11px] font-medium">
-                        {astro.experienceYears} Years Exp
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Skills tags */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {astro.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-0.5 rounded-md bg-celestial-950/80 border border-gold-500/15 text-[10px] sm:text-[11px] text-gold-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Languages */}
-                <div className="flex items-center gap-1.5 text-[11px] text-gold-300/70 mb-4 font-sans">
-                  <Languages className="w-3.5 h-3.5 text-gold-400" />
-                  <span>Languages: {astro.languages.join(", ")}</span>
-                </div>
-
-                <p className="text-xs text-gold-200/75 line-clamp-2 font-sans mb-4">
-                  {astro.bio}
-                </p>
+        {/* Featured Astrologer Lead Profile Card */}
+        <div className="mb-14 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-celestial-900 via-celestial-950 to-wine-950/80 border-2 border-astrotalk-yellow/40 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left: Avatar & Badges */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-5">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden border-2 border-astrotalk-yellow shadow-2xl flex-shrink-0">
+                <Image
+                  src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
+                  alt="Astrologer Swati Pandey"
+                  fill
+                  className="object-cover"
+                />
+                <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-emerald-400 border-2 border-celestial-950 animate-pulse" />
               </div>
 
-              {/* Bottom CTA Row */}
-              <div className="pt-4 border-t border-gold-500/15 flex items-center justify-between gap-3">
-                <div className="text-left">
-                  <div className="text-[10px] text-gold-300/60 uppercase tracking-wider">Fee</div>
-                  <div className="text-astrotalk-yellow font-serif font-bold text-sm sm:text-base">
-                    {astro.priceFormatted}
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleConnect(astro.name, "call")}
-                    className="px-4 py-2.5 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
-                  >
-                    <PhoneCall className="w-3.5 h-3.5" />
-                    <span>Call Now</span>
-                  </button>
-
-                  <a
-                    href={`https://wa.me/919116055424?text=${encodeURIComponent(
-                      `Hello! I want to start a consultation session with ${astro.name}.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 flex items-center gap-1.5 transition-colors"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Chat Now</span>
-                  </a>
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-astrotalk-yellow text-celestial-950 text-xs font-bold uppercase tracking-wide mb-2 shadow-md">
+                  <Award className="w-3.5 h-3.5" />
+                  <span>National Awardee</span>
+                </span>
+                <h2 className="font-serif text-2xl font-bold text-white">Astrologer Swati Pandey</h2>
+                <p className="text-xs text-gold-300/80 mt-0.5">Founder &amp; Principal Astrologer</p>
+                <div className="flex items-center justify-center sm:justify-start lg:justify-center gap-2 text-xs mt-2 text-astrotalk-yellow font-bold">
+                  <Star className="w-4 h-4 fill-astrotalk-yellow stroke-none" />
+                  <span>4.99 ★</span>
+                  <span className="text-gold-300/60 font-normal">(12,500+ Verified Consultations)</span>
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* Middle: Credentials & Bio */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="p-4 rounded-2xl bg-celestial-950/80 border border-gold-500/15">
+                <p className="text-xs sm:text-sm text-gold-200/90 leading-relaxed font-sans">
+                  Honored with the <strong>&quot;India&apos;s Most Trusted &amp; Accurate Astrologer of the Year&quot;</strong> award by former Indian cricketer <strong>Sh Nayan Mongia Ji</strong>. Conferred Vedic Excellence by <strong>Gurudev GD Vashist Ji</strong> and <strong>Sh Arun Bansal Ji</strong>. Trusted by CMs, MPs, business leaders, and clients across 28+ countries.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 text-xs text-gold-200/90 font-sans">
+                <div className="p-3 rounded-xl bg-celestial-900/60 border border-gold-500/10 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-astrotalk-yellow flex-shrink-0" />
+                  <span>100% Confidential 1-on-1</span>
+                </div>
+                <div className="p-3 rounded-xl bg-celestial-900/60 border border-gold-500/10 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-astrotalk-yellow flex-shrink-0" />
+                  <span>12+ Years Experience</span>
+                </div>
+                <div className="p-3 rounded-xl bg-celestial-900/60 border border-gold-500/10 flex items-center gap-2">
+                  <Languages className="w-4 h-4 text-astrotalk-yellow flex-shrink-0" />
+                  <span>Hindi &amp; English</span>
+                </div>
+                <div className="p-3 rounded-xl bg-celestial-900/60 border border-gold-500/10 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-astrotalk-yellow flex-shrink-0" />
+                  <span>Sattvic Lal Kitab Remedies</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {["Vedic Astrology", "KP System", "Kundli Milan", "Lal Kitab Remedies", "Vastu Shastra", "Palmistry", "Numerology"].map((skill, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-lg bg-celestial-950 border border-gold-500/15 text-[11px] text-gold-200 font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Instant Call CTA Box */}
+            <div className="lg:col-span-3 p-6 rounded-2xl bg-celestial-950/90 border border-astrotalk-yellow/30 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="text-[10px] text-gold-300/60 uppercase tracking-widest font-bold">
+                  Direct Line
+                </div>
+                <div className="text-xl sm:text-2xl font-serif font-bold text-astrotalk-yellow mt-0.5">
+                  {SITE_CONFIG.phone}
+                </div>
+                <p className="text-[11px] text-gold-300/70 mt-1">
+                  Connect on phone or WhatsApp audio/video call instantly.
+                </p>
+              </div>
+
+              <div className="space-y-2.5">
+                <a
+                  href={`tel:${SITE_CONFIG.phoneRaw}`}
+                  className="w-full py-3 px-4 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 shadow-xl flex items-center justify-center gap-2 transition-all cursor-pointer"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>Call Direct: +91 91160 55424</span>
+                </a>
+
+                <a
+                  href={SITE_CONFIG.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 flex items-center justify-center gap-2 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <span>WhatsApp Audio/Video</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => handleBookSession("All Life Comprehensive Consultancy (₹5,100/-)")}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-gold-200 bg-white/5 border border-gold-500/20 hover:bg-white/10 flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-astrotalk-yellow" />
+                  <span>Book Scheduled Slot</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Astrotalk-Style Trust Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-celestial-900/60 border border-gold-500/20 text-center">
-          <div className="p-3">
-            <ShieldCheck className="w-7 h-7 text-astrotalk-yellow mx-auto mb-2" />
-            <h4 className="text-xs sm:text-sm font-bold text-white">100% Privacy</h4>
-            <p className="text-[10px] sm:text-[11px] text-gold-300/70 mt-0.5">Encrypted &amp; Confidential</p>
+        {/* Consultation Sessions Selection */}
+        <div className="mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                Choose Your Consultation Session
+              </h2>
+              <p className="text-xs sm:text-sm text-gold-300/70 mt-1 font-sans">
+                Every session is conducted personally and confidentially with Astrologer Swati Pandey.
+              </p>
+            </div>
+
+            {/* Filter Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+              {filterTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveFilter(tab.id)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                    activeFilter === tab.id
+                      ? "bg-astrotalk-yellow text-celestial-950 shadow-md shadow-astrotalk-yellow/20"
+                      : "bg-celestial-900/80 text-gold-300/80 hover:text-white border border-gold-500/20"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="p-3">
-            <UserCheck className="w-7 h-7 text-astrotalk-yellow mx-auto mb-2" />
-            <h4 className="text-xs sm:text-sm font-bold text-white">Verified Astrologers</h4>
-            <p className="text-[10px] sm:text-[11px] text-gold-300/70 mt-0.5">National Awarded Experts</p>
+
+          {/* Sessions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredSessions.map((session) => (
+              <div
+                key={session.id}
+                className="rounded-3xl p-6 bg-celestial-900/60 border border-gold-500/20 hover:border-astrotalk-yellow/40 hover:shadow-2xl transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <span className="px-2.5 py-0.5 rounded-full bg-astrotalk-yellow/15 text-astrotalk-yellow text-[10px] font-bold uppercase tracking-wider">
+                      {session.badge || "Personal Session"}
+                    </span>
+                    {session.priceFormatted && (
+                      <span className="font-serif text-base font-bold text-astrotalk-yellow">
+                        {session.priceFormatted}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="font-serif text-lg font-bold text-white group-hover:text-astrotalk-yellow transition-colors mb-2">
+                    {session.title}
+                  </h3>
+
+                  <p className="text-xs text-gold-200/80 leading-relaxed font-sans mb-4">
+                    {session.description}
+                  </p>
+
+                  {session.details && (
+                    <ul className="space-y-1.5 mb-5 text-[11px] text-gold-300/80 font-sans">
+                      {session.details.slice(0, 3).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-astrotalk-yellow flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                <div className="pt-4 border-t border-gold-500/15 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => handleBookSession(session.title, session.price)}
+                    className="flex-1 py-2.5 px-3 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
+                  >
+                    <PhoneCall className="w-3.5 h-3.5" />
+                    <span>Talk / Book</span>
+                  </button>
+
+                  <a
+                    href={`https://wa.me/919116055424?text=${encodeURIComponent(`Hello Astrologer Swati Pandey! I want to consult for: ${session.title}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 px-3 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 hover:bg-emerald-500/25 transition-colors flex items-center justify-center gap-1"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Chat</span>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="p-3">
-            <Zap className="w-7 h-7 text-astrotalk-yellow mx-auto mb-2" />
-            <h4 className="text-xs sm:text-sm font-bold text-white">Instant Connection</h4>
-            <p className="text-[10px] sm:text-[11px] text-gold-300/70 mt-0.5">Zero Waiting via WhatsApp</p>
-          </div>
-          <div className="p-3">
-            <Award className="w-7 h-7 text-astrotalk-yellow mx-auto mb-2" />
-            <h4 className="text-xs sm:text-sm font-bold text-white">Authentic Remedies</h4>
-            <p className="text-[10px] sm:text-[11px] text-gold-300/70 mt-0.5">Traditional Vedic Methods</p>
+        </div>
+
+        {/* How Direct Consultation Works */}
+        <div className="my-16 p-8 rounded-3xl bg-celestial-950/80 border border-gold-500/20">
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-white text-center mb-8">
+            How Direct Consultation with Astrologer Swati Pandey Works
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-5 rounded-2xl bg-celestial-900/60 border border-gold-500/15 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-celestial-950 font-bold flex items-center justify-center mb-3">
+                1
+              </div>
+              <h3 className="font-serif text-sm font-bold text-white mb-1">Select Consultation</h3>
+              <p className="text-xs text-gold-300/80 font-sans">
+                Choose your specific area of concern (All Life, Kundli Milan, Marriage, Career, or Vastu).
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-celestial-900/60 border border-gold-500/15 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-celestial-950 font-bold flex items-center justify-center mb-3">
+                2
+              </div>
+              <h3 className="font-serif text-sm font-bold text-white mb-1">Share Birth Details</h3>
+              <p className="text-xs text-gold-300/80 font-sans">
+                Provide your accurate Date of Birth, Birth Time, and Birth Place for precision chart calculation.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-celestial-900/60 border border-gold-500/15 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-celestial-950 font-bold flex items-center justify-center mb-3">
+                3
+              </div>
+              <h3 className="font-serif text-sm font-bold text-white mb-1">Live 1-on-1 Call</h3>
+              <p className="text-xs text-gold-300/80 font-sans">
+                Speak directly with Astrologer Swati Pandey on phone or video call and receive actionable Lal Kitab remedies.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Booking Modal */}
       <BookingModal
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
-        initialService={selectedAstrologer}
+        initialService={selectedSession}
       />
     </div>
   );
