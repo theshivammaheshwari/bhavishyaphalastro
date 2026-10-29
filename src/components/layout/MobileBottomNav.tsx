@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Sparkles, PhoneCall, ShoppingBag, MessageCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-data";
-import { triggerBooking } from "@/lib/booking-trigger";
+import { useLanguage } from "@/context/LanguageContext";
+import { cn } from "@/lib/utils";
 
 export function MobileBottomNav({
   onOpenBooking,
@@ -12,33 +13,26 @@ export function MobileBottomNav({
   onOpenBooking?: (serviceName?: string) => void;
 }) {
   const pathname = usePathname();
-
-  const handleBookingClick = () => {
-    if (onOpenBooking) {
-      onOpenBooking("All Life Comprehensive Consultancy (₹5,100/-)");
-    } else {
-      triggerBooking("All Life Comprehensive Consultancy (₹5,100/-)");
-    }
-  };
+  const { t } = useLanguage();
 
   const navItems = [
     {
       id: "home",
-      label: "Home",
+      label: t.navHome,
       icon: Home,
       href: "/",
       isActive: pathname === "/",
     },
     {
       id: "talk",
-      label: "Talk",
+      label: t.navTalk.split(" ")[0] || "Talk",
       icon: PhoneCall,
       href: "/talk-to-astrologer",
       isActive: pathname === "/talk-to-astrologer",
     },
     {
       id: "kundli",
-      label: "Kundli",
+      label: t.navKundli,
       icon: Sparkles,
       href: "/kundli",
       isSpecial: true,
@@ -46,14 +40,14 @@ export function MobileBottomNav({
     },
     {
       id: "yantras",
-      label: "Yantras",
+      label: t.navYantras.split(" ")[0] || "Yantras",
       icon: ShoppingBag,
       href: "/yantras",
       isActive: pathname === "/yantras",
     },
     {
       id: "chat",
-      label: "Chat",
+      label: t.navChat.split(" ")[0] || "Chat",
       icon: MessageCircle,
       href: "/chat-with-astrologer",
       isActive: pathname === "/chat-with-astrologer",
@@ -64,7 +58,7 @@ export function MobileBottomNav({
   return (
     <nav
       aria-label="Mobile Bottom App Navigation"
-      className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-celestial-950/95 backdrop-blur-2xl border-t border-gold-500/25 px-2 py-1.5 shadow-[0_-8px_30px_rgba(0,0,0,0.8)] pb-[calc(0.4rem+env(safe-area-inset-bottom))]"
+      className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/98 backdrop-blur-md border-t border-stone-200 px-2 py-1 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] pb-[calc(0.4rem+env(safe-area-inset-bottom))]"
     >
       <div className="flex items-center justify-around max-w-md mx-auto">
         {navItems.map((item) => {
@@ -78,10 +72,10 @@ export function MobileBottomNav({
                 href="/kundli"
                 className="relative -top-3 flex flex-col items-center group focus:outline-none"
               >
-                <div className="w-13 h-13 p-3 rounded-full bg-gradient-to-tr from-astrotalk-yellow via-amber-400 to-amber-300 text-celestial-950 shadow-xl shadow-astrotalk-yellow/40 border-2 border-celestial-950 flex items-center justify-center transform group-active:scale-95 transition-transform animate-pulse">
+                <div className="w-13 h-13 p-3 rounded-full bg-astrotalk-yellow text-stone-950 shadow-md border-2 border-white flex items-center justify-center transform group-active:scale-95 transition-transform animate-pulse">
                   <Icon className="w-6 h-6 stroke-[2.5]" />
                 </div>
-                <span className="text-[10px] font-bold text-astrotalk-yellow mt-0.5 tracking-tight">
+                <span className="text-[10px] font-bold text-amber-800 mt-0.5 tracking-tight">
                   {item.label}
                 </span>
               </Link>
@@ -90,27 +84,29 @@ export function MobileBottomNav({
 
           const buttonContent = (
             <div
-              className={`flex flex-col items-center py-1 px-2 rounded-xl transition-all relative ${
+              className={cn(
+                "flex flex-col items-center py-1 px-2 rounded-xl transition-all relative",
                 item.isActive
-                  ? "text-gold-300 font-bold"
-                  : "text-gold-200/60 hover:text-gold-200"
-              }`}
+                  ? "text-amber-700 font-bold"
+                  : "text-stone-600 hover:text-stone-900"
+              )}
             >
               {/* Badge if any */}
               {item.badge && (
-                <span className="absolute -top-1 right-1 px-1 py-0.2 rounded-full bg-emerald-500 text-[8px] font-extrabold text-celestial-950">
+                <span className="absolute -top-1 right-0.5 px-1 py-0.2 rounded-full bg-emerald-500 text-[8px] font-extrabold text-white">
                   {item.badge}
                 </span>
               )}
 
               <Icon
-                className={`w-5 h-5 mb-0.5 transition-transform ${
-                  item.isActive ? "scale-110 text-gold-300" : ""
-                }`}
+                className={cn(
+                  "w-5 h-5 mb-0.5 transition-transform",
+                  item.isActive ? "scale-110 text-amber-600" : ""
+                )}
               />
-              <span className="text-[10px] leading-tight">{item.label}</span>
+              <span className="text-[10px] leading-tight line-clamp-1">{item.label}</span>
               {item.isActive && (
-                <span className="w-1 h-1 rounded-full bg-gold-400 mt-0.5" />
+                <span className="w-1 h-1 rounded-full bg-amber-600 mt-0.5" />
               )}
             </div>
           );

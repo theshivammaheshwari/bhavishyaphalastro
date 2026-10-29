@@ -27,7 +27,7 @@ export function FloatingActions() {
         <button
           type="button"
           onClick={scrollToTop}
-          className="w-11 h-11 rounded-full bg-celestial-900/90 hover:bg-celestial-800 text-gold-300 border border-gold-500/30 shadow-xl flex items-center justify-center transition-all transform hover:-translate-y-1 hover:shadow-gold-500/20"
+          className="w-11 h-11 rounded-full bg-white hover:bg-stone-100 text-stone-800 border border-stone-200 shadow-lg flex items-center justify-center transition-all transform hover:-translate-y-1 hover:shadow-stone-400/20"
           aria-label="Scroll to top of page"
         >
           <ArrowUp className="w-4 h-4" />
@@ -48,7 +48,7 @@ export function FloatingActions() {
       <div className="relative group">
         <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-celestial-950"></span>
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-white"></span>
         </span>
 
         <a

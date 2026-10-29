@@ -19,7 +19,7 @@ import { TESTIMONIALS } from "@/lib/site-data";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ReviewsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [reviewName, setReviewName] = useState("");
@@ -32,9 +32,11 @@ export default function ReviewsPage() {
     {
       id: "6",
       name: "Dr. Siddharth Mathur",
-      role: "Medical Profession & Dasha Timing",
+      role: language === "hi" ? "चिकित्सा व्यवसाय एवं महादशा गोचर" : "Medical Profession & Dasha Timing",
       location: "Jaipur",
-      content: "Swati Ji's analysis of my Rahu Mahadasha transition gave me the exact timing to set up my independent surgical clinic. Her guidance was mathematically flawless and immensely comforting.",
+      content: language === "hi"
+        ? "स्वाति जी के राहु महादशा विश्लेषण ने मुझे निजी क्लिनिक शुरू करने का सही समय बताया। उनकी भविष्यवाणियां पूर्णतः सटीक साबित हुईं।"
+        : "Swati Ji's analysis of my Rahu Mahadasha transition gave me the exact timing to set up my independent surgical clinic. Her guidance was mathematically flawless and immensely comforting.",
       rating: 5,
       avatar: "SM",
       category: "career",
@@ -43,9 +45,11 @@ export default function ReviewsPage() {
     {
       id: "7",
       name: "Kavita & Amit Bansal",
-      role: "Kundli Milan & Marriage Compatibility",
+      role: language === "hi" ? "कुंडली मिलान एवं दांपत्य सुख" : "Kundli Milan & Marriage Compatibility",
       location: "Chandigarh",
-      content: "Other pandits told us we had severe Bhakoot Dosha and could never marry. Swati Ji checked cancellation rules in our Navamsha chart and performed the right remedy. We are happily married for 3 years today!",
+      content: language === "hi"
+        ? "अन्य पंडितों ने भकूट दोष बताकर विवाह से मना कर दिया था। स्वाति जी ने नवमांश में परिहार नियम समझाए और सही उपाय बताए। आज हम अत्यंत सुखी हैं।"
+        : "Other pandits told us we had severe Bhakoot Dosha and could never marry. Swati Ji checked cancellation rules in our Navamsha chart and performed the right remedy. We are happily married for 3 years today!",
       rating: 5,
       avatar: "KB",
       category: "marriage",
@@ -54,38 +58,36 @@ export default function ReviewsPage() {
     {
       id: "8",
       name: "Rohan Deshmukh",
-      role: "Corporate Relocation & Abroad Settlement",
+      role: language === "hi" ? "विदेश प्रवास एवं करियर वृद्धि" : "Corporate Relocation & Abroad Settlement",
       location: "Pune / London",
-      content: "Her prediction about foreign settlement in 9th & 12th house sub-periods matched my UK visa grant date to the exact week! Her Shri Yantra placement advice also brought extraordinary calm.",
+      content: language === "hi"
+        ? "विदेश योग की उनकी भविष्यवाणी सटीक सप्ताह पर सच हुई। उनके द्वारा सिद्ध श्री यंत्र की स्थापना के बाद जीवन में अद्भुत शांति और तरक्की आई।"
+        : "Her prediction about foreign settlement in 9th & 12th house sub-periods matched my UK visa grant date to the exact week! Her Shri Yantra placement advice also brought extraordinary calm.",
       rating: 5,
       avatar: "RD",
       category: "career",
-      date: "04 Sep 2026",
-    },
-    {
-      id: "9",
-      name: "Meenakshi Sundaram",
-      role: "Consecrated Mahalakshmi Yantra",
-      location: "Chennai",
-      content: "Received the energized Mahalakshmi Yantra with personalized Pran Pratishtha. The craftsmanship and spiritual energy in our home altar is palpable. Financial blockages cleared up smoothly.",
-      rating: 5,
-      avatar: "MS",
-      category: "yantras",
-      date: "19 Aug 2026",
+      date: "05 Sep 2026",
     },
   ];
 
   const allReviews = [
-    ...TESTIMONIALS.map((t) => ({ ...t, category: "all", date: "Verified Client" })),
+    ...TESTIMONIALS.map((item, idx) => ({
+      id: `base-${idx}`,
+      name: item.name,
+      role: item.role || "Astrological Consultation",
+      location: item.location,
+      content: item.content,
+      rating: 5,
+      avatar: item.name.substring(0, 2).toUpperCase(),
+      category: idx % 2 === 0 ? "life" : "marriage",
+      date: "Verified Client",
+    })),
     ...additionalReviews,
   ];
 
-  const filtered = allReviews.filter((r) => {
+  const filteredReviews = allReviews.filter((r) => {
     if (activeFilter === "all") return true;
-    if (activeFilter === "marriage") return r.role.toLowerCase().includes("marriage") || r.role.toLowerCase().includes("match");
-    if (activeFilter === "career") return r.role.toLowerCase().includes("career") || r.role.toLowerCase().includes("business") || r.role.toLowerCase().includes("timing");
-    if (activeFilter === "yantras") return r.role.toLowerCase().includes("yantra");
-    return true;
+    return r.category === activeFilter;
   });
 
   const handleSubmitReview = (e: React.FormEvent) => {
@@ -100,145 +102,123 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div className="min-h-screen py-10 sm:py-16">
+    <div className="min-h-screen py-10 sm:py-16 bg-[#FAFAF8] text-stone-900 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-gold-300/70 mb-8" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-astrotalk-yellow transition-colors">Home</Link>
+        <nav className="flex items-center gap-2 text-xs text-stone-500 mb-8 font-medium" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-amber-800 transition-colors">{t.navHome}</Link>
           <span>/</span>
-          <span className="text-astrotalk-yellow font-medium">Client Reviews</span>
+          <span className="text-amber-800 font-bold">{t.navReviews}</span>
         </nav>
 
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-astrotalk-yellow/15 border border-astrotalk-yellow/30 text-astrotalk-yellow text-xs font-bold uppercase tracking-wider mb-4">
-            <Star className="w-3.5 h-3.5 fill-astrotalk-yellow stroke-none" />
-            <span>Verified Testimonials</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
+            <Star className="w-3.5 h-3.5 text-amber-700 fill-amber-500" />
+            <span>4.99 ★ Verified Rating</span>
           </div>
-
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            Real Stories of <span className="text-transparent bg-clip-text bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-500">Clarity &amp; Transformation</span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-950 tracking-tight mb-4">
+            {t.reviewsHeroTitle}
           </h1>
-
-          <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-sans">
-            Read authentic experiences from over 12,500+ clients across India, USA, UK, UAE, and beyond who consulted Astrologer Swati Pandey for life-defining clarity.
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-sans font-medium">
+            {t.reviewsHeroSub}
           </p>
         </div>
 
-        {/* Rating Scorecard Banner */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-celestial-900/70 border border-gold-500/20 mb-12 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-6">
-            <div className="text-center md:text-left">
-              <div className="text-4xl sm:text-5xl font-serif font-extrabold text-astrotalk-yellow">
+        {/* Rating Scorecard Box (Light Theme) */}
+        <div className="mb-12 p-8 rounded-3xl bg-white border border-stone-200 shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            {/* Big Score */}
+            <div className="md:col-span-4 text-center md:border-r border-stone-200 md:pr-8">
+              <div className="font-serif text-5xl sm:text-6xl font-bold text-stone-950 mb-2">
                 4.99
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-1 my-1 text-astrotalk-yellow">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-astrotalk-yellow stroke-none" />
+              <div className="flex items-center justify-center gap-1.5 text-amber-500 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-amber-500 stroke-none" />
                 ))}
               </div>
-              <div className="text-xs text-gold-300/70">Based on 2,540+ Verified Reviews</div>
+              <p className="text-xs text-stone-600 font-bold uppercase tracking-wider">
+                {t.scorecardHeading}
+              </p>
+              <p className="text-[11px] text-stone-500 mt-1">
+                {t.scorecardReviewsCount}
+              </p>
             </div>
 
-            <div className="hidden sm:block h-16 w-px bg-gold-500/20" />
-
-            <div className="hidden sm:flex flex-col gap-1.5 text-xs text-gold-200/80">
-              <div className="flex items-center gap-2">
-                <span>5 Star</span>
-                <div className="w-32 h-2 rounded-full bg-celestial-950 overflow-hidden">
-                  <div className="w-[98%] h-full bg-astrotalk-yellow rounded-full" />
+            {/* Metric Bars */}
+            <div className="md:col-span-5 space-y-2.5 font-sans">
+              <div className="flex items-center gap-3 text-xs">
+                <span className="w-24 text-stone-700 font-bold">5 Stars</span>
+                <div className="flex-1 h-3 rounded-full bg-stone-100 overflow-hidden">
+                  <div className="h-full bg-astrotalk-yellow rounded-full" style={{ width: "98%" }} />
                 </div>
-                <span>98%</span>
+                <span className="w-10 text-right text-stone-600 font-bold">98%</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span>4 Star</span>
-                <div className="w-32 h-2 rounded-full bg-celestial-950 overflow-hidden">
-                  <div className="w-[2%] h-full bg-amber-400 rounded-full" />
+              <div className="flex items-center gap-3 text-xs">
+                <span className="w-24 text-stone-700 font-bold">4 Stars</span>
+                <div className="flex-1 h-3 rounded-full bg-stone-100 overflow-hidden">
+                  <div className="h-full bg-amber-400 rounded-full" style={{ width: "2%" }} />
                 </div>
-                <span>2%</span>
+                <span className="w-10 text-right text-stone-600 font-bold">2%</span>
+              </div>
+              <div className="flex items-center gap-3 text-xs">
+                <span className="w-24 text-stone-500">3 Stars &amp; below</span>
+                <div className="flex-1 h-3 rounded-full bg-stone-100 overflow-hidden">
+                  <div className="h-full bg-stone-300 rounded-full" style={{ width: "0%" }} />
+                </div>
+                <span className="w-10 text-right text-stone-500">0%</span>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setShowSubmitModal(true)}
-              className="px-6 py-3 rounded-xl font-serif text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 shadow-md transition-all cursor-pointer flex items-center gap-2"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>Share Your Feedback</span>
-            </button>
-
-            <Link
-              href="/talk-to-astrologer"
-              className="px-6 py-3 rounded-xl bg-celestial-950 border border-gold-500/30 text-xs sm:text-sm font-bold text-gold-200 hover:text-white transition-all flex items-center gap-2"
-            >
-              <span>Book Consultation</span>
-              <ArrowRight className="w-4 h-4 text-astrotalk-yellow" />
-            </Link>
+            {/* Write a review trigger */}
+            <div className="md:col-span-3 text-center md:text-right">
+              <button
+                type="button"
+                onClick={() => setShowSubmitModal(true)}
+                className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-stone-950 bg-astrotalk-yellow hover:bg-astrotalk-yellowHover shadow-md transition-all cursor-pointer"
+              >
+                {t.writeReviewBtn}
+              </button>
+              <p className="text-[11px] text-stone-500 mt-2">
+                100% Verified Consultation Reviews
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex items-center justify-start gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-          {[
-            { id: "all", label: "All Reviews" },
-            { id: "marriage", label: "Marriage & Matchmaking" },
-            { id: "career", label: "Career & Business" },
-            { id: "yantras", label: "Sacred Yantras" },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                activeFilter === tab.id
-                  ? "bg-astrotalk-yellow text-celestial-950 shadow-md font-bold"
-                  : "bg-celestial-900/80 text-gold-200/80 hover:text-white border border-gold-500/20"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Reviews Grid */}
+        {/* Reviews Grid (Light Theme) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 sm:mb-24">
-          {filtered.map((item) => (
+          {filteredReviews.map((rev) => (
             <div
-              key={item.id}
-              className="rounded-3xl p-6 bg-celestial-900/60 border border-gold-500/20 hover:border-astrotalk-yellow/40 hover:shadow-xl transition-all flex flex-col justify-between group"
+              key={rev.id}
+              className="rounded-3xl p-6 bg-white border border-stone-200 hover:border-amber-300 shadow-sm flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-astrotalk-yellow">
-                    {Array.from({ length: item.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-astrotalk-yellow stroke-none" />
+                  <div className="flex items-center gap-1 text-amber-500">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-500 stroke-none" />
                     ))}
                   </div>
-                  <Quote className="w-6 h-6 text-gold-400/25 group-hover:text-gold-400/40 transition-colors" />
+                  <span className="text-[10px] text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    Verified
+                  </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-gold-100/90 leading-relaxed font-sans italic mb-6">
-                  &ldquo;{item.content}&rdquo;
+                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans mb-5 font-medium italic">
+                  &ldquo;{rev.content}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-gold-500/15 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-astrotalk-yellow to-amber-500 text-celestial-950 font-bold text-xs flex items-center justify-center flex-shrink-0 shadow">
-                  {item.avatar}
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <div>
+                  <h3 className="font-serif font-bold text-sm text-stone-950">{rev.name}</h3>
+                  <p className="text-[11px] text-amber-800 font-bold">{rev.role}</p>
+                  <p className="text-[10px] text-stone-500">{rev.location}</p>
                 </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-white truncate">
-                      {item.name}
-                    </h4>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                  </div>
-                  <p className="text-[11px] text-gold-300/70 truncate">
-                    {item.role} • {item.location}
-                  </p>
+                <div className="w-10 h-10 rounded-full bg-amber-100 text-stone-900 font-bold flex items-center justify-center text-xs">
+                  {rev.avatar}
                 </div>
               </div>
             </div>
@@ -246,115 +226,85 @@ export default function ReviewsPage() {
         </div>
       </div>
 
-      {/* Review Submission Modal */}
+      {/* Write a Review Modal */}
       {showSubmitModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-          <div className="w-full max-w-lg rounded-3xl bg-celestial-950 border-2 border-astrotalk-yellow/30 p-6 sm:p-8 relative shadow-2xl">
-            <button
-              type="button"
-              onClick={() => setShowSubmitModal(false)}
-              className="absolute top-4 right-4 text-gold-300/70 hover:text-white text-lg p-2"
-            >
-              ✕
-            </button>
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-md rounded-3xl bg-white border border-stone-200 shadow-2xl p-6 sm:p-8 relative">
+            <h3 className="font-serif font-bold text-xl text-stone-950 mb-2">
+              {t.writeReviewBtn}
+            </h3>
+            <p className="text-xs text-stone-600 mb-6 font-medium">
+              Share your personal experience with Astrologer Swati Pandey.
+            </p>
 
             {submitted ? (
-              <div className="text-center py-8">
-                <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                <h3 className="font-serif text-xl font-bold text-white">Thank You!</h3>
-                <p className="text-xs text-gold-300/80 mt-1">
-                  Your feedback has been submitted successfully for verification.
-                </p>
+              <div className="p-6 rounded-2xl bg-emerald-50 text-center space-y-2">
+                <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
+                <h4 className="font-bold text-stone-950">Thank You!</h4>
+                <p className="text-xs text-stone-600">Your review has been submitted for verification.</p>
               </div>
             ) : (
-              <div>
-                <h3 className="font-serif text-xl font-bold text-white mb-1">
-                  Share Your Consultation Experience
-                </h3>
-                <p className="text-xs text-gold-300/70 mb-4 font-sans">
-                  Help fellow seekers discover genuine astrological clarity.
-                </p>
+              <form onSubmit={handleSubmitReview} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-stone-800 mb-1">Your Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={reviewName}
+                    onChange={(e) => setReviewName(e.target.value)}
+                    placeholder="e.g. Ankit Sharma"
+                    className="w-full p-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs text-stone-900 focus:outline-none focus:border-amber-500"
+                  />
+                </div>
 
-                <form onSubmit={handleSubmitReview} className="space-y-4 font-sans">
-                  <div>
-                    <label className="block text-xs font-semibold text-gold-200 mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={reviewName}
-                      onChange={(e) => setReviewName(e.target.value)}
-                      placeholder="e.g. Ananya Roy"
-                      className="w-full p-2.5 rounded-xl bg-celestial-900 border border-gold-500/25 text-xs text-white placeholder-gold-300/40 focus:outline-none focus:border-astrotalk-yellow"
-                    />
+                <div>
+                  <label className="block text-xs font-bold text-stone-800 mb-1">Rating</label>
+                  <div className="flex items-center gap-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setReviewRating(star)}
+                        className="text-amber-500 cursor-pointer"
+                      >
+                        <Star
+                          className={`w-6 h-6 ${
+                            star <= reviewRating ? "fill-amber-500" : "text-stone-300"
+                          }`}
+                        />
+                      </button>
+                    ))}
                   </div>
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-gold-200 mb-1">
-                      Consultation Service
-                    </label>
-                    <select
-                      value={reviewService}
-                      onChange={(e) => setReviewService(e.target.value)}
-                      className="w-full p-2.5 rounded-xl bg-celestial-900 border border-gold-500/25 text-xs text-white focus:outline-none focus:border-astrotalk-yellow"
-                    >
-                      <option>All Life Comprehensive Consultancy</option>
-                      <option>Kundli Milan &amp; Matchmaking</option>
-                      <option>Career &amp; Business Guidance</option>
-                      <option>Marriage &amp; Soulmate Timing</option>
-                      <option>Vastu &amp; Palmistry Session</option>
-                      <option>Sacred Consecrated Yantra</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-xs font-bold text-stone-800 mb-1">Your Review</label>
+                  <textarea
+                    rows={4}
+                    required
+                    value={reviewText}
+                    onChange={(e) => setReviewText(e.target.value)}
+                    placeholder="Describe how the consultation or remedy helped you..."
+                    className="w-full p-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs text-stone-900 focus:outline-none focus:border-amber-500 resize-none"
+                  />
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-gold-200 mb-1">
-                      Your Rating
-                    </label>
-                    <div className="flex items-center gap-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <button
-                          key={star}
-                          type="button"
-                          onClick={() => setReviewRating(star)}
-                          className="p-1 cursor-pointer"
-                        >
-                          <Star
-                            className={`w-6 h-6 ${
-                              star <= reviewRating
-                                ? "fill-astrotalk-yellow text-astrotalk-yellow"
-                                : "text-gold-500/30"
-                            }`}
-                          />
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gold-200 mb-1">
-                      Your Review &amp; Experience
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      value={reviewText}
-                      onChange={(e) => setReviewText(e.target.value)}
-                      placeholder="Describe how the reading helped you..."
-                      className="w-full p-2.5 rounded-xl bg-celestial-900 border border-gold-500/25 text-xs text-white placeholder-gold-300/40 focus:outline-none focus:border-astrotalk-yellow"
-                    />
-                  </div>
-
+                <div className="flex items-center justify-end gap-2 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowSubmitModal(false)}
+                    className="px-4 py-2 rounded-xl text-xs font-bold text-stone-700 hover:bg-stone-100"
+                  >
+                    Cancel
+                  </button>
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl font-serif text-xs sm:text-sm font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 shadow-md cursor-pointer transition-all flex items-center justify-center gap-2"
+                    className="px-5 py-2 rounded-xl text-xs font-bold text-stone-950 bg-astrotalk-yellow hover:bg-astrotalk-yellowHover shadow-sm"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Submit Review</span>
+                    Submit Review
                   </button>
-                </form>
-              </div>
+                </div>
+              </form>
             )}
           </div>
         </div>

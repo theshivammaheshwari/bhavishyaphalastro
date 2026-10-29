@@ -10,6 +10,8 @@ export interface Translations {
   navHome: string;
   navAbout: string;
   navServices: string;
+  navTalk: string;
+  navChat: string;
   navYantras: string;
   navKundli: string;
   navGallery: string;
@@ -17,19 +19,25 @@ export interface Translations {
   navBlog: string;
   navContact: string;
   bookConsultation: string;
-  galleryAwards: string;
-  galleryClients: string;
-  galleryPress: string;
-  galleryAstrologers: string;
-  gallerySocial: string;
+  callNow: string;
+  chatNow: string;
+  whatsappNow: string;
+  onlineNow: string;
+  leadAstrologerBadge: string;
+  nationalAwardee: string;
 
-  // Hero
+  // Ticker
+  tickerText: string;
+  tickerCta: string;
+
+  // Hero Section
   heroBadge: string;
   heroTitle1: string;
   heroTitle2: string;
   heroTitle3: string;
   heroSub: string;
-  heroCtaBook: string;
+  heroCtaTalk: string;
+  heroCtaChat: string;
   heroCtaKundli: string;
   statExperience: string;
   statReadings: string;
@@ -39,13 +47,188 @@ export interface Translations {
   statReadingsLabel: string;
   statDignitariesLabel: string;
   statAccuracyLabel: string;
+  verifiedOnline: string;
 
-  // Banner
-  bannerTitle: string;
-  bannerSub: string;
-  bannerCta: string;
+  // Quick Hub
+  quickHubTitle: string;
+  viewAllServices: string;
+  quickTalkTitle: string;
+  quickTalkSub: string;
+  quickChatTitle: string;
+  quickChatSub: string;
+  quickKundliTitle: string;
+  quickKundliSub: string;
+  quickMatchingTitle: string;
+  quickMatchingSub: string;
+  quickHoroscopeTitle: string;
+  quickHoroscopeSub: string;
+  quickYantrasTitle: string;
+  quickYantrasSub: string;
+  quickPackagesTitle: string;
+  quickPackagesSub: string;
+  quickGalleryTitle: string;
+  quickGallerySub: string;
 
-  // About
+  // Consultation Showcase (Home)
+  consultationSectionTag: string;
+  consultationSectionTitle: string;
+  consultationSectionSub: string;
+  exploreAllModes: string;
+  mode1Badge: string;
+  mode1Title: string;
+  mode1Desc: string;
+  startingFrom: string;
+  viewSessions: string;
+  mode2Badge: string;
+  mode2Title: string;
+  mode2Desc: string;
+  mode2ReplyTime: string;
+  startChat: string;
+
+  // Free Kundli Banner (Home)
+  freeKundliBadge: string;
+  freeKundliTitle: string;
+  freeKundliDesc: string;
+  freeKundliCta: string;
+
+  // Featured Previews on Home
+  featuredYantrasTitle: string;
+  featuredYantrasSub: string;
+  featuredGalleryTitle: string;
+  featuredGallerySub: string;
+  featuredReviewsTitle: string;
+  featuredReviewsSub: string;
+  viewAllYantras: string;
+  viewAllPhotos: string;
+  viewAllReviews: string;
+
+  // Talk to Astrologer Page
+  talkPageBadge: string;
+  talkPageTitle: string;
+  talkPageSub: string;
+  searchTopicPlaceholder: string;
+  founderPrincipal: string;
+  directLineTitle: string;
+  directLineSub: string;
+  directCallBtn: string;
+  whatsappAudioVideoBtn: string;
+  bookSlotBtn: string;
+  chooseSessionTitle: string;
+  chooseSessionSub: string;
+  filterAll: string;
+  filterLife: string;
+  filterMarriage: string;
+  filterCareer: string;
+  filterVastu: string;
+  howItWorksTitle: string;
+  step1Num: string;
+  step1Title: string;
+  step1Desc: string;
+  step2Num: string;
+  step2Title: string;
+  step2Desc: string;
+  step3Num: string;
+  step3Title: string;
+  step3Desc: string;
+
+  // Chat with Astrologer Page
+  chatPageTitle: string;
+  chatPageSub: string;
+  chatIntakeTitle: string;
+  chatTopicLabel: string;
+  chatNameLabel: string;
+  chatDobLabel: string;
+  chatBirthTimeLabel: string;
+  chatBirthPlaceLabel: string;
+  chatQuestionLabel: string;
+  startWhatsAppChatBtn: string;
+  chatConfidentialNotice: string;
+  chatFastResponseNotice: string;
+  chatRemediesNotice: string;
+
+  // Services Page
+  servicesHeroTitle: string;
+  servicesHeroSub: string;
+  allConsultationsTab: string;
+  lifeDestinyTab: string;
+  marriageMatchmakingTab: string;
+  careerBusinessTab: string;
+  vastuPalmistryTab: string;
+  bookThisSessionBtn: string;
+  chatAboutThisBtn: string;
+
+  // Yantras Page
+  yantrasHeroTitle: string;
+  yantrasHeroSub: string;
+  yantrasFixedPriceNotice: string;
+  filterAllYantras: string;
+  filterWallYantras: string;
+  filterPendants: string;
+  orderYantraBtn: string;
+  deityLabel: string;
+  benefitsLabel: string;
+  mantraLabel: string;
+  placementLabel: string;
+
+  // About Page
+  aboutHeroTitle: string;
+  aboutHeroSub: string;
+  aboutBioText1: string;
+  aboutBioText2: string;
+  awardsSectionTitle: string;
+  dignitariesSectionTitle: string;
+
+  // Reviews Page
+  reviewsHeroTitle: string;
+  reviewsHeroSub: string;
+  scorecardHeading: string;
+  scorecardReviewsCount: string;
+  writeReviewBtn: string;
+
+  // Contact Page
+  contactHeroTitle: string;
+  contactHeroSub: string;
+  appointmentFormTitle: string;
+  fullNameLabel: string;
+  phoneLabel: string;
+  emailLabel: string;
+  serviceSelectLabel: string;
+  preferredDateLabel: string;
+  messageLabel: string;
+  submitAppointmentBtn: string;
+  officeLocationTitle: string;
+  officeHoursTitle: string;
+  instantUpiTitle: string;
+  upiIdLabel: string;
+  faqBadge: string;
+  faqTitle: string;
+  faqSub: string;
+
+  // Modals & Common
+  closeBtn: string;
+  backBtn: string;
+  submitBtn: string;
+  yantraModalTitle: string;
+  yantraModalSub: string;
+  shippingAddressLabel: string;
+  pincodeLabel: string;
+  cityStateLabel: string;
+  gotraLabel: string;
+  confirmOrderBtn: string;
+
+  // Footer
+  footerDesc: string;
+  quickLinksTitle: string;
+  consultationsTitle: string;
+  yantrasServicesTitle: string;
+  rightsReserved: string;
+
+  // Additional / Component keys
+  contactOffice: string;
+  bookingBadge: string;
+  bookingTitle: string;
+  bookingSub: string;
+  heroCtaBook: string;
   aboutBadge: string;
   aboutTitle: string;
   aboutBio1: string;
@@ -57,329 +240,524 @@ export interface Translations {
   aboutFeature3Title: string;
   aboutFeature3Desc: string;
   aboutCta: string;
-
-  // Services
   servicesBadge: string;
   servicesTitle: string;
   servicesSub: string;
   tabConsultancy: string;
   tabRemedial: string;
-  bookNowBtn: string;
-  viewDetailsBtn: string;
-
-  // Yantras
   yantrasBadge: string;
   yantrasTitle: string;
   yantrasSub: string;
-  filterAll: string;
   filterYantras: string;
-  filterPendants: string;
   orderNowBtn: string;
   whatsAppOrderBtn: string;
   yantraConsecrationNotice: string;
-
-  // Gallery
-  galleryBadge: string;
-  galleryTitle: string;
-  gallerySub: string;
-
-  // Reviews
-  reviewsBadge: string;
-  reviewsTitle: string;
-  reviewsSub: string;
-
-  // FAQ
-  faqBadge: string;
-  faqTitle: string;
-  faqSub: string;
-
-  // Booking
-  bookingBadge: string;
-  bookingTitle: string;
-  bookingSub: string;
-  fullName: string;
-  phoneLabel: string;
-  emailLabel: string;
-  serviceLabel: string;
-  dobLabel: string;
-  birthTimeLabel: string;
-  birthPlaceLabel: string;
-  modeLabel: string;
-  preferredDateLabel: string;
-  questionsLabel: string;
-  submitBtn: string;
-  whatsappConnectBtn: string;
-  backBtn: string;
-  fullscreenBtn: string;
-
-  // Yantra Order Modal
-  yantraOrderTitle: string;
-  yantraOrderSub: string;
-  shippingAddress: string;
-  pincode: string;
-  cityState: string;
-  gotraLabel: string;
-  paymentMethod: string;
-  confirmOrderBtn: string;
-
-  // Footer
-  footerDesc: string;
-  quickLinks: string;
-  officialServices: string;
-  contactOffice: string;
-  rightsReserved: string;
 }
 
 export const translations: Record<Language, Translations> = {
   en: {
+    // Topbar
     topNotice: "Personalized Vedic & KP Astrology Guidance",
     phone: "+91 91160 55424",
     email: "info@bhavishyaphalastro.online",
 
+    // Nav
     navHome: "Home",
     navAbout: "About Us",
     navServices: "Services",
+    navTalk: "Talk to Astrologer",
+    navChat: "Chat with Astrologer",
     navYantras: "Sacred Yantras",
-    navKundli: "Kundli Hub",
+    navKundli: "Free Kundli",
     navGallery: "Gallery",
     navReviews: "Reviews",
     navBlog: "Blog",
     navContact: "Contact",
     bookConsultation: "Book Consultation",
-    galleryAwards: "Awards & Honors",
-    galleryClients: "Distinguished Clients",
-    galleryPress: "Press & Articles",
-    galleryAstrologers: "Moments with Astrologers",
-    gallerySocial: "Social Contributions",
+    callNow: "Call Now",
+    chatNow: "Chat Now",
+    whatsappNow: "WhatsApp",
+    onlineNow: "Online Now",
+    leadAstrologerBadge: "Lead Astrologer • National Awardee",
+    nationalAwardee: "National Awardee",
 
-    heroBadge: "National Excellence in Vedic Astrology",
-    heroTitle1: "Decode Your Destiny With",
-    heroTitle2: "Vedic Precision & Divine",
-    heroTitle3: "Sacred Remedies",
-    heroSub:
-      "Guided by Astrologer Swati Pandey — Honored by Deputy Chief Minister Prem Bairwa, leading political dignitaries, celebrities, and thousands of global seekers.",
-    heroCtaBook: "Book Private Consultation",
-    heroCtaKundli: "Free Kundli & Milan Hub",
-    statExperience: "14+",
-    statExpLabel: "Years Vedic Mastery",
-    statReadings: "25,000+",
-    statReadingsLabel: "Verified Consultations",
+    // Ticker
+    tickerText: "Astrologer Swati Pandey is Online Now for 1-on-1 Voice & Video Consultations",
+    tickerCta: "Connect in 60 Seconds →",
+
+    // Hero Section
+    heroBadge: "India's Most Trusted & Accurate Astrologer",
+    heroTitle1: "Know Your Future.",
+    heroTitle2: "Transform Your Destiny.",
+    heroTitle3: "Sacred Vedic Clarity",
+    heroSub: "Personalized Vedic Astrology consultations led by Astrologer Swati Pandey. Conferred national honor by Sh Nayan Mongia Ji. Get mathematical precision, KP Horary clarity, and authentic Lal Kitab remedies.",
+    heroCtaTalk: "Talk to Astrologer",
+    heroCtaChat: "Chat with Astrologer",
+    heroCtaKundli: "Free Janam Kundli",
+    statExperience: "12+",
+    statReadings: "12,500+",
     statDignitaries: "100+",
+    statAccuracy: "4.99 ★",
+    statExpLabel: "Years Vedic Mastery",
+    statReadingsLabel: "Consultations Completed",
     statDignitariesLabel: "VIPs & Celebrities",
-    statAccuracy: "99.4%",
     statAccuracyLabel: "Client Satisfaction",
+    verifiedOnline: "Verified Astrologer Online Now",
 
-    bannerTitle: "Generate Your Vedic Kundli & Match Horoscopes Online",
-    bannerSub:
-      "Explore our free 7-in-1 calculator hub: Birth Charts, 36-Point Guna Milan, Daily Horoscopes & Numerology.",
-    bannerCta: "Launch Kundli Hub",
+    // Quick Hub
+    quickHubTitle: "Explore Astrological Services & Tools",
+    viewAllServices: "View All Services →",
+    quickTalkTitle: "Talk to Astrologer",
+    quickTalkSub: "Call Live",
+    quickChatTitle: "Chat with Astrologer",
+    quickChatSub: "Instant Q&A",
+    quickKundliTitle: "Free Kundli",
+    quickKundliSub: "Janam Kundli",
+    quickMatchingTitle: "Kundli Matching",
+    quickMatchingSub: "36 Guna Milan",
+    quickHoroscopeTitle: "Daily Horoscope",
+    quickHoroscopeSub: "12 Rashis",
+    quickYantrasTitle: "Sacred Yantras",
+    quickYantrasSub: "₹3,999 Consecrated",
+    quickPackagesTitle: "All Packages",
+    quickPackagesSub: "8 Life Suites",
+    quickGalleryTitle: "VIP Gallery",
+    quickGallerySub: "National Honors",
 
-    aboutBadge: "Renowned Vedic Astrologer & Vastu Consultant",
-    aboutTitle: "Meet Astrologer Swati Pandey",
-    aboutBio1:
-      "Astrologer Swati Pandey is one of India's most respected Vedic and KP astrologers, renowned for mathematical rigor, deep intuitive wisdom, and practical astrological remedies that transform lives.",
-    aboutBio2:
-      "Honored on prestigious national platforms by Deputy Chief Minister Prem Chand Bairwa, prominent politicians, national media networks, and respected spiritual conclaves across India.",
-    aboutFeature1Title: "Vedic Precision (Parashari & KP)",
-    aboutFeature1Desc: "Synthesizing classical Brihat Parashara principles with modern KP sub-lord accuracy.",
-    aboutFeature2Title: "Empowering Lal Kitab Remedies",
-    aboutFeature2Desc: "Simple, highly effective, non-fear-based remedial measures for real life breakthroughs.",
-    aboutFeature3Title: "Consecrated Sacred Yantras",
-    aboutFeature3Desc: "Authentic Pran-Pratishtha consecrated geometrical yantras energized for career, health, and peace.",
-    aboutCta: "Schedule Private Session",
+    // Consultation Showcase
+    consultationSectionTag: "Direct Consultations",
+    consultationSectionTitle: "Consult with Astrologer Swati Pandey",
+    consultationSectionSub: "National Award Winner • Conferred by Sh Nayan Mongia Ji • 100% Confidential 1-on-1 Consultations",
+    exploreAllModes: "Explore All Consultation Modes",
+    mode1Badge: "Phone & Video Call • 1-on-1",
+    mode1Title: "Direct Phone Consultation",
+    mode1Desc: "Detailed discussion on horoscope, career, marriage & remedies",
+    startingFrom: "Starting From",
+    viewSessions: "View Sessions →",
+    mode2Badge: "Instant WhatsApp Chat",
+    mode2Title: "Chat with Astrologer Swati",
+    mode2Desc: "Fast written replies, quick queries, Muhurat & gemstone advice",
+    mode2ReplyTime: "Typical reply in < 2 mins",
+    startChat: "Start Chat",
 
-    servicesBadge: "Astrological Consultation & Remedial Solutions",
-    servicesTitle: "Sacred Consultations & Products",
-    servicesSub:
-      "Select a comprehensive consultation package tailored to your life situation, or explore personalized remedial instruments.",
-    tabConsultancy: "Consultation Packages (8)",
-    tabRemedial: "Remedial Services (4)",
-    bookNowBtn: "Book Session",
-    viewDetailsBtn: "View Details",
+    // Free Kundli Banner
+    freeKundliBadge: "100% Free Computational Engine",
+    freeKundliTitle: "Interactive 7-in-1 Vedic Janma Kundli & Horoscope",
+    freeKundliDesc: "Generate North-Indian diamond birth chart, 36-Point Guna Milan, and daily planetary transit predictions.",
+    freeKundliCta: "Open Vedic Kundli Suite",
 
-    yantrasBadge: "Consecrated Vedic Geometries",
-    yantrasTitle: "Sacred Yantras & Yantra Pendants",
-    yantrasSub:
-      "Every Yantra and Sacred Pendant is consecrated with authentic Vedic Pran Pratishtha rituals by our scholars before dispatch. Fixed at an accessible single price of ₹3,999/- each.",
-    filterAll: "All Items",
-    filterYantras: "Wall / Altar Yantras",
+    // Featured Previews on Home
+    featuredYantrasTitle: "Sacred Consecrated Yantras & Pendants",
+    featuredYantrasSub: "Each yantra is energized with a 3-day Vedic Pran Pratishtha ritual in your name before dispatch.",
+    featuredGalleryTitle: "National Honors & VIP Dignitaries",
+    featuredGallerySub: "Felicitated by cricket legends, senior ministers, Bollywood directors, and prominent conclaves.",
+    featuredReviewsTitle: "Verified Client Testimonials",
+    featuredReviewsSub: "Real feedback from families, professionals, and entrepreneurs guided by Astrologer Swati Pandey.",
+    viewAllYantras: "View All 22 Yantras →",
+    viewAllPhotos: "View Full VIP Gallery →",
+    viewAllReviews: "Read All 12,500+ Reviews →",
+
+    // Talk to Astrologer Page
+    talkPageBadge: "Available for Direct Phone & Video Calls",
+    talkPageTitle: "Talk to Astrologer Swati Pandey",
+    talkPageSub: "Connect directly via confidential 1-on-1 voice or video call. India's Most Trusted & Accurate Astrologer of the Year • Conferred by Sh Nayan Mongia Ji.",
+    searchTopicPlaceholder: "Search topic (e.g. Marriage, Career)...",
+    founderPrincipal: "Founder & Principal Astrologer",
+    directLineTitle: "Direct Line",
+    directLineSub: "Connect on phone or WhatsApp audio/video call instantly.",
+    directCallBtn: "Call Direct: +91 91160 55424",
+    whatsappAudioVideoBtn: "WhatsApp Audio/Video",
+    bookSlotBtn: "Book Scheduled Slot",
+    chooseSessionTitle: "Choose Your Consultation Session",
+    chooseSessionSub: "Every session is conducted personally and confidentially with Astrologer Swati Pandey.",
+    filterAll: "All Sessions",
+    filterLife: "Horoscope & Life",
+    filterMarriage: "Love & Marriage",
+    filterCareer: "Career & Finance",
+    filterVastu: "Vastu & Palmistry",
+    howItWorksTitle: "How Direct Consultation Works",
+    step1Num: "1",
+    step1Title: "Select Consultation",
+    step1Desc: "Choose your specific area of concern (All Life, Kundli Milan, Marriage, Career, or Vastu).",
+    step2Num: "2",
+    step2Title: "Share Birth Details",
+    step2Desc: "Provide your accurate Date of Birth, Birth Time, and Birth Place for precision chart calculation.",
+    step3Num: "3",
+    step3Title: "Live 1-on-1 Call",
+    step3Desc: "Speak directly with Astrologer Swati Pandey on phone or video call and receive actionable Lal Kitab remedies.",
+
+    // Chat with Astrologer Page
+    chatPageTitle: "Chat with Astrologer Swati Pandey",
+    chatPageSub: "Get instant astrological clarity delivered directly to your WhatsApp. Quick remedies, chart insights, and auspicious Muhurat.",
+    chatIntakeTitle: "Start Instant WhatsApp Consultation",
+    chatTopicLabel: "Select Consultation Topic",
+    chatNameLabel: "Your Full Name",
+    chatDobLabel: "Date of Birth",
+    chatBirthTimeLabel: "Birth Time",
+    chatBirthPlaceLabel: "Birth Place (City, State)",
+    chatQuestionLabel: "Your Specific Question or Dilemma",
+    startWhatsAppChatBtn: "Start Chat on WhatsApp",
+    chatConfidentialNotice: "100% Confidential & Private Conversation",
+    chatFastResponseNotice: "Typical Response Time: Under 2 Minutes",
+    chatRemediesNotice: "Includes Planetary Mahadasha & Remedy Advice",
+
+    // Services Page
+    servicesHeroTitle: "Specialized Astrological Consultation Packages",
+    servicesHeroSub: "Personalized, 1-on-1 confidential consultations with Astrologer Swati Pandey. Transparent pricing, authentic mathematical birth-chart calculations, and practical remedial solutions.",
+    allConsultationsTab: "All Consultations",
+    lifeDestinyTab: "Life & Destiny",
+    marriageMatchmakingTab: "Marriage & Matchmaking",
+    careerBusinessTab: "Career & Business",
+    vastuPalmistryTab: "Vastu & Palmistry",
+    bookThisSessionBtn: "Book Session",
+    chatAboutThisBtn: "Chat on WhatsApp",
+
+    // Yantras Page
+    yantrasHeroTitle: "Sacred Consecrated Yantras & Pendants",
+    yantrasHeroSub: "Every sacred geometrical Yantra and wearable pendant is strictly energized with authentic Vedic Pran Pratishtha rituals specifically in your Name and Gotra before dispatch. Fixed at an accessible single price of ₹3,999/- each.",
+    yantrasFixedPriceNotice: "Fixed Consecrated Price: ₹3,999/- with 3-Day Vedic Pran Pratishtha Rituals Included",
+    filterAllYantras: "All Items (22)",
+    filterWallYantras: "Wall / Altar Yantras",
     filterPendants: "Wearable Pendants",
-    orderNowBtn: "Order Now",
-    whatsAppOrderBtn: "WhatsApp Order",
-    yantraConsecrationNotice:
-      "Each yantra order includes personalized Vedic Pran Pratishtha energization performed specifically with your Name, Gotra and Nakshatra before secure dispatch.",
+    orderYantraBtn: "Order Consecrated (₹3,999)",
+    deityLabel: "Deity",
+    benefitsLabel: "Key Benefits",
+    mantraLabel: "Sacred Mantra",
+    placementLabel: "Placement & Direction",
 
-    galleryBadge: "Recognitions & Public Trust",
-    galleryTitle: "Dignitaries, Awards & Conclaves",
-    gallerySub:
-      "A glimpse into our public recognitions, high-profile dignitaries, national news coverage, and philanthropic contributions.",
+    // About Page
+    aboutHeroTitle: "About Astrologer Swati Pandey",
+    aboutHeroSub: "Conferred 'India's Most Trusted & Accurate Astrologer of the Year' by former Indian cricketer Sh Nayan Mongia Ji. Conferred Vedic Excellence by Gurudev GD Vashist Ji & Sh Arun Bansal Ji.",
+    aboutBioText1: "Astrologer Swati Pandey is a distinguished Vedic scholar, KP astrologer, and Lal Kitab specialist with over 12+ years of rigorous predictive experience. Conferred with national honors by cricket icon Sh Nayan Mongia Ji, she has guided more than 12,500 clients across 28+ countries.",
+    aboutBioText2: "Her expertise bridges classical Parashari mathematical foundations, KP Horary sub-lord accuracy, practical non-fear-based remedies, and consecrated Vedic yantras.",
+    awardsSectionTitle: "National Honors & Awards",
+    dignitariesSectionTitle: "Distinguished VIP Dignitaries & Clients",
 
-    reviewsBadge: "Client Testimonials",
-    reviewsTitle: "Words of Gratitude & Success",
-    reviewsSub: "Read real experiences from families, professionals, and seekers blessed with our astrological guidance.",
+    // Reviews Page
+    reviewsHeroTitle: "Verified Client Reviews & Testimonials",
+    reviewsHeroSub: "Over 12,500+ satisfied clients across 28+ countries have experienced life-changing clarity through Astrologer Swati Pandey's guidance.",
+    scorecardHeading: "Client Satisfaction Scorecard",
+    scorecardReviewsCount: "Based on 12,500+ Verified Consultations",
+    writeReviewBtn: "Write a Client Review",
 
+    // Contact Page
+    contactHeroTitle: "Contact & Appointment Desk",
+    contactHeroSub: "Schedule your consultation session, make an enquiry, or connect directly on WhatsApp with Astrologer Swati Pandey's desk.",
+    appointmentFormTitle: "Book Consultation Appointment",
+    fullNameLabel: "Full Name",
+    phoneLabel: "Phone / WhatsApp Number",
+    emailLabel: "Email Address (Optional)",
+    serviceSelectLabel: "Select Consultation Service",
+    preferredDateLabel: "Preferred Date & Time",
+    messageLabel: "Birth Details or Questions",
+    submitAppointmentBtn: "Submit Appointment Request",
+    officeLocationTitle: "Consultation Office",
+    officeHoursTitle: "Consultation Hours",
+    instantUpiTitle: "Instant UPI Consultation Fee Box",
+    upiIdLabel: "UPI ID: 9116055424@upi",
     faqBadge: "Clear Answers",
     faqTitle: "Frequently Asked Questions",
-    faqSub: "Find quick answers regarding consultation modes, privacy, birth time accuracy, and consecrated yantras.",
+    faqSub: "Find quick answers regarding consultation modes, privacy, and consecrated yantras.",
 
-    bookingBadge: "Private Consultation Session",
-    bookingTitle: "Book Your Vedic Consultation",
-    bookingSub: "Share your birth details below. Your session will be structured with utmost confidentiality.",
-    fullName: "Full Name",
-    phoneLabel: "Phone / WhatsApp",
-    emailLabel: "Email Address (Optional)",
-    serviceLabel: "Consultation Service",
-    dobLabel: "Date of Birth",
-    birthTimeLabel: "Birth Time",
-    birthPlaceLabel: "Birth City / Place",
-    modeLabel: "Consultation Mode",
-    preferredDateLabel: "Preferred Date",
-    questionsLabel: "Specific Questions / Life Situation",
-    submitBtn: "Submit Consultation Request",
-    whatsappConnectBtn: "Instant WhatsApp Connect",
-    backBtn: "← Back / Close",
-    fullscreenBtn: "Full Screen",
-
-    yantraOrderTitle: "Consecrated Yantra Order Form",
-    yantraOrderSub: "Personalized Pran Pratishtha Consecration & Secure Express Home Delivery",
-    shippingAddress: "Complete Delivery Address",
-    pincode: "Postal PIN Code",
-    cityState: "City, State",
-    gotraLabel: "Gotra & Nakshatra (For Consecration Ritual)",
-    paymentMethod: "Payment Preference",
+    // Modals & Common
+    closeBtn: "Close",
+    backBtn: "Back",
+    submitBtn: "Submit",
+    yantraModalTitle: "Consecrated Yantra Order Form",
+    yantraModalSub: "Personalized Pran Pratishtha Consecration & Secure Express Home Delivery",
+    shippingAddressLabel: "Complete Delivery Address",
+    pincodeLabel: "PIN Code",
+    cityStateLabel: "City, State",
+    gotraLabel: "Gotra & Nakshatra (For Consecration Puja)",
     confirmOrderBtn: "Confirm & Place Yantra Order (₹3,999/-)",
 
-    footerDesc:
-      "Bhavishyaphal Astrology Services by Astrologer Swati Pandey provides authentic Vedic, KP, and Lal Kitab astrological consultations, Kundli matchmaking, and consecrated Yantras.",
-    quickLinks: "Quick Navigation",
-    officialServices: "Key Services",
-    contactOffice: "Head Office & Contact",
-    rightsReserved: "All rights reserved. Designed for spiritual elevation & celestial clarity.",
+    // Footer
+    footerDesc: "Bhavishyaphal Astrology Services by Astrologer Swati Pandey provides authentic Vedic, KP, and Lal Kitab astrological consultations, Kundli matchmaking, and consecrated Yantras.",
+    quickLinksTitle: "Quick Navigation",
+    consultationsTitle: "Consultations",
+    yantrasServicesTitle: "Yantras & Sacred Items",
+    rightsReserved: "All rights reserved. Designed for celestial clarity & ethical astrological guidance.",
+
+    contactOffice: "Consultation Office",
+    bookingBadge: "Verified Consultation Desk",
+    bookingTitle: "Book Astrological Consultation",
+    bookingSub: "Connect directly with Astrologer Swati Pandey for deep birth chart insights & authentic Vedic remedies.",
+    heroCtaBook: "Book Consultation",
+    aboutBadge: "Meet The Astrologer",
+    aboutTitle: "Astrologer Swati Pandey",
+    aboutBio1: "Vedic & KP Astrologer with 12+ years of experience, guiding clients worldwide towards clarity and success.",
+    aboutBio2: "Honored by national dignitaries including Ex-Indian Cricketer Nayan Mongia Ji.",
+    aboutFeature1Title: "12,500+ Consultations",
+    aboutFeature1Desc: "Guiding patrons across 28+ countries with high precision.",
+    aboutFeature2Title: "National Awardee",
+    aboutFeature2Desc: "Conferred 'Most Trusted Astrologer of the Year'.",
+    aboutFeature3Title: "Consecrated Remedies",
+    aboutFeature3Desc: "Authentic Pran Pratishtha Yantras and practical Vedic guidance.",
+    aboutCta: "Book Consultation with Swati Ji",
+    servicesBadge: "Astrological Services",
+    servicesTitle: "Vedic & KP Consultation Services",
+    servicesSub: "Comprehensive astrological solutions tailored to your unique birth chart.",
+    tabConsultancy: "Consultation Sessions",
+    tabRemedial: "Consecrated Remedies",
+    yantrasBadge: "Pran Pratishtha Yantras",
+    yantrasTitle: "Sacred Energized Yantras",
+    yantrasSub: "Consecrated with 3-day Vedic rituals for prosperity and protection.",
+    filterYantras: "Wall Yantras",
+    orderNowBtn: "Order Yantra",
+    whatsAppOrderBtn: "Order on WhatsApp",
+    yantraConsecrationNotice: "Every sacred yantra is consecrated with 3-day Vedic Pran Pratishtha before dispatch.",
   },
 
   hi: {
+    // Topbar
     topNotice: "व्यक्तिगत वैदिक एवं के.पी. ज्योतिषीय मार्गदर्शन",
     phone: "+91 91160 55424",
     email: "info@bhavishyaphalastro.online",
 
-    navHome: "मुख्य पृष्ठ",
+    // Nav
+    navHome: "होम",
     navAbout: "हमारे बारे में",
     navServices: "सेवाएं",
+    navTalk: "ज्योतिषी से बात करें",
+    navChat: "ज्योतिषी से चैट करें",
     navYantras: "सिद्ध यंत्र",
-    navKundli: "कुंडली हब",
+    navKundli: "फ्री कुंडली",
     navGallery: "गैलरी",
     navReviews: "समीक्षाएं",
     navBlog: "ब्लॉग",
     navContact: "संपर्क",
     bookConsultation: "परामर्श बुक करें",
-    galleryAwards: "पुरस्कार एवं सम्मान",
-    galleryClients: "विशिष्ट अतिथि व क्लाइंट्स",
-    galleryPress: "प्रेस व समाचार",
-    galleryAstrologers: "विद्वान ज्योतिषी समागम",
-    gallerySocial: "सामाजिक योगदान",
+    callNow: "कॉल करें",
+    chatNow: "चैट करें",
+    whatsappNow: "व्हाट्सएप",
+    onlineNow: "ऑनलाइन उपलब्ध",
+    leadAstrologerBadge: "प्रमुख ज्योतिषी • राष्ट्रीय सम्मान प्राप्त",
+    nationalAwardee: "राष्ट्रीय पुरस्कार विजेता",
 
-    heroBadge: "वैदिक ज्योतिष में राष्ट्रीय स्तर पर सम्मानित",
-    heroTitle1: "अपने भाग्य को पहचानें",
-    heroTitle2: "सटीक वैदिक गणना एवं",
-    heroTitle3: "दिव्य अनुभूत उपायों से",
-    heroSub:
-      "प्रसिद्ध ज्योतिषी स्वाति पांडे द्वारा निर्देशित — राजस्थान के उपमुख्यमंत्री प्रेम बैरवा, प्रख्यात राजनीतिज्ञों, हस्तियों और विश्वभर के हजारों जातकों द्वारा सम्मानित एवं विश्वसनीय।",
-    heroCtaBook: "निजी परामर्श बुक करें",
-    heroCtaKundli: "फ्री कुंडली व गुण मिलान",
-    statExperience: "14+ वर्ष",
-    statExpLabel: "वैदिक अनुभव",
-    statReadings: "25,000+",
-    statReadingsLabel: "सफल भविष्यवाणियां",
+    // Ticker
+    tickerText: "आचार्य स्वाति पांडे 1-on-1 फोन व वीडियो परामर्श के लिए अभी ऑनलाइन उपलब्ध हैं",
+    tickerCta: "60 सेकंड में जुड़ें →",
+
+    // Hero Section
+    heroBadge: "भारत की सर्वाधिक विश्वसनीय एवं सटीक भविष्यवक्ता",
+    heroTitle1: "अपना भविष्य जानें।",
+    heroTitle2: "सटीक वैदिक समाधान पाएं।",
+    heroTitle3: "दिव्य अनुभूत उपाय",
+    heroSub: "ज्योतिषी स्वाति पांडे द्वारा व्यक्तिगत वैदिक ज्योतिषीय मार्गदर्शन। पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा राष्ट्रीय सम्मान प्राप्त। सूक्ष्म गणितीय जन्मपत्री विश्लेषण एवं लाल किताब के अचूक सात्विक उपाय।",
+    heroCtaTalk: "ज्योतिषी से बात करें",
+    heroCtaChat: "ज्योतिषी से चैट करें",
+    heroCtaKundli: "फ्री जन्म कुंडली",
+    statExperience: "12+ वर्ष",
+    statReadings: "12,500+",
     statDignitaries: "100+",
+    statAccuracy: "4.99 ★",
+    statExpLabel: "वैदिक अनुभव",
+    statReadingsLabel: "सफल परामर्श",
     statDignitariesLabel: "विशिष्ट हस्तियां",
-    statAccuracy: "99.4%",
-    statAccuracyLabel: "संतुष्ट जातक",
+    statAccuracyLabel: "संतुष्टि रेटिंग",
+    verifiedOnline: "सत्यापित ज्योतिषी अभी ऑनलाइन उपलब्ध",
 
-    bannerTitle: "अपनी वैदिक कुंडली बनाएं एवं फ्री में वर-वधू गुण मिलान करें",
-    bannerSub:
-      "हमारे निःशुल्क 7-इन-1 कैलकुलेटर हब का लाभ उठाएं: जन्म कुंडली, 36 गुण मिलान, दैनिक राशिफल और अंकशास्त्र।",
-    bannerCta: "कुंडली हब खोलें",
+    // Quick Hub
+    quickHubTitle: "ज्योतिषीय सेवाएं एवं ऑनलाइन टूल्स",
+    viewAllServices: "सभी सेवाएं देखें →",
+    quickTalkTitle: "ज्योतिषी से बात करें",
+    quickTalkSub: "लाइव कॉल",
+    quickChatTitle: "ज्योतिषी से चैट करें",
+    quickChatSub: "त्वरित समाधान",
+    quickKundliTitle: "फ्री जन्म कुंडली",
+    quickKundliSub: "सटीक चक्र",
+    quickMatchingTitle: "कुंडली मिलान",
+    quickMatchingSub: "36 गुण मिलान",
+    quickHoroscopeTitle: "दैनिक राशिफल",
+    quickHoroscopeSub: "12 राशियां",
+    quickYantrasTitle: "सिद्ध यंत्र",
+    quickYantrasSub: "₹3,999 सिद्ध",
+    quickPackagesTitle: "सभी पैकेज",
+    quickPackagesSub: "8 प्रमुख सेवाएं",
+    quickGalleryTitle: "वीआईपी गैलरी",
+    quickGallerySub: "राष्ट्रीय सम्मान",
 
-    aboutBadge: "प्रख्यात वैदिक ज्योतिषी एवं वास्तु सलाहकार",
-    aboutTitle: "ज्योतिषी स्वाति पांडे से मिलें",
-    aboutBio1:
-      "ज्योतिषी स्वाति पांडे भारत की प्रतिष्ठित वैदिक एवं के.पी. ज्योतिषियों में से एक हैं, जो अपनी सटीक गणितीय गणना, गहन अंतर्दृष्टि और चमत्कारी लाल किताब उपायों के लिए जानी जाती हैं।",
-    aboutBio2:
-      "राजस्थान के उप-मुख्यमंत्री डॉ. प्रेम चंद बैरवा, देश के शीर्ष राजनीतिज्ञों, राष्ट्रीय मीडिया चैनलों एवं प्रतिष्ठित ज्योतिष सम्मेलनों द्वारा कई बार सम्मानित की जा चुकी हैं।",
-    aboutFeature1Title: "सटीक वैदिक एवं के.पी. पद्धति",
-    aboutFeature1Desc: "महर्षि पराशर सिद्धांत और आधुनिक के.पी. उप-नक्षत्र पद्धति का अद्भुत संगम।",
-    aboutFeature2Title: "सरल व प्रभावशाली लाल किताब उपाय",
-    aboutFeature2Desc: "बिना किसी भय के जीवन की समस्याओं को सुलझाने वाले अचूक व सरल सात्विक उपाय।",
-    aboutFeature3Title: "प्राण-प्रतिष्ठित सिद्ध यंत्र",
-    aboutFeature3Desc: "धन, स्वास्थ्य, विवाह व व्यापार में सफलता हेतु वैदिक मंत्रों से सिद्ध किए गए प्रामाणिक यंत्र।",
-    aboutCta: "अपॉइंटमेंट बुक करें",
+    // Consultation Showcase
+    consultationSectionTag: "प्रत्यक्ष परामर्श",
+    consultationSectionTitle: "आचार्य स्वाति पांडे से परामर्श लें",
+    consultationSectionSub: "राष्ट्रीय पुरस्कार विजेता • श्री नयन मोंगिया जी द्वारा सम्मानित • 100% गोपनीय 1-on-1 परामर्श",
+    exploreAllModes: "सभी परामर्श विकल्प देखें",
+    mode1Badge: "फोन व वीडियो कॉल • 1-on-1",
+    mode1Title: "सीधे फोन पर परामर्श",
+    mode1Desc: "जन्मपत्री, करियर, विवाह, संतान एवं लाल किताब उपायों पर विस्तृत व्यक्तिगत चर्चा",
+    startingFrom: "शुरुआती शुल्क",
+    viewSessions: "सत्र विवरण देखें →",
+    mode2Badge: "त्वरित व्हाट्सएप चैट",
+    mode2Title: "ज्योतिषी स्वाति से चैट करें",
+    mode2Desc: "त्वरित लिखित उत्तर, प्रश्न कुंडली, शुभ मुहूर्त एवं रत्न परामर्श",
+    mode2ReplyTime: "प्रायः 2 मिनट में उत्तर",
+    startChat: "चैट शुरू करें",
 
-    servicesBadge: "ज्योतिषीय परामर्श एवं दिव्य समाधान",
-    servicesTitle: "परामर्श सेवाएं एवं वैदिक समाधान",
-    servicesSub:
-      "अपनी आवश्यकतानुसार संपूर्ण जीवन, विवाह, करियर, संतान अथवा व्यापार के लिए विशेष परामर्श चुनें।",
-    tabConsultancy: "परामर्श पैकेज (8)",
-    tabRemedial: "उपचारात्मक सेवाएं (4)",
-    bookNowBtn: "परामर्श लें",
-    viewDetailsBtn: "विस्तार देखें",
+    // Free Kundli Banner
+    freeKundliBadge: "100% निःशुल्क ऑनलाइन कैलकुलेटर",
+    freeKundliTitle: "7-इन-1 वैदिक जन्म कुंडली एवं गुण मिलान हब",
+    freeKundliDesc: "उत्तर-भारतीय लग्न चक्र, 36 गुण मिलान, नवमांश और दैनिक ग्रह गोचर तुरंत देखें।",
+    freeKundliCta: "वैदिक कुंडली टूल खोलें",
 
-    yantrasBadge: "सिद्ध वैदिक ज्यामिति",
-    yantrasTitle: "सिद्ध यंत्र एवं यंत्र लॉकेट संग्रह",
-    yantrasSub:
-      "प्रत्येक यंत्र एवं लॉकेट को वैदिक विद्वानों द्वारा आपके नाम एवं गोत्र से विधिवत प्राण-प्रतिष्ठित करके भेजा जाता है। एक समान विशेष मूल्य: ₹3,999/- प्रत्येक।",
-    filterAll: "सभी यंत्र",
-    filterYantras: "पूजा घर / दीवार यंत्र",
+    // Featured Previews on Home
+    featuredYantrasTitle: "सिद्ध एवं प्राण-प्रतिष्ठित यंत्र व पेंडेंट",
+    featuredYantrasSub: "प्रत्येक यंत्र को आपके नाम एवं गोत्र से 3 दिवसीय वैदिक अनुष्ठान द्वारा सिद्ध करके भेजा जाता है।",
+    featuredGalleryTitle: "राष्ट्रीय पुरस्कार एवं विशिष्ट हस्तियां",
+    featuredGallerySub: "उपमुख्यमंत्री प्रेम बैरवा, पूर्व मुख्यमंत्री अशोक गहलोत, श्री नयन मोंगिया एवं गुरुदेव जीडी वशिष्ठ जी द्वारा सम्मान।",
+    featuredReviewsTitle: "सत्यापित जातकों की समीक्षाएं",
+    featuredReviewsSub: "आचार्य स्वाति पांडे के सटीक मार्गदर्शन से लाभान्वित परिवारों और व्यवसायियों के वास्तविक अनुभव।",
+    viewAllYantras: "सभी 22 यंत्र देखें →",
+    viewAllPhotos: "पूरी वीआईपी गैलरी देखें →",
+    viewAllReviews: "सभी 12,500+ समीक्षाएं पढ़ें →",
+
+    // Talk to Astrologer Page
+    talkPageBadge: "फोन एवं वीडियो कॉल के लिए उपलब्ध",
+    talkPageTitle: "ज्योतिषी स्वाति पांडे से सीधे बात करें",
+    talkPageSub: "1-on-1 फोन अथवा वीडियो कॉल द्वारा जुड़ें। वर्ष की सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी • श्री नयन मोंगिया जी द्वारा सम्मानित।",
+    searchTopicPlaceholder: "विषय खोजें (जैसे: विवाह, करियर)...",
+    founderPrincipal: "संस्थापक एवं मुख्य ज्योतिषी",
+    directLineTitle: "डायरेक्ट हेल्पलाइन",
+    directLineSub: "सीधे फोन अथवा व्हाट्सएप ऑडियो/वीडियो कॉल पर जुड़ें।",
+    directCallBtn: "सीधे कॉल करें: +91 91160 55424",
+    whatsappAudioVideoBtn: "व्हाट्सएप ऑडियो/वीडियो",
+    bookSlotBtn: "पसंदीदा समय अनुसार स्लॉट बुक करें",
+    chooseSessionTitle: "अपना परामर्श सत्र चुनें",
+    chooseSessionSub: "प्रत्येक सत्र आचार्य स्वाति पांडे द्वारा पूर्ण व्यक्तिगत ध्यान एवं गोपनीयता के साथ आयोजित किया जाता है।",
+    filterAll: "सभी सत्र",
+    filterLife: "कुंडली एवं संपूर्ण जीवन",
+    filterMarriage: "विवाह एवं प्रेम",
+    filterCareer: "करियर एवं व्यापार",
+    filterVastu: "वास्तु एवं हस्तरेखा",
+    howItWorksTitle: "परामर्श प्रक्रिया कैसे काम करती है",
+    step1Num: "1",
+    step1Title: "सत्र का चयन करें",
+    step1Desc: "अपनी आवश्यकता के अनुसार परामर्श पैकेज (संपूर्ण जीवन, विवाह, करियर, संतान अथवा वास्तु) चुनें।",
+    step2Num: "2",
+    step2Title: "जन्म विवरण साझा करें",
+    step2Desc: "सटीक जन्म तिथि, जन्म समय एवं जन्म स्थान प्रदान करें ताकि सूक्ष्म गणितीय गणना की जा सके।",
+    step3Num: "3",
+    step3Title: "लाइव 1-on-1 कॉल",
+    step3Desc: "आचार्य स्वाति पांडे से फोन अथवा वीडियो कॉल पर सीधी बात करें और सटीक समाधान व सात्विक उपाय पाएं।",
+
+    // Chat with Astrologer Page
+    chatPageTitle: "आचार्य स्वाति पांडे से चैट पर परामर्श",
+    chatPageSub: "व्हाट्सएप पर तुरंत सटीक ज्योतिषीय परामर्श पाएं। त्वरित उपाय, जन्मपत्री विश्लेषण एवं शुभ मुहूर्त।",
+    chatIntakeTitle: "तुरंत व्हाट्सएप चैट परामर्श शुरू करें",
+    chatTopicLabel: "परामर्श का विषय चुनें",
+    chatNameLabel: "आपका पूरा नाम",
+    chatDobLabel: "जन्म तिथि",
+    chatBirthTimeLabel: "जन्म समय",
+    chatBirthPlaceLabel: "जन्म स्थान (शहर, राज्य)",
+    chatQuestionLabel: "आपका मुख्य प्रश्न या समस्या",
+    startWhatsAppChatBtn: "व्हाट्सएप पर चैट शुरू करें",
+    chatConfidentialNotice: "100% व्यक्तिगत एवं गोपनीय परामर्श",
+    chatFastResponseNotice: "प्रायः 2 मिनट में त्वरित उत्तर",
+    chatRemediesNotice: "महादशा विश्लेषण एवं अचूक लाल किताब उपाय सम्मिलित",
+
+    // Services Page
+    servicesHeroTitle: "विशिष्ट ज्योतिषीय परामर्श पैकेज",
+    servicesHeroSub: "आचार्य स्वाति पांडे के साथ व्यक्तिगत व गोपनीय परामर्श। पारदर्शी शुल्क, सटीक वैदिक गणना एवं प्रामाणिक लाल किताब उपाय।",
+    allConsultationsTab: "सभी परामर्श",
+    lifeDestinyTab: "जीवन एवं भाग्य",
+    marriageMatchmakingTab: "विवाह एवं गुण मिलान",
+    careerBusinessTab: "करियर एवं व्यापार",
+    vastuPalmistryTab: "वास्तु एवं हस्तरेखा",
+    bookThisSessionBtn: "परामर्श बुक करें",
+    chatAboutThisBtn: "व्हाट्सएप पर पूछें",
+
+    // Yantras Page
+    yantrasHeroTitle: "सिद्ध एवं प्राण प्रतिष्ठित यंत्र व पेंडेंट",
+    yantrasHeroSub: "प्रत्येक पवित्र ज्यामितीय यंत्र एवं धारण करने योग्य लॉकेट आपके नाम व गोत्र से 3 दिवसीय वैदिक अनुष्ठान द्वारा सिद्ध किया जाता है। एक समान विशेष मूल्य: मात्र ₹3,999/- प्रत्येक।",
+    yantrasFixedPriceNotice: "एक समान सिद्ध मूल्य: ₹3,999/- (3-दिवसीय वैदिक प्राण-प्रतिष्ठा पूजा सहित)",
+    filterAllYantras: "सभी यंत्र (22)",
+    filterWallYantras: "पूजा घर / दीवार यंत्र",
     filterPendants: "धारण करने योग्य लॉकेट",
-    orderNowBtn: "ऑर्डर करें",
-    whatsAppOrderBtn: "व्हाट्सएप ऑर्डर",
-    yantraConsecrationNotice:
-      "प्रत्येक यंत्र के साथ आपके नाम, गोत्र और नक्षत्र के अनुसार व्यक्तिगत प्राण-प्रतिष्ठा पूजा संपन्न करके सुरक्षित होम डिलीवरी की जाती है।",
+    orderYantraBtn: "सिद्ध यंत्र ऑर्डर करें (₹3,999)",
+    deityLabel: "अधिष्ठाता देवता",
+    benefitsLabel: "प्रमुख लाभ",
+    mantraLabel: "सिद्ध बीज मंत्र",
+    placementLabel: "स्थापना व दिशा",
 
-    galleryBadge: "सम्मान एवं जन-विश्वास",
-    galleryTitle: "विशिष्ट हस्तियां, पुरस्कार एवं सम्मेलन",
-    gallerySub:
-      "उप-मुख्यमंत्री प्रेम बैरवा, राष्ट्रीय हस्तियों, ज्योतिषी सम्मेलनों और सामाजिक सम्मानों की झलकियां।",
+    // About Page
+    aboutHeroTitle: "आचार्य स्वाति पांडे का परिचय",
+    aboutHeroSub: "पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा 'वर्ष की सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी' से सम्मानित। गुरुदेव जी.डी. वशिष्ठ जी एवं श्री अरुण बंसल जी द्वारा वैदिक उत्कृष्टता सम्मान प्राप्त।",
+    aboutBioText1: "ज्योतिषी स्वाति पांडे 12 से अधिक वर्षों के अनुभव के साथ वैदिक, के.पी. और लाल किताब ज्योतिष की अग्रणी विशेषज्ञ हैं। क्रिकेट लीजेंड श्री नयन मोंगिया जी द्वारा राष्ट्रीय मंच पर सम्मानित, उन्होंने 28 से अधिक देशों के 12,500 से अधिक जातकों को सही राह दिखाई है।",
+    aboutBioText2: "उनकी भविष्यवाणियां पराशरी सिद्धांतों की सटीकता, के.पी. उप-नक्षत्र गणित और बिना भय के सरल व चमत्कारी लाल किताब उपायों पर आधारित हैं।",
+    awardsSectionTitle: "राष्ट्रीय पुरस्कार एवं सम्मान",
+    dignitariesSectionTitle: "विशिष्ट अतिथि एवं सम्मानीय जातक",
 
-    reviewsBadge: "संतुष्ट जातकों के अनुभव",
-    reviewsTitle: "जातकों के विचार एवं कृतज्ञता",
-    reviewsSub: "पढ़ें कैसे हमारी ज्योतिषीय सलाह ने परिवारों और व्यवसायियों के जीवन में नई दिशा दी।",
+    // Reviews Page
+    reviewsHeroTitle: "सत्यापित जातकों की समीक्षाएं",
+    reviewsHeroSub: "28 से अधिक देशों में 12,500+ से अधिक जातक आचार्य स्वाति पांडे के मार्गदर्शन से अपने जीवन में सकारात्मक बदलाव ला चुके हैं।",
+    scorecardHeading: "जातक संतुष्टि स्कोरकार्ड",
+    scorecardReviewsCount: "12,500+ सत्यापित परामर्शों पर आधारित",
+    writeReviewBtn: "अपनी समीक्षा लिखें",
 
+    // Contact Page
+    contactHeroTitle: "संपर्क एवं परामर्श डेस्क",
+    contactHeroSub: "परामर्श का समय निर्धारित करें, जानकारी प्राप्त करें या व्हाट्सएप पर सीधे संपर्क करें।",
+    appointmentFormTitle: "परामर्श अपॉइंटमेंट फॉर्म",
+    fullNameLabel: "पूरा नाम",
+    phoneLabel: "फोन / व्हाट्सएप नंबर",
+    emailLabel: "ईमेल (वैकल्पिक)",
+    serviceSelectLabel: "परामर्श सेवा चुनें",
+    preferredDateLabel: "पसंदीदा तिथि एवं समय",
+    messageLabel: "जन्म विवरण अथवा प्रश्न",
+    submitAppointmentBtn: "अपॉइंटमेंट अनुरोध भेजें",
+    officeLocationTitle: "परामर्श कार्यालय",
+    officeHoursTitle: "परामर्श समय",
+    instantUpiTitle: "सीधा UPI शुल्क भुगतान",
+    upiIdLabel: "UPI ID: 9116055424@upi",
     faqBadge: "स्पष्ट समाधान",
     faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
     faqSub: "परामर्श के तरीके, समय, गोपनीयता और सिद्ध यंत्रों से जुड़े सामान्य प्रश्नों के उत्तर।",
 
-    bookingBadge: "गोपनीय परामर्श सत्र",
-    bookingTitle: "अपना वैदिक परामर्श बुक करें",
-    bookingSub: "कृपया नीचे अपनी जन्म कुंडली का विवरण साझा करें। आपकी सभी जानकारी पूर्णतः गोपनीय रखी जाएगी।",
-    fullName: "पूरा नाम",
-    phoneLabel: "फोन / व्हाट्सएप नंबर",
-    emailLabel: "ईमेल (वैकल्पिक)",
-    serviceLabel: "परामर्श सेवा चुनें",
-    dobLabel: "जन्म तिथि",
-    birthTimeLabel: "जन्म समय",
-    birthPlaceLabel: "जन्म स्थान (शहर/राज्य)",
-    modeLabel: "परामर्श का माध्यम",
-    preferredDateLabel: "पसंदीदा तिथि",
-    questionsLabel: "अपने मुख्य प्रश्न / समस्या का विवरण",
-    submitBtn: "परामर्श फॉर्म जमा करें",
-    whatsappConnectBtn: "सीधे व्हाट्सएप पर भेजें",
-    backBtn: "← वापस जाएं / बंद करें",
-    fullscreenBtn: "फुल स्क्रीन",
-
-    yantraOrderTitle: "सिद्ध यंत्र ऑर्डर फॉर्म",
-    yantraOrderSub: "व्यक्तिगत नाम-गोत्र प्राण प्रतिष्ठा एवं सुरक्षित स्पीड पोस्ट डिलीवरी",
-    shippingAddress: "डिलीवरी का पूरा पता (मकान नं., गली, क्षेत्र)",
-    pincode: "पिन कोड (PIN Code)",
-    cityState: "शहर एवं राज्य",
-    gotraLabel: "गोत्र एवं जन्म नक्षत्र (प्राण प्रतिष्ठा संकल्प हेतु)",
-    paymentMethod: "भुगतान का प्रकार",
+    // Modals & Common
+    closeBtn: "बंद करें",
+    backBtn: "वापस",
+    submitBtn: "जमा करें",
+    yantraModalTitle: "सिद्ध यंत्र ऑर्डर फॉर्म",
+    yantraModalSub: "व्यक्तिगत नाम-गोत्र प्राण प्रतिष्ठा एवं सुरक्षित स्पीड पोस्ट डिलीवरी",
+    shippingAddressLabel: "डिलीवरी का पूरा पता (मकान नं., गली, क्षेत्र)",
+    pincodeLabel: "पिन कोड (PIN Code)",
+    cityStateLabel: "शहर एवं राज्य",
+    gotraLabel: "गोत्र एवं जन्म नक्षत्र (संकल्प हेतु)",
     confirmOrderBtn: "ऑर्डर कन्फर्म करें (₹3,999/-)",
 
-    footerDesc:
-      "भविष्यफल ज्योतिष संस्थान — प्रख्यात ज्योतिषी स्वाति पांडे द्वारा संचालित। वैदिक, के.पी. एवं लाल किताब ज्योतिषीय परामर्श और सिद्ध यंत्रों का विश्वसनीय केंद्र।",
-    quickLinks: "महत्वपूर्ण लिंक्स",
-    officialServices: "प्रमुख सेवाएं",
-    contactOffice: "कार्यालय एवं संपर्क",
+    // Footer
+    footerDesc: "भविष्यफल ज्योतिष संस्थान — आचार्य स्वाति पांडे द्वारा संचालित। वैदिक, के.पी. एवं लाल किताब ज्योतिषीय परामर्श और सिद्ध यंत्रों का विश्वसनीय केंद्र।",
+    quickLinksTitle: "महत्वपूर्ण लिंक्स",
+    consultationsTitle: "परामर्श सेवाएं",
+    yantrasServicesTitle: "सिद्ध यंत्र एवं लॉकेट",
     rightsReserved: "सर्वाधिकार सुरक्षित। आध्यात्मिक उन्नति एवं दिव्य मार्गदर्शन के लिए समर्पित।",
+
+    contactOffice: "परामर्श कार्यालय",
+    bookingBadge: "सत्यापित परामर्श केंद्र",
+    bookingTitle: "ज्योतिषीय परामर्श बुक करें",
+    bookingSub: "गहन कुंडली विश्लेषण एवं सटीक वैदिक उपायों हेतु आचार्य स्वाति पांडे से सीधे संपर्क करें।",
+    heroCtaBook: "परामर्श बुक करें",
+    aboutBadge: "ज्योतिषाचार्य परिचय",
+    aboutTitle: "आचार्य स्वाति पांडे",
+    aboutBio1: "12+ वर्षों के अनुभव के साथ वैदिक एवं के.पी. ज्योतिष में प्रतिष्ठित, विश्वभर के जातकों को सही दिशा दिखाती हैं।",
+    aboutBio2: "पूर्व भारतीय क्रिकेटर नयन मोंगिया जी द्वारा राष्ट्रीय पुरस्कार से सम्मानित।",
+    aboutFeature1Title: "12,500+ जातक",
+    aboutFeature1Desc: "28+ देशों में जातकों को सटीक मार्गदर्शन।",
+    aboutFeature2Title: "राष्ट्रीय पुरस्कार विजेता",
+    aboutFeature2Desc: "मोस्ट ट्रस्टेड एस्ट्रोलॉजर ऑफ द ईयर से सम्मानित।",
+    aboutFeature3Title: "प्राण प्रतिष्ठित उपाय",
+    aboutFeature3Desc: "सिद्ध वैदिक यंत्र एवं व्यावहारिक समाधान।",
+    aboutCta: "स्वाति जी से परामर्श बुक करें",
+    servicesBadge: "ज्योतिषीय सेवाएं",
+    servicesTitle: "वैदिक एवं के.पी. परामर्श सेवाएं",
+    servicesSub: "आपकी जन्मपत्रिका के अनुरूप सटीक एवं व्यावहारिक समाधान।",
+    tabConsultancy: "परामर्श सत्र",
+    tabRemedial: "उपाय एवं यंत्र",
+    yantrasBadge: "प्राण प्रतिष्ठित यंत्र",
+    yantrasTitle: "सिद्ध वैदिक यंत्र",
+    yantrasSub: "3-दिवसीय वैदिक अनुष्ठान द्वारा सिद्ध किए गए दिव्य यंत्र।",
+    filterYantras: "दीवार यंत्र",
+    orderNowBtn: "यंत्र ऑर्डर करें",
+    whatsAppOrderBtn: "व्हाट्सएप पर ऑर्डर करें",
+    yantraConsecrationNotice: "प्रत्येक यंत्र को व्यक्तिगत नाम व गोत्र से 3 दिन सिद्ध करके स्पीड पोस्ट से भेजा जाता है।",
   },
 };

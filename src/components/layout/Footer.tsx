@@ -13,17 +13,14 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-celestial-950 via-[#12061f] to-[#08020e] text-gold-200/80 border-t border-gold-500/20 overflow-hidden pt-16 pb-8">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gold-500/5 blur-3xl pointer-events-none rounded-full" />
-
+    <footer className="relative bg-stone-100 text-stone-700 border-t border-stone-200 overflow-hidden pt-16 pb-12 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-14 border-b border-gold-500/15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-14 border-b border-stone-200">
           {/* Col 1: Brand & Bio */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl p-0.5 bg-gradient-to-br from-gold-400 via-amber-500 to-wine-600 shadow-lg shadow-gold-500/20 flex-shrink-0">
-                <div className="w-full h-full bg-celestial-950 rounded-[14px] overflow-hidden flex items-center justify-center p-1">
+              <div className="w-12 h-12 rounded-2xl p-0.5 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 shadow-sm flex-shrink-0">
+                <div className="w-full h-full bg-white rounded-[14px] overflow-hidden flex items-center justify-center p-1">
                   <Image
                     src="/images/WhatsApp-Image-2026-08-05-at-2.30.52-PM_33.jpeg"
                     alt="Bhavishyaphal"
@@ -34,17 +31,17 @@ export function Footer() {
                 </div>
               </div>
               <div>
-                <span className="font-serif font-bold text-lg text-gold-300 block">
+                <span className="font-serif font-bold text-lg text-stone-900 block leading-tight">
                   Bhavishyaphal
                 </span>
-                <span className="text-xs text-gold-400/80 uppercase tracking-widest block font-medium">
+                <span className="text-xs text-amber-700 uppercase tracking-wider block font-bold">
                   Astrology Services
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs text-gold-200/70 leading-relaxed">
-              Founded by <strong className="text-gold-300 font-semibold">{SITE_CONFIG.founder}</strong>, recognized nationally as <span className="text-gold-300">{SITE_CONFIG.founderTitle}</span>. Bringing Vedic science, KP precision, and empowering remedies to seekers worldwide.
+            <p className="text-xs text-stone-600 leading-relaxed">
+              {t.footerDesc}
             </p>
 
             <div className="pt-2">
@@ -52,165 +49,130 @@ export function Footer() {
                 href={SITE_CONFIG.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 transition-colors shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400 fill-emerald-400" />
-                <span>WhatsApp Instant Connect</span>
+                <MessageCircle className="w-4 h-4 text-emerald-600 fill-emerald-600" />
+                <span>WhatsApp: {SITE_CONFIG.phone}</span>
               </a>
             </div>
           </div>
 
           {/* Col 2: Services */}
           <div className="space-y-3 font-sans">
-            <h4 className="font-serif font-bold text-sm text-astrotalk-yellow uppercase tracking-wider relative inline-block">
-              Astrology Services
+            <h4 className="font-serif font-bold text-sm text-stone-900 uppercase tracking-wider relative inline-block">
+              {t.consultationsTitle}
               <span className="block h-0.5 w-8 bg-astrotalk-yellow mt-1 rounded-full" />
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-xs text-stone-600">
               <li>
-                <Link href="/talk-to-astrologer" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Talk to Astrologer (Voice &amp; Video)
+                <Link href="/talk-to-astrologer" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navTalk}
                 </Link>
               </li>
               <li>
-                <Link href="/chat-with-astrologer" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Chat with Astrologer Online
+                <Link href="/chat-with-astrologer" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navChat}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> All Life Comprehensive Reading
+                <Link href="/services" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navServices}
                 </Link>
               </li>
               <li>
-                <Link href="/kundli" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Kundli Milan &amp; Guna Milan
+                <Link href="/kundli" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navKundli}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Marriage Timing &amp; Soulmate
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Career, Job vs Business Direction
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> About Astrologer Swati Pandey
+                <Link href="/about" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navAbout}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Sacred Yantras & Hub */}
+          {/* Col 3: Sacred Yantras & Proof */}
           <div className="space-y-3 font-sans">
-            <h4 className="font-serif font-bold text-sm text-astrotalk-yellow uppercase tracking-wider relative inline-block">
-              Sacred Products &amp; Pages
+            <h4 className="font-serif font-bold text-sm text-stone-900 uppercase tracking-wider relative inline-block">
+              {t.yantrasServicesTitle}
               <span className="block h-0.5 w-8 bg-astrotalk-yellow mt-1 rounded-full" />
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-xs text-stone-600">
               <li>
-                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Consecrated Shri Yantra (₹3,999)
+                <Link href="/yantras" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navYantras} (₹3,999/-)
                 </Link>
               </li>
               <li>
-                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Kubera &amp; Mahalakshmi Yantras
+                <Link href="/gallery" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navGallery}
                 </Link>
               </li>
               <li>
-                <Link href="/yantras" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Energized Sacred Pendants
+                <Link href="/reviews" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navReviews}
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> VIP Gallery &amp; National Honors
+                <Link href="/contact" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navContact}
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Client Reviews &amp; Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Contact &amp; Appointment Desk
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-astrotalk-yellow transition-colors flex items-center gap-1.5">
-                  <span className="text-astrotalk-yellow">›</span> Astrology Research Journal
+                <Link href="/blog" className="hover:text-stone-950 hover:underline transition-colors flex items-center gap-1.5 font-medium">
+                  <span className="text-amber-600 font-bold">›</span> {t.navBlog}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Contact & Social */}
+          {/* Col 4: Contact & Location */}
           <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-gold-300 uppercase tracking-wider relative inline-block">
-              Connect With Us
-              <span className="block h-0.5 w-8 bg-gold-400 mt-1 rounded-full" />
+            <h4 className="font-serif font-bold text-sm text-stone-900 uppercase tracking-wider relative inline-block">
+              {t.contactOffice}
+              <span className="block h-0.5 w-8 bg-astrotalk-yellow mt-1 rounded-full" />
             </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] text-gold-400/80 block uppercase">Phone & WhatsApp</span>
-                  <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="text-gold-200 hover:text-gold-400 transition-colors font-medium">
-                    {SITE_CONFIG.phone}
-                  </a>
+            <div className="space-y-2.5 text-xs text-stone-600">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                <span>{SITE_CONFIG.location}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="hover:text-stone-950 font-bold text-stone-800">
+                  {SITE_CONFIG.phone}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-stone-950">
+                  {SITE_CONFIG.email}
+                </a>
+              </div>
+              <div className="pt-2">
+                <div className="text-[11px] text-stone-500 font-medium">
+                  UPI ID: <span className="font-bold text-stone-800">9116055424@upi</span>
                 </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] text-gold-400/80 block uppercase">Email Address</span>
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-gold-200 hover:text-gold-400 transition-colors font-medium">
-                    {SITE_CONFIG.email}
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <Instagram className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] text-gold-400/80 block uppercase">Instagram Profile</span>
-                  <a href={SITE_CONFIG.instagram} target="_blank" rel="noopener noreferrer" className="text-gold-200 hover:text-gold-400 transition-colors font-medium">
-                    {SITE_CONFIG.instagramHandle}
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] text-gold-400/80 block uppercase">Location</span>
-                  <span className="text-gold-200/90">{SITE_CONFIG.location}</span>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Scroll to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gold-400/60">
-          <p>© {new Date().getFullYear()} Bhavishyaphal Astrology Services. {t.rightsReserved}</p>
-
-          <div className="flex items-center gap-6">
-            <span>Confidential & Ethical Consultations</span>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-gold-300 hover:text-gold-100 transition-colors p-1.5 rounded-lg hover:bg-white/5 cursor-pointer"
-              aria-label="Scroll to top"
-            >
-              <span>{language === "hi" ? "ऊपर जाएं" : "Back to Top"}</span>
-              <ArrowUp className="w-3.5 h-3.5" />
-            </button>
-          </div>
+        {/* Bottom Bar: Copyright & Back to Top */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. {t.rightsReserved}
+          </p>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 hover:text-stone-950 hover:bg-stone-50 transition-colors shadow-sm cursor-pointer"
+            aria-label="Back to top"
+          >
+            <span>Top</span>
+            <ArrowUp className="w-3.5 h-3.5 text-amber-600" />
+          </button>
         </div>
       </div>
     </footer>

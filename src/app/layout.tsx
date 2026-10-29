@@ -85,10 +85,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${dmSerif.variable} ${cinzel.variable} scroll-smooth dark`}>
-      <body className="min-h-screen bg-celestial-950 text-gold-100 flex flex-col font-sans antialiased selection:bg-astrotalk-yellow selection:text-astrotalk-darker pb-16 md:pb-0">
+    <html lang="en" className={`${poppins.variable} ${dmSerif.variable} ${cinzel.variable} scroll-smooth`}>
+      <body className="min-h-screen bg-[#FAFAF8] text-stone-900 flex flex-col font-sans antialiased selection:bg-amber-300 selection:text-stone-950 pb-16 md:pb-0">
         <LanguageProvider>
-          <CelestialBackground />
           <Navbar />
           <main className="flex-1 relative z-10">{children}</main>
           <Footer />

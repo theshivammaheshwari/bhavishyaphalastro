@@ -21,7 +21,7 @@ import { YantraOrderModal } from "@/components/yantras/YantraOrderModal";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function YantrasPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [filter, setFilter] = useState<"all" | "yantra" | "pendant">("all");
   const [search, setSearch] = useState("");
   const [selectedYantra, setSelectedYantra] = useState<YantraItem | null>(null);
@@ -43,189 +43,204 @@ export default function YantrasPage() {
   });
 
   return (
-    <div className="min-h-screen py-10 sm:py-16">
+    <div className="min-h-screen py-10 sm:py-16 bg-[#FAFAF8] text-stone-900 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-gold-300/70 mb-8" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-astrotalk-yellow transition-colors">Home</Link>
+        <nav className="flex items-center gap-2 text-xs text-stone-500 mb-8 font-medium" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-amber-800 transition-colors">{t.navHome}</Link>
           <span>/</span>
-          <span className="text-astrotalk-yellow font-medium">Sacred Yantras &amp; Pendants</span>
+          <span className="text-amber-800 font-bold">{t.navYantras}</span>
         </nav>
 
-        {/* Hero Section */}
+        {/* Hero Section (Light Theme) */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-astrotalk-yellow/15 border border-astrotalk-yellow/30 text-astrotalk-yellow text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
             <span>Consecrated Sacred Energy Store</span>
           </div>
-
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            Pran Pratishtha Energized <span className="text-transparent bg-clip-text bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-500">Sacred Yantras</span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-950 tracking-tight mb-4">
+            {t.yantrasHeroTitle}
           </h1>
-
-          <p className="text-sm sm:text-base text-gold-200/80 leading-relaxed font-sans">
-            Every sacred Yantra and Pendant undergoes an authentic 3-day Vedic Pran Pratishtha ritual performed personally in the buyer&apos;s <strong>Name, Gotra, and Nakshatra</strong> by Astrologer Swati Pandey before dispatch.
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-sans font-medium">
+            {t.yantrasHeroSub}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-xs text-gold-300">
-            <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-astrotalk-yellow" /> 100% Pure Asthadhatu &amp; Brass</span>
-            <span className="flex items-center gap-1.5"><Flame className="w-4 h-4 text-astrotalk-yellow" /> 3-Day Vedic Pran Pratishtha</span>
-            <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-astrotalk-yellow" /> Fixed ₹3,999/- Across All Yantras</span>
+          {/* Consecration Guarantee Box */}
+          <div className="mt-6 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-stone-800 max-w-2xl mx-auto flex items-center justify-center gap-2 font-medium">
+            <Flame className="w-4 h-4 text-amber-600 flex-shrink-0" />
+            <span>{t.yantrasFixedPriceNotice}</span>
           </div>
         </div>
 
-        {/* Filters & Search Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-gold-500/15">
-          <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto no-scrollbar">
-            {[
-              { id: "all", label: `All Items (${SACRED_YANTRAS.length})` },
-              { id: "yantra", label: `Wall / Altar Yantras (15)` },
-              { id: "pendant", label: `Sacred Pendants (7)` },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setFilter(tab.id as any)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                  filter === tab.id
-                    ? "bg-astrotalk-yellow text-celestial-950 shadow-lg shadow-astrotalk-yellow/20"
-                    : "bg-celestial-900/80 text-gold-200/80 hover:text-white border border-gold-500/20"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        {/* Search & Filters */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-stone-200">
+          <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto no-scrollbar">
+            <button
+              type="button"
+              onClick={() => setFilter("all")}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all cursor-pointer ${
+                filter === "all"
+                  ? "bg-astrotalk-yellow text-stone-950 shadow-sm"
+                  : "bg-white text-stone-700 hover:bg-stone-100 border border-stone-200"
+              }`}
+            >
+              {t.filterAllYantras}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter("yantra")}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all cursor-pointer ${
+                filter === "yantra"
+                  ? "bg-astrotalk-yellow text-stone-950 shadow-sm"
+                  : "bg-white text-stone-700 hover:bg-stone-100 border border-stone-200"
+              }`}
+            >
+              {t.filterWallYantras}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter("pendant")}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all cursor-pointer ${
+                filter === "pendant"
+                  ? "bg-astrotalk-yellow text-stone-950 shadow-sm"
+                  : "bg-white text-stone-700 hover:bg-stone-100 border border-stone-200"
+              }`}
+            >
+              {t.filterPendants}
+            </button>
           </div>
 
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-400/60 pointer-events-none" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search Yantra or Deity..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-celestial-900/80 border border-gold-500/25 text-xs text-white placeholder-gold-300/40 focus:outline-none focus:border-astrotalk-yellow transition-colors"
+              placeholder={language === "hi" ? "यंत्र या लाभ खोजें..." : "Search Yantra or deity..."}
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-stone-300 text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-500 shadow-sm"
             />
           </div>
         </div>
 
-        {/* Yantras Grid */}
+        {/* Yantras Grid (Light Theme) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16 sm:mb-24">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl bg-celestial-900/60 border border-gold-500/20 overflow-hidden hover:border-astrotalk-yellow/40 hover:shadow-2xl hover:shadow-black/60 transition-all flex flex-col justify-between group"
+              className="rounded-3xl bg-white border border-stone-200 overflow-hidden hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Image */}
-                <div className="relative aspect-square overflow-hidden bg-celestial-950 p-4 flex items-center justify-center">
+                <div className="relative aspect-square overflow-hidden bg-stone-50 p-4 border-b border-stone-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                    className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-celestial-950/80 border border-gold-500/30 text-[10px] font-bold text-gold-200 uppercase tracking-wider backdrop-blur-md">
-                    {item.type === "yantra" ? "Wall Yantra" : "Pendant"}
+                  <span className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-astrotalk-yellow text-stone-950 text-xs font-serif font-bold shadow-xs">
+                    ₹{item.price.toLocaleString("en-IN")}/-
+                  </span>
+                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-stone-100 text-stone-700 text-[10px] font-bold uppercase border border-stone-200">
+                    {item.type}
                   </span>
                 </div>
 
-                {/* Info */}
-                <div className="p-4 sm:p-5">
-                  <div className="text-[10px] font-bold text-astrotalk-yellow uppercase tracking-widest mb-1">
-                    Deity: {item.deity}
+                <div className="p-5 space-y-3">
+                  <div>
+                    <h3 className="font-serif font-bold text-base text-stone-950 group-hover:text-amber-800 transition-colors line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-amber-800 font-bold mt-0.5">
+                      {item.deity}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-white group-hover:text-astrotalk-yellow transition-colors line-clamp-1 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-gold-200/80 line-clamp-2 font-sans mb-3 leading-relaxed">
+
+                  <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed font-medium">
                     {item.benefits}
                   </p>
 
-                  <div className="p-2.5 rounded-xl bg-celestial-950/70 border border-gold-500/10 text-[11px] text-gold-300/80 space-y-1 mb-3 font-sans">
-                    <div className="flex items-center gap-1.5 text-astrotalk-yellow">
-                      <Compass className="w-3.5 h-3.5 flex-shrink-0" />
-                      <span className="truncate">Direction: {item.placement}</span>
-                    </div>
+                  <div className="p-2.5 rounded-xl bg-amber-50/60 border border-amber-200/60 text-[11px] font-medium text-stone-700 font-mono line-clamp-1">
+                    🪔 {item.mantra}
                   </div>
                 </div>
               </div>
 
-              {/* Price & CTA */}
-              <div className="p-4 sm:p-5 pt-0 border-t border-gold-500/10 flex items-center justify-between gap-3">
-                <div>
-                  <div className="text-[10px] text-gold-300/60 uppercase">Price</div>
-                  <div className="text-astrotalk-yellow font-serif font-bold text-base">
-                    ₹{item.price.toLocaleString("en-IN")}/-
-                  </div>
-                </div>
-
+              <div className="p-5 pt-0 border-t border-stone-100 flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => handleBuy(item)}
-                  className="px-4 py-2.5 rounded-xl font-serif text-xs font-bold text-celestial-950 bg-gradient-to-r from-astrotalk-yellow via-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
+                  className="flex-1 py-2.5 px-4 rounded-xl font-bold text-xs text-stone-950 bg-astrotalk-yellow hover:bg-astrotalk-yellowHover transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   <ShoppingBag className="w-3.5 h-3.5" />
-                  <span>Order Now</span>
+                  <span>{t.orderYantraBtn}</span>
                 </button>
+
+                <a
+                  href={`https://wa.me/919116055424?text=${encodeURIComponent(`Hello Astrologer Swati Pandey! I want to order consecrated: ${item.title} (₹3,999)`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 transition-colors flex items-center justify-center"
+                  title="Order on WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4 text-emerald-600" />
+                </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Pran Pratishtha Ritual Explanation */}
-        <div className="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-celestial-900/90 via-celestial-950 to-wine-950/80 border border-gold-500/25">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <span className="text-astrotalk-yellow text-xs font-bold uppercase tracking-wider">
-                Ancient Vedic Consecration
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 mb-4">
-                What is 3-Day Vedic Pran Pratishtha?
+        {/* Vedic Pran Pratishtha Process Details */}
+        <div className="rounded-3xl p-8 bg-white border border-stone-200 shadow-sm">
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-950 text-center mb-4">
+            {language === "hi" ? "3-दिवसीय वैदिक प्राण प्रतिष्ठा अनुष्ठान" : "3-Day Vedic Pran Pratishtha Ritual Process"}
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-600 text-center max-w-2xl mx-auto mb-8 font-medium">
+            {language === "hi"
+              ? "हमारे यहां बिना प्राण-प्रतिष्ठा के कोई भी यंत्र नहीं भेजा जाता। प्रत्येक यंत्र आपके नाम और गोत्र से सिद्ध होकर सकारात्मक ऊर्जा प्रसारित करता है।"
+              : "Every sacred instrument undergoes an authentic 3-day Vedic consecration ritual led by learned scholars under the supervision of Astrologer Swati Pandey."}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-stone-950 font-bold flex items-center justify-center mb-3">
+                1
+              </div>
+              <h3 className="font-serif font-bold text-sm text-stone-950 mb-1">
+                {language === "hi" ? "नाम व गोत्र संकल्प" : "Sankalpa in Your Name"}
               </h3>
-              <p className="text-xs sm:text-sm text-gold-200/85 leading-relaxed font-sans mb-4">
-                A Yantra without consecration is merely etched metal. In the ancient Agama and Tantra Shastras, <strong>Pran Pratishtha</strong> is the sacred invocation through which universal divine cosmic vibrations are infused into the geometric nodes of the Yantra.
+              <p className="text-xs text-stone-600 font-medium">
+                {language === "hi" ? "आपकी कुंडली के नक्षत्र व गोत्र का संकल्प लेकर यंत्र पर वैदिक मंत्रों की आहुति दी जाती है।" : "Consecration begins with personalized Sankalpa invoking your Gotra, Nakshatra, and spiritual purpose."}
               </p>
-              <ul className="space-y-2 text-xs text-gold-300 font-sans">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-astrotalk-yellow" />
-                  <span>Panchamrit Abhishekam and sacred herbal purification</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-astrotalk-yellow" />
-                  <span>11,000 Vedic Beej Mantra recitations in buyer&apos;s Name &amp; Gotra</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-astrotalk-yellow" />
-                  <span>Sealed in ceremonial protective packaging before delivery</span>
-                </li>
-              </ul>
             </div>
 
-            <div className="rounded-2xl p-6 bg-celestial-950/80 border border-gold-500/20 text-center">
-              <ShoppingBag className="w-10 h-10 text-astrotalk-yellow mx-auto mb-3" />
-              <h4 className="font-serif text-lg font-bold text-white mb-1">
-                Custom Yantra Orders on WhatsApp
-              </h4>
-              <p className="text-xs text-gold-300/80 font-sans mb-4">
-                Have specific planetary doshas or need guidance on which Yantra will resolve your current career or marriage obstacles?
+            <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-stone-950 font-bold flex items-center justify-center mb-3">
+                2
+              </div>
+              <h3 className="font-serif font-bold text-sm text-stone-950 mb-1">
+                {language === "hi" ? "11,000 बीज मंत्र जाप" : "11,000 Beej Mantra Japa"}
+              </h3>
+              <p className="text-xs text-stone-600 font-medium">
+                {language === "hi" ? "संबंधित देवी-देवता के विशिष्ट बीज मंत्रों द्वारा यंत्र की ज्यामिति को जागृत किया जाता है।" : "Specific divine Beej Mantras are chanted over 3 continuous days to awaken the sacred sacred geometry."}
               </p>
-              <a
-                href={`https://wa.me/919116055424?text=${encodeURIComponent(
-                  "Hello Astrologer Swati Pandey, I would like guidance on ordering a consecrated sacred Yantra."
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-celestial-950 text-xs sm:text-sm font-bold shadow-lg transition-all"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Chat with Astrologer for Yantra Guidance</span>
-              </a>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200 text-center">
+              <div className="w-10 h-10 mx-auto rounded-full bg-astrotalk-yellow text-stone-950 font-bold flex items-center justify-center mb-3">
+                3
+              </div>
+              <h3 className="font-serif font-bold text-sm text-stone-950 mb-1">
+                {language === "hi" ? "सुरक्षित होम डिलीवरी" : "Express Home Delivery"}
+              </h3>
+              <p className="text-xs text-stone-600 font-medium">
+                {language === "hi" ? "गंगाजल व चंदन से अभिमंत्रित करके स्थापना विधि के साथ सुरक्षित आपके पते पर भेजा जाता है।" : "Dispatched securely in tamper-evident packaging with sacred installation guidelines and auspicious Muhurat."}
+              </p>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Yantra Order Modal */}
       <YantraOrderModal
         isOpen={orderModalOpen}
         onClose={() => setOrderModalOpen(false)}
