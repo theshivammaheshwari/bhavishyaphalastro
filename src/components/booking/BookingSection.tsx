@@ -49,7 +49,7 @@ export function BookingSection() {
                 Request Your Personal Consultation
               </h2>
               <p className="text-xs sm:text-sm text-gold-200/70 mt-2 leading-relaxed">
-                Reach out directly with your questions. We will schedule a dedicated time slot for Astrologer Swati Pandey to study your horoscope and guide you personally.
+                Reach out directly with your questions. We will schedule a dedicated time slot for Astrologer Ajay Kumar Agarwal to study your horoscope and guide you personally.
               </p>
             </div>
 

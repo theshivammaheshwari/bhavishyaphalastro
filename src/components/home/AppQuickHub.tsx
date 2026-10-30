@@ -45,7 +45,7 @@ export function AppQuickHub({ onOpenBooking }: AppQuickHubProps) {
     },
     {
       id: "consult",
-      title: "Consult Swati Ji",
+      title: "Consult Ajay Ji",
       subtitle: "1-on-1 Call",
       icon: PhoneCall,
       action: () => onOpenBooking("All Life Comprehensive Consultancy (₹5,100/-)"),

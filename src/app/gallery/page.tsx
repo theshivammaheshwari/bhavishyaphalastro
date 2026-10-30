@@ -72,7 +72,7 @@ export default function GalleryPage() {
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-sans font-medium">
             {language === "hi"
-              ? "क्रिकेट हस्तियों, वरिष्ठ मंत्रियों, मुख्यमंत्रियों, बॉलीवुड निर्देशकों एवं राष्ट्रीय ज्योतिष सम्मेलनों में आचार्य स्वाति पांडे के सम्मानित क्षण।"
+              ? "क्रिकेट हस्तियों, वरिष्ठ मंत्रियों, मुख्यमंत्रियों, बॉलीवुड निर्देशकों एवं राष्ट्रीय ज्योतिष सम्मेलनों में आचार्य अजय कुमार अग्रवाल के सम्मानित क्षण।"
               : "Moments of recognition featuring Deputy CM Prem Bairwa, cricket icon Sh Nayan Mongia Ji, former CM Ashok Gehlot, Bollywood luminaries, and grand astrological conclaves."}
           </p>
         </div>

@@ -48,7 +48,7 @@ export const SITE_CONFIG = {
   name: "Bhavishyaphal Astrology Services",
   shortName: "Bhavishyaphal",
   tagline: "Vedic Wisdom • Modern Clarity",
-  founder: "Astrologer Swati Pandey",
+  founder: "Astrologer Ajay Kumar Agarwal",
   founderTitle: "India's Most Trusted & Accurate Astrologer of the Year",
   phone: "+91 91160 55424",
   phoneRaw: "919116055424",
@@ -640,7 +640,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "astrologer-3",
-    title: "Astrologer Swati Pandey — Conclave Keynote",
+    title: "Astrologer Ajay Kumar Agarwal — Conclave Keynote",
     category: "astrologers",
     caption: "Addressing the National Astrology Summit in Jaipur.",
     image: "/images/asset_43",
@@ -720,7 +720,7 @@ export const TESTIMONIALS = [
     name: "Priyanka Sharma",
     role: "Marriage & Match Consultation",
     location: "New Delhi",
-    content: "The consultation was calm, scientific and free from fear-mongering. Swati Ji predicted the exact month of my wedding and the remedy suggested brought tremendous peace to our family.",
+    content: "The consultation was calm, scientific and free from fear-mongering. Ajay Ji predicted the exact month of my wedding and the remedy suggested brought tremendous peace to our family.",
     rating: 5,
     avatar: "PS",
   },
@@ -773,7 +773,7 @@ export const FAQS = [
   },
   {
     q: "How does Bhavishyaphal differ from generic horoscope websites or apps?",
-    a: "Most commercial portals use automated generic paragraphs. At Bhavishyaphal, all readings are backed by Astrologer Swati Pandey's proven mathematical KP & Parashari lineage, individualized planetary degrees, and positive, empowering solutions without fear tactics.",
+    a: "Most commercial portals use automated generic paragraphs. At Bhavishyaphal, all readings are backed by Astrologer Ajay Kumar Agarwal's proven mathematical KP & Parashari lineage, individualized planetary degrees, and positive, empowering solutions without fear tactics.",
   },
   {
     q: "Are the Sacred Yantras and Gemstones genuinely energized before dispatch?",
@@ -781,7 +781,7 @@ export const FAQS = [
   },
   {
     q: "What happens if a Kundli match has Manglik Dosha or Nadi Dosha?",
-    a: "Classical Vedic astrology provides many cancellation yogas (Dosha Bhanga) that generic software misses. Swati Ji evaluates special planetary counter-balances, Navamsha aspects, and provides authentic, gentle remedies that allow harmonious wedlock without panic.",
+    a: "Classical Vedic astrology provides many cancellation yogas (Dosha Bhanga) that generic software misses. Ajay Ji evaluates special planetary counter-balances, Navamsha aspects, and provides authentic, gentle remedies that allow harmonious wedlock without panic.",
   },
   {
     q: "How do I make a payment for consultation or reports?",
@@ -798,7 +798,7 @@ export const BLOG_POSTS: BlogArticle[] = [
     category: "Marriage Astrology",
     date: "October 10, 2026",
     readTime: "5 min read",
-    author: "Astrologer Swati Pandey",
+    author: "Astrologer Ajay Kumar Agarwal",
     image: "/images/6efde35bfb57e31eb74602406c07bee4_65.jpg",
     content: [
       "Mangal Dosha, or Mars affliction, is one of the most misunderstood concepts in Indian astrology. Popular superstition has caused immense anxiety among marriage seekers, yet Sage Parashara in Brihat Parashara Hora Shastra outlined over twenty distinct conditions where Mangal Dosha gets completely cancelled.",
@@ -814,7 +814,7 @@ export const BLOG_POSTS: BlogArticle[] = [
     category: "Career Astrology",
     date: "September 28, 2026",
     readTime: "6 min read",
-    author: "Astrologer Swati Pandey",
+    author: "Astrologer Ajay Kumar Agarwal",
     image: "/images/asset_69",
     content: [
       "Have you ever noticed two individuals with identical qualifications and effort experiencing vastly contrasting career outcomes? The secret lies in the Vimshottari Dasha cycle—the chronological unfoldment of planetary periods.",
@@ -830,7 +830,7 @@ export const BLOG_POSTS: BlogArticle[] = [
     category: "Sacred Yantras",
     date: "September 15, 2026",
     readTime: "4 min read",
-    author: "Astrologer Swati Pandey",
+    author: "Astrologer Ajay Kumar Agarwal",
     image: "/images/asset_77",
     content: [
       "The Shri Yantra is often termed the 'Mother of All Yantras'. Composed of nine interlocking triangles centered around the Bindu (the origin of cosmic consciousness), it represents the cosmic creation cycle.",
@@ -846,7 +846,7 @@ export const BLOG_POSTS: BlogArticle[] = [
     category: "Vastu Shastra",
     date: "August 30, 2026",
     readTime: "7 min read",
-    author: "Astrologer Swati Pandey",
+    author: "Astrologer Ajay Kumar Agarwal",
     image: "/images/images_61",
     content: [
       "Vastu Shastra is the traditional Indian science of architecture that harmonizes living spaces with the five natural elements (Pancha Bhootas): Earth, Water, Fire, Air, and Space.",

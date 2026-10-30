@@ -163,7 +163,7 @@ export default function ServicesPage() {
                 </button>
 
                 <a
-                  href={`https://wa.me/919116055424?text=${encodeURIComponent(`Hello Astrologer Swati Pandey! I want to book: ${service.title}`)}`}
+                  href={`https://wa.me/919116055424?text=${encodeURIComponent(language === "hi" ? `नमस्कार आचार्य अजय कुमार अग्रवाल जी! मैं बुक करना चाहता हूँ: ${service.title}` : `Hello Astrologer Ajay Kumar Agarwal! I want to book: ${service.title}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-3 px-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-bold hover:bg-emerald-100 transition-colors flex items-center justify-center"
@@ -184,8 +184,8 @@ export default function ServicesPage() {
           </h2>
           <p className="text-xs sm:text-sm text-stone-700 max-w-2xl mx-auto leading-relaxed font-medium">
             {language === "hi"
-              ? "प्रत्येक सत्र सीधे आचार्य स्वाति पांडे द्वारा लिया जाता है। किसी भी प्रकार के भय या अंधविश्वास के बिना केवल व्यावहारिक लाल किताब व वैदिक उपाय।"
-              : "Every session is conducted personally by Astrologer Swati Pandey. Experience genuine horary mathematical accuracy, empathetic clarity, and authentic Vedic remedies."}
+              ? "प्रत्येक सत्र सीधे आचार्य अजय कुमार अग्रवाल द्वारा लिया जाता है। किसी भी प्रकार के भय या अंधविश्वास के बिना केवल व्यावहारिक लाल किताब व वैदिक उपाय।"
+              : "Every session is conducted personally by Astrologer Ajay Kumar Agarwal. Experience genuine horary mathematical accuracy, empathetic clarity, and authentic Vedic remedies."}
           </p>
         </div>
       </div>

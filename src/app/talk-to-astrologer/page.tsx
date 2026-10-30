@@ -108,7 +108,7 @@ export default function TalkToAstrologerPage() {
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden border-2 border-stone-200 shadow-lg flex-shrink-0 bg-stone-100">
                 <Image
                   src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
-                  alt="Astrologer Swati Pandey"
+                  alt={language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                   fill
                   className="object-cover"
                 />
@@ -120,7 +120,9 @@ export default function TalkToAstrologerPage() {
                   <Award className="w-3.5 h-3.5" />
                   <span>{t.nationalAwardee}</span>
                 </span>
-                <h2 className="font-serif text-2xl font-bold text-stone-950">Astrologer Swati Pandey</h2>
+                <h2 className="font-serif text-2xl font-bold text-stone-950">
+                  {language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
+                </h2>
                 <p className="text-xs text-stone-600 mt-0.5 font-medium">{t.founderPrincipal}</p>
                 <div className="flex items-center justify-center sm:justify-start lg:justify-center gap-2 text-xs mt-2 text-amber-700 font-bold">
                   <Star className="w-4 h-4 fill-amber-500 stroke-none" />
@@ -295,7 +297,7 @@ export default function TalkToAstrologerPage() {
                   </button>
 
                   <a
-                    href={`https://wa.me/919116055424?text=${encodeURIComponent(`Hello Astrologer Swati Pandey! I want to consult for: ${session.title}`)}`}
+                    href={`https://wa.me/919116055424?text=${encodeURIComponent(language === "hi" ? `नमस्कार आचार्य अजय कुमार अग्रवाल जी! मैं परामर्श लेना चाहता हूँ: ${session.title}` : `Hello Astrologer Ajay Kumar Agarwal! I want to consult for: ${session.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 hover:bg-emerald-100 transition-colors flex items-center justify-center gap-1"

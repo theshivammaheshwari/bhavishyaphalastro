@@ -182,7 +182,7 @@ export default function ContactPage() {
                     Request Received Successfully!
                   </h3>
                   <p className="text-xs text-stone-600 max-w-sm mx-auto font-medium leading-relaxed">
-                    Astrologer Swati Pandey&apos;s team will contact you on WhatsApp/Phone shortly to confirm your consultation timing.
+                    Astrologer Ajay Kumar Agarwal&apos;s team will contact you on WhatsApp/Phone shortly to confirm your consultation timing.
                   </p>
                 </div>
               ) : (

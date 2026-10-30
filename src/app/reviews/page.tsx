@@ -35,8 +35,8 @@ export default function ReviewsPage() {
       role: language === "hi" ? "चिकित्सा व्यवसाय एवं महादशा गोचर" : "Medical Profession & Dasha Timing",
       location: "Jaipur",
       content: language === "hi"
-        ? "स्वाति जी के राहु महादशा विश्लेषण ने मुझे निजी क्लिनिक शुरू करने का सही समय बताया। उनकी भविष्यवाणियां पूर्णतः सटीक साबित हुईं।"
-        : "Swati Ji's analysis of my Rahu Mahadasha transition gave me the exact timing to set up my independent surgical clinic. Her guidance was mathematically flawless and immensely comforting.",
+        ? "अजय जी के राहु महादशा विश्लेषण ने मुझे निजी क्लिनिक शुरू करने का सही समय बताया। उनकी भविष्यवाणियां पूर्णतः सटीक साबित हुईं।"
+        : "Ajay Ji's analysis of my Rahu Mahadasha transition gave me the exact timing to set up my independent surgical clinic. His guidance was mathematically flawless and immensely comforting.",
       rating: 5,
       avatar: "SM",
       category: "career",
@@ -48,8 +48,8 @@ export default function ReviewsPage() {
       role: language === "hi" ? "कुंडली मिलान एवं दांपत्य सुख" : "Kundli Milan & Marriage Compatibility",
       location: "Chandigarh",
       content: language === "hi"
-        ? "अन्य पंडितों ने भकूट दोष बताकर विवाह से मना कर दिया था। स्वाति जी ने नवमांश में परिहार नियम समझाए और सही उपाय बताए। आज हम अत्यंत सुखी हैं।"
-        : "Other pandits told us we had severe Bhakoot Dosha and could never marry. Swati Ji checked cancellation rules in our Navamsha chart and performed the right remedy. We are happily married for 3 years today!",
+        ? "अन्य पंडितों ने भकूट दोष बताकर विवाह से मना कर दिया था। अजय जी ने नवमांश में परिहार नियम समझाए और सही उपाय बताए। आज हम अत्यंत सुखी हैं।"
+        : "Other pandits told us we had severe Bhakoot Dosha and could never marry. Ajay Ji checked cancellation rules in our Navamsha chart and performed the right remedy. We are happily married for 3 years today!",
       rating: 5,
       avatar: "KB",
       category: "marriage",
@@ -234,7 +234,7 @@ export default function ReviewsPage() {
               {t.writeReviewBtn}
             </h3>
             <p className="text-xs text-stone-600 mb-6 font-medium">
-              Share your personal experience with Astrologer Swati Pandey.
+              {language === "hi" ? "आचार्य अजय कुमार अग्रवाल के साथ अपना व्यक्तिगत अनुभव साझा करें।" : "Share your personal experience with Astrologer Ajay Kumar Agarwal."}
             </p>
 
             {submitted ? (

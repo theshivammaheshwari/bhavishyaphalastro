@@ -211,12 +211,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Card: Astrologer Swati Pandey Feature Card */}
+            {/* Right Card: Astrologer Ajay Kumar Agarwal Feature Card */}
             <div className="lg:col-span-5 relative">
               <div className="relative aspect-[3/4] max-w-sm sm:max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-stone-200 shadow-xl group bg-white">
                 <Image
                   src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
-                  alt="Astrologer Swati Pandey"
+                  alt={language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -239,7 +239,7 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 border border-stone-200 backdrop-blur-md shadow-lg">
                   <div className="flex items-center justify-between gap-2 mb-1">
                     <h3 className="font-serif font-bold text-base sm:text-lg text-stone-950">
-                      Astrologer Swati Pandey
+                      {language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                     </h3>
                     <div className="flex items-center gap-1 text-amber-700 text-xs font-bold">
                       <Star className="w-3.5 h-3.5 fill-amber-500 stroke-none" />

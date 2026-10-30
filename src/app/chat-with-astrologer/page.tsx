@@ -52,7 +52,8 @@ export default function ChatWithAstrologerPage() {
       .filter(Boolean)
       .join("\n");
 
-    const message = `Hello Astrologer Swati Pandey! I would like to start a Chat Consultation.\n\n${details}`;
+    const greeting = language === "hi" ? "नमस्कार आचार्य अजय कुमार अग्रवाल जी!" : "Hello Astrologer Ajay Kumar Agarwal!";
+    const message = `${greeting} I would like to start a Chat Consultation.\n\n${details}`;
     const whatsappUrl = `https://wa.me/919116055424?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -75,7 +76,7 @@ export default function ChatWithAstrologerPage() {
                 <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-2 border-astrotalk-yellow shadow-md flex-shrink-0 bg-stone-100">
                   <Image
                     src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
-                    alt="Astrologer Swati Pandey"
+                    alt={language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                     fill
                     className="object-cover"
                   />
@@ -86,7 +87,9 @@ export default function ChatWithAstrologerPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                     <span>{t.onlineNow}</span>
                   </div>
-                  <h2 className="font-serif text-lg font-bold text-stone-950">Astrologer Swati Pandey</h2>
+                  <h2 className="font-serif text-lg font-bold text-stone-950">
+                    {language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
+                  </h2>
                   <p className="text-xs text-stone-600 font-medium">{t.founderPrincipal}</p>
                   <div className="flex items-center gap-2 text-xs mt-1 text-amber-700 font-bold">
                     <Star className="w-3.5 h-3.5 fill-amber-500 stroke-none" />
@@ -98,8 +101,8 @@ export default function ChatWithAstrologerPage() {
 
               <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/80 mb-4 text-xs text-stone-800 leading-relaxed font-sans font-medium">
                 💡 <strong>{language === "hi" ? "चैट परामर्श सुविधा:" : "Chat Consultation Feature:"}</strong> {language === "hi"
-                  ? "सीधे आचार्य स्वाति पांडे से व्हाट्सएप पर त्वरित संदेश, जन्मपत्री गणना, शुभ समय और उपाय प्राप्त करें।"
-                  : "Get quick, typed responses directly from Astrologer Swati Pandey with chart computations, auspicious timings, and practical remedies delivered directly to your chat window."}
+                  ? "सीधे आचार्य अजय कुमार अग्रवाल से व्हाट्सएप पर त्वरित संदेश, जन्मपत्री गणना, शुभ समय और उपाय प्राप्त करें।"
+                  : "Get quick, typed responses directly from Astrologer Ajay Kumar Agarwal with chart computations, auspicious timings, and practical remedies delivered directly to your chat window."}
               </div>
 
               <div className="space-y-2.5 text-xs text-stone-700 font-sans font-medium">

@@ -521,7 +521,7 @@ export function KundliHub({ onOpenBooking }: { onOpenBooking: (service?: string)
                   <div className="p-5 rounded-2xl bg-gradient-to-r from-wine-950 via-celestial-900 to-wine-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div>
                       <strong className="text-xs font-bold text-gold-200 block">
-                        Need Astrologer Swati Pandey&apos;s Personal Decoding?
+                        Need Astrologer Ajay Kumar Agarwal&apos;s Personal Decoding?
                       </strong>
                       <span className="text-[11px] text-gold-300/80">
                         Get in-depth analysis on marriage timing, career path, and customized remedies.
@@ -542,7 +542,7 @@ export function KundliHub({ onOpenBooking }: { onOpenBooking: (service?: string)
                           kundliResult.name
                         )}%20(DOB%3A%20${encodeURIComponent(
                           kundliResult.dob
-                        )})%20and%20want%20to%20consult%20Astrologer%20Swati%20Pandey.`}
+                        )})%20and%20want%20to%20consult%20Astrologer%20Ajay%20Kumar%20Agarwal.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-3.5 py-2 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 flex items-center gap-1.5"
@@ -1238,7 +1238,7 @@ export function KundliHub({ onOpenBooking }: { onOpenBooking: (service?: string)
                 onClick={() => onOpenBooking("Lal Kitab Personalized Remedy Consultation")}
                 className="px-5 py-2.5 rounded-xl text-xs font-bold text-celestial-950 bg-gradient-to-r from-gold-300 to-amber-400 hover:from-gold-200 hover:to-amber-300"
               >
-                Consult Astrologer Swati Pandey
+                Consult Astrologer Ajay Kumar Agarwal
               </button>
             </div>
           </div>

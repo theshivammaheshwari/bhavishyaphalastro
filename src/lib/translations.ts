@@ -282,7 +282,7 @@ export const translations: Record<Language, Translations> = {
     nationalAwardee: "National Awardee",
 
     // Ticker
-    tickerText: "Astrologer Swati Pandey is Online Now for 1-on-1 Voice & Video Consultations",
+    tickerText: "Astrologer Ajay Kumar Agarwal is Online Now for 1-on-1 Voice & Video Consultations",
     tickerCta: "Connect in 60 Seconds →",
 
     // Hero Section
@@ -290,7 +290,7 @@ export const translations: Record<Language, Translations> = {
     heroTitle1: "Know Your Future.",
     heroTitle2: "Transform Your Destiny.",
     heroTitle3: "Sacred Vedic Clarity",
-    heroSub: "Personalized Vedic Astrology consultations led by Astrologer Swati Pandey. Conferred national honor by Sh Nayan Mongia Ji. Get mathematical precision, KP Horary clarity, and authentic Lal Kitab remedies.",
+    heroSub: "Personalized Vedic Astrology consultations led by Astrologer Ajay Kumar Agarwal. Conferred national honor by Sh Nayan Mongia Ji. Get mathematical precision, KP Horary clarity, and authentic Lal Kitab remedies.",
     heroCtaTalk: "Talk to Astrologer",
     heroCtaChat: "Chat with Astrologer",
     heroCtaKundli: "Free Janam Kundli",
@@ -326,7 +326,7 @@ export const translations: Record<Language, Translations> = {
 
     // Consultation Showcase
     consultationSectionTag: "Direct Consultations",
-    consultationSectionTitle: "Consult with Astrologer Swati Pandey",
+    consultationSectionTitle: "Consult with Astrologer Ajay Kumar Agarwal",
     consultationSectionSub: "National Award Winner • Conferred by Sh Nayan Mongia Ji • 100% Confidential 1-on-1 Consultations",
     exploreAllModes: "Explore All Consultation Modes",
     mode1Badge: "Phone & Video Call • 1-on-1",
@@ -335,7 +335,7 @@ export const translations: Record<Language, Translations> = {
     startingFrom: "Starting From",
     viewSessions: "View Sessions →",
     mode2Badge: "Instant WhatsApp Chat",
-    mode2Title: "Chat with Astrologer Swati",
+    mode2Title: "Chat with Astrologer Ajay Kumar",
     mode2Desc: "Fast written replies, quick queries, Muhurat & gemstone advice",
     mode2ReplyTime: "Typical reply in < 2 mins",
     startChat: "Start Chat",
@@ -352,14 +352,14 @@ export const translations: Record<Language, Translations> = {
     featuredGalleryTitle: "National Honors & VIP Dignitaries",
     featuredGallerySub: "Felicitated by cricket legends, senior ministers, Bollywood directors, and prominent conclaves.",
     featuredReviewsTitle: "Verified Client Testimonials",
-    featuredReviewsSub: "Real feedback from families, professionals, and entrepreneurs guided by Astrologer Swati Pandey.",
+    featuredReviewsSub: "Real feedback from families, professionals, and entrepreneurs guided by Astrologer Ajay Kumar Agarwal.",
     viewAllYantras: "View All 22 Yantras →",
     viewAllPhotos: "View Full VIP Gallery →",
     viewAllReviews: "Read All 12,500+ Reviews →",
 
     // Talk to Astrologer Page
     talkPageBadge: "Available for Direct Phone & Video Calls",
-    talkPageTitle: "Talk to Astrologer Swati Pandey",
+    talkPageTitle: "Talk to Astrologer Ajay Kumar Agarwal",
     talkPageSub: "Connect directly via confidential 1-on-1 voice or video call. India's Most Trusted & Accurate Astrologer of the Year • Conferred by Sh Nayan Mongia Ji.",
     searchTopicPlaceholder: "Search topic (e.g. Marriage, Career)...",
     founderPrincipal: "Founder & Principal Astrologer",
@@ -369,7 +369,7 @@ export const translations: Record<Language, Translations> = {
     whatsappAudioVideoBtn: "WhatsApp Audio/Video",
     bookSlotBtn: "Book Scheduled Slot",
     chooseSessionTitle: "Choose Your Consultation Session",
-    chooseSessionSub: "Every session is conducted personally and confidentially with Astrologer Swati Pandey.",
+    chooseSessionSub: "Every session is conducted personally and confidentially with Astrologer Ajay Kumar Agarwal.",
     filterAll: "All Sessions",
     filterLife: "Horoscope & Life",
     filterMarriage: "Love & Marriage",
@@ -384,10 +384,10 @@ export const translations: Record<Language, Translations> = {
     step2Desc: "Provide your accurate Date of Birth, Birth Time, and Birth Place for precision chart calculation.",
     step3Num: "3",
     step3Title: "Live 1-on-1 Call",
-    step3Desc: "Speak directly with Astrologer Swati Pandey on phone or video call and receive actionable Lal Kitab remedies.",
+    step3Desc: "Speak directly with Astrologer Ajay Kumar Agarwal on phone or video call and receive actionable Lal Kitab remedies.",
 
     // Chat with Astrologer Page
-    chatPageTitle: "Chat with Astrologer Swati Pandey",
+    chatPageTitle: "Chat with Astrologer Ajay Kumar Agarwal",
     chatPageSub: "Get instant astrological clarity delivered directly to your WhatsApp. Quick remedies, chart insights, and auspicious Muhurat.",
     chatIntakeTitle: "Start Instant WhatsApp Consultation",
     chatTopicLabel: "Select Consultation Topic",
@@ -403,7 +403,7 @@ export const translations: Record<Language, Translations> = {
 
     // Services Page
     servicesHeroTitle: "Specialized Astrological Consultation Packages",
-    servicesHeroSub: "Personalized, 1-on-1 confidential consultations with Astrologer Swati Pandey. Transparent pricing, authentic mathematical birth-chart calculations, and practical remedial solutions.",
+    servicesHeroSub: "Personalized, 1-on-1 confidential consultations with Astrologer Ajay Kumar Agarwal. Transparent pricing, authentic mathematical birth-chart calculations, and practical remedial solutions.",
     allConsultationsTab: "All Consultations",
     lifeDestinyTab: "Life & Destiny",
     marriageMatchmakingTab: "Marriage & Matchmaking",
@@ -426,23 +426,23 @@ export const translations: Record<Language, Translations> = {
     placementLabel: "Placement & Direction",
 
     // About Page
-    aboutHeroTitle: "About Astrologer Swati Pandey",
+    aboutHeroTitle: "About Astrologer Ajay Kumar Agarwal",
     aboutHeroSub: "Conferred 'India's Most Trusted & Accurate Astrologer of the Year' by former Indian cricketer Sh Nayan Mongia Ji. Conferred Vedic Excellence by Gurudev GD Vashist Ji & Sh Arun Bansal Ji.",
-    aboutBioText1: "Astrologer Swati Pandey is a distinguished Vedic scholar, KP astrologer, and Lal Kitab specialist with over 12+ years of rigorous predictive experience. Conferred with national honors by cricket icon Sh Nayan Mongia Ji, she has guided more than 12,500 clients across 28+ countries.",
-    aboutBioText2: "Her expertise bridges classical Parashari mathematical foundations, KP Horary sub-lord accuracy, practical non-fear-based remedies, and consecrated Vedic yantras.",
+    aboutBioText1: "Astrologer Ajay Kumar Agarwal is a distinguished Vedic scholar, KP astrologer, and Lal Kitab specialist with over 12+ years of rigorous predictive experience. Conferred with national honors by cricket icon Sh Nayan Mongia Ji, he has guided more than 12,500 clients across 28+ countries.",
+    aboutBioText2: "His expertise bridges classical Parashari mathematical foundations, KP Horary sub-lord accuracy, practical non-fear-based remedies, and consecrated Vedic yantras.",
     awardsSectionTitle: "National Honors & Awards",
     dignitariesSectionTitle: "Distinguished VIP Dignitaries & Clients",
 
     // Reviews Page
     reviewsHeroTitle: "Verified Client Reviews & Testimonials",
-    reviewsHeroSub: "Over 12,500+ satisfied clients across 28+ countries have experienced life-changing clarity through Astrologer Swati Pandey's guidance.",
+    reviewsHeroSub: "Over 12,500+ satisfied clients across 28+ countries have experienced life-changing clarity through Astrologer Ajay Kumar Agarwal's guidance.",
     scorecardHeading: "Client Satisfaction Scorecard",
     scorecardReviewsCount: "Based on 12,500+ Verified Consultations",
     writeReviewBtn: "Write a Client Review",
 
     // Contact Page
     contactHeroTitle: "Contact & Appointment Desk",
-    contactHeroSub: "Schedule your consultation session, make an enquiry, or connect directly on WhatsApp with Astrologer Swati Pandey's desk.",
+    contactHeroSub: "Schedule your consultation session, make an enquiry, or connect directly on WhatsApp with Astrologer Ajay Kumar Agarwal's desk.",
     appointmentFormTitle: "Book Consultation Appointment",
     fullNameLabel: "Full Name",
     phoneLabel: "Phone / WhatsApp Number",
@@ -472,7 +472,7 @@ export const translations: Record<Language, Translations> = {
     confirmOrderBtn: "Confirm & Place Yantra Order (₹3,999/-)",
 
     // Footer
-    footerDesc: "Bhavishyaphal Astrology Services by Astrologer Swati Pandey provides authentic Vedic, KP, and Lal Kitab astrological consultations, Kundli matchmaking, and consecrated Yantras.",
+    footerDesc: "Bhavishyaphal Astrology Services by Astrologer Ajay Kumar Agarwal provides authentic Vedic, KP, and Lal Kitab astrological consultations, Kundli matchmaking, and consecrated Yantras.",
     quickLinksTitle: "Quick Navigation",
     consultationsTitle: "Consultations",
     yantrasServicesTitle: "Yantras & Sacred Items",
@@ -481,10 +481,10 @@ export const translations: Record<Language, Translations> = {
     contactOffice: "Consultation Office",
     bookingBadge: "Verified Consultation Desk",
     bookingTitle: "Book Astrological Consultation",
-    bookingSub: "Connect directly with Astrologer Swati Pandey for deep birth chart insights & authentic Vedic remedies.",
+    bookingSub: "Connect directly with Astrologer Ajay Kumar Agarwal for deep birth chart insights & authentic Vedic remedies.",
     heroCtaBook: "Book Consultation",
     aboutBadge: "Meet The Astrologer",
-    aboutTitle: "Astrologer Swati Pandey",
+    aboutTitle: "Astrologer Ajay Kumar Agarwal",
     aboutBio1: "Vedic & KP Astrologer with 12+ years of experience, guiding clients worldwide towards clarity and success.",
     aboutBio2: "Honored by national dignitaries including Ex-Indian Cricketer Nayan Mongia Ji.",
     aboutFeature1Title: "12,500+ Consultations",
@@ -493,7 +493,7 @@ export const translations: Record<Language, Translations> = {
     aboutFeature2Desc: "Conferred 'Most Trusted Astrologer of the Year'.",
     aboutFeature3Title: "Consecrated Remedies",
     aboutFeature3Desc: "Authentic Pran Pratishtha Yantras and practical Vedic guidance.",
-    aboutCta: "Book Consultation with Swati Ji",
+    aboutCta: "Book Consultation with Ajay Ji",
     servicesBadge: "Astrological Services",
     servicesTitle: "Vedic & KP Consultation Services",
     servicesSub: "Comprehensive astrological solutions tailored to your unique birth chart.",
@@ -535,15 +535,15 @@ export const translations: Record<Language, Translations> = {
     nationalAwardee: "राष्ट्रीय पुरस्कार विजेता",
 
     // Ticker
-    tickerText: "आचार्य स्वाति पांडे 1-on-1 फोन व वीडियो परामर्श के लिए अभी ऑनलाइन उपलब्ध हैं",
+    tickerText: "आचार्य अजय कुमार अग्रवाल 1-on-1 फोन व वीडियो परामर्श के लिए अभी ऑनलाइन उपलब्ध हैं",
     tickerCta: "60 सेकंड में जुड़ें →",
 
     // Hero Section
-    heroBadge: "भारत की सर्वाधिक विश्वसनीय एवं सटीक भविष्यवक्ता",
+    heroBadge: "भारत के सर्वाधिक विश्वसनीय एवं सटीक भविष्यवक्ता",
     heroTitle1: "अपना भविष्य जानें।",
     heroTitle2: "सटीक वैदिक समाधान पाएं।",
     heroTitle3: "दिव्य अनुभूत उपाय",
-    heroSub: "ज्योतिषी स्वाति पांडे द्वारा व्यक्तिगत वैदिक ज्योतिषीय मार्गदर्शन। पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा राष्ट्रीय सम्मान प्राप्त। सूक्ष्म गणितीय जन्मपत्री विश्लेषण एवं लाल किताब के अचूक सात्विक उपाय।",
+    heroSub: "ज्योतिषी अजय कुमार अग्रवाल द्वारा व्यक्तिगत वैदिक ज्योतिषीय मार्गदर्शन। पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा राष्ट्रीय सम्मान प्राप्त। सूक्ष्म गणितीय जन्मपत्री विश्लेषण एवं लाल किताब के अचूक सात्विक उपाय।",
     heroCtaTalk: "ज्योतिषी से बात करें",
     heroCtaChat: "ज्योतिषी से चैट करें",
     heroCtaKundli: "फ्री जन्म कुंडली",
@@ -579,7 +579,7 @@ export const translations: Record<Language, Translations> = {
 
     // Consultation Showcase
     consultationSectionTag: "प्रत्यक्ष परामर्श",
-    consultationSectionTitle: "आचार्य स्वाति पांडे से परामर्श लें",
+    consultationSectionTitle: "आचार्य अजय कुमार अग्रवाल से परामर्श लें",
     consultationSectionSub: "राष्ट्रीय पुरस्कार विजेता • श्री नयन मोंगिया जी द्वारा सम्मानित • 100% गोपनीय 1-on-1 परामर्श",
     exploreAllModes: "सभी परामर्श विकल्प देखें",
     mode1Badge: "फोन व वीडियो कॉल • 1-on-1",
@@ -588,7 +588,7 @@ export const translations: Record<Language, Translations> = {
     startingFrom: "शुरुआती शुल्क",
     viewSessions: "सत्र विवरण देखें →",
     mode2Badge: "त्वरित व्हाट्सएप चैट",
-    mode2Title: "ज्योतिषी स्वाति से चैट करें",
+    mode2Title: "ज्योतिषी अजय कुमार से चैट करें",
     mode2Desc: "त्वरित लिखित उत्तर, प्रश्न कुंडली, शुभ मुहूर्त एवं रत्न परामर्श",
     mode2ReplyTime: "प्रायः 2 मिनट में उत्तर",
     startChat: "चैट शुरू करें",
@@ -605,15 +605,15 @@ export const translations: Record<Language, Translations> = {
     featuredGalleryTitle: "राष्ट्रीय पुरस्कार एवं विशिष्ट हस्तियां",
     featuredGallerySub: "उपमुख्यमंत्री प्रेम बैरवा, पूर्व मुख्यमंत्री अशोक गहलोत, श्री नयन मोंगिया एवं गुरुदेव जीडी वशिष्ठ जी द्वारा सम्मान।",
     featuredReviewsTitle: "सत्यापित जातकों की समीक्षाएं",
-    featuredReviewsSub: "आचार्य स्वाति पांडे के सटीक मार्गदर्शन से लाभान्वित परिवारों और व्यवसायियों के वास्तविक अनुभव।",
+    featuredReviewsSub: "आचार्य अजय कुमार अग्रवाल के सटीक मार्गदर्शन से लाभान्वित परिवारों और व्यवसायियों के वास्तविक अनुभव।",
     viewAllYantras: "सभी 22 यंत्र देखें →",
     viewAllPhotos: "पूरी वीआईपी गैलरी देखें →",
     viewAllReviews: "सभी 12,500+ समीक्षाएं पढ़ें →",
 
     // Talk to Astrologer Page
     talkPageBadge: "फोन एवं वीडियो कॉल के लिए उपलब्ध",
-    talkPageTitle: "ज्योतिषी स्वाति पांडे से सीधे बात करें",
-    talkPageSub: "1-on-1 फोन अथवा वीडियो कॉल द्वारा जुड़ें। वर्ष की सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी • श्री नयन मोंगिया जी द्वारा सम्मानित।",
+    talkPageTitle: "ज्योतिषी अजय कुमार अग्रवाल से सीधे बात करें",
+    talkPageSub: "1-on-1 फोन अथवा वीडियो कॉल द्वारा जुड़ें। वर्ष के सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी • श्री नयन मोंगिया जी द्वारा सम्मानित।",
     searchTopicPlaceholder: "विषय खोजें (जैसे: विवाह, करियर)...",
     founderPrincipal: "संस्थापक एवं मुख्य ज्योतिषी",
     directLineTitle: "डायरेक्ट हेल्पलाइन",
@@ -622,7 +622,7 @@ export const translations: Record<Language, Translations> = {
     whatsappAudioVideoBtn: "व्हाट्सएप ऑडियो/वीडियो",
     bookSlotBtn: "पसंदीदा समय अनुसार स्लॉट बुक करें",
     chooseSessionTitle: "अपना परामर्श सत्र चुनें",
-    chooseSessionSub: "प्रत्येक सत्र आचार्य स्वाति पांडे द्वारा पूर्ण व्यक्तिगत ध्यान एवं गोपनीयता के साथ आयोजित किया जाता है।",
+    chooseSessionSub: "प्रत्येक सत्र आचार्य अजय कुमार अग्रवाल द्वारा पूर्ण व्यक्तिगत ध्यान एवं गोपनीयता के साथ आयोजित किया जाता है।",
     filterAll: "सभी सत्र",
     filterLife: "कुंडली एवं संपूर्ण जीवन",
     filterMarriage: "विवाह एवं प्रेम",
@@ -637,10 +637,10 @@ export const translations: Record<Language, Translations> = {
     step2Desc: "सटीक जन्म तिथि, जन्म समय एवं जन्म स्थान प्रदान करें ताकि सूक्ष्म गणितीय गणना की जा सके।",
     step3Num: "3",
     step3Title: "लाइव 1-on-1 कॉल",
-    step3Desc: "आचार्य स्वाति पांडे से फोन अथवा वीडियो कॉल पर सीधी बात करें और सटीक समाधान व सात्विक उपाय पाएं।",
+    step3Desc: "आचार्य अजय कुमार अग्रवाल से फोन अथवा वीडियो कॉल पर सीधी बात करें और सटीक समाधान व सात्विक उपाय पाएं।",
 
     // Chat with Astrologer Page
-    chatPageTitle: "आचार्य स्वाति पांडे से चैट पर परामर्श",
+    chatPageTitle: "आचार्य अजय कुमार अग्रवाल से चैट पर परामर्श",
     chatPageSub: "व्हाट्सएप पर तुरंत सटीक ज्योतिषीय परामर्श पाएं। त्वरित उपाय, जन्मपत्री विश्लेषण एवं शुभ मुहूर्त।",
     chatIntakeTitle: "तुरंत व्हाट्सएप चैट परामर्श शुरू करें",
     chatTopicLabel: "परामर्श का विषय चुनें",
@@ -656,7 +656,7 @@ export const translations: Record<Language, Translations> = {
 
     // Services Page
     servicesHeroTitle: "विशिष्ट ज्योतिषीय परामर्श पैकेज",
-    servicesHeroSub: "आचार्य स्वाति पांडे के साथ व्यक्तिगत व गोपनीय परामर्श। पारदर्शी शुल्क, सटीक वैदिक गणना एवं प्रामाणिक लाल किताब उपाय।",
+    servicesHeroSub: "आचार्य अजय कुमार अग्रवाल के साथ व्यक्तिगत व गोपनीय परामर्श। पारदर्शी शुल्क, सटीक वैदिक गणना एवं प्रामाणिक लाल किताब उपाय।",
     allConsultationsTab: "सभी परामर्श",
     lifeDestinyTab: "जीवन एवं भाग्य",
     marriageMatchmakingTab: "विवाह एवं गुण मिलान",
@@ -679,16 +679,16 @@ export const translations: Record<Language, Translations> = {
     placementLabel: "स्थापना व दिशा",
 
     // About Page
-    aboutHeroTitle: "आचार्य स्वाति पांडे का परिचय",
-    aboutHeroSub: "पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा 'वर्ष की सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी' से सम्मानित। गुरुदेव जी.डी. वशिष्ठ जी एवं श्री अरुण बंसल जी द्वारा वैदिक उत्कृष्टता सम्मान प्राप्त।",
-    aboutBioText1: "ज्योतिषी स्वाति पांडे 12 से अधिक वर्षों के अनुभव के साथ वैदिक, के.पी. और लाल किताब ज्योतिष की अग्रणी विशेषज्ञ हैं। क्रिकेट लीजेंड श्री नयन मोंगिया जी द्वारा राष्ट्रीय मंच पर सम्मानित, उन्होंने 28 से अधिक देशों के 12,500 से अधिक जातकों को सही राह दिखाई है।",
+    aboutHeroTitle: "आचार्य अजय कुमार अग्रवाल का परिचय",
+    aboutHeroSub: "पूर्व भारतीय क्रिकेटर श्री नयन मोंगिया जी द्वारा 'वर्ष के सर्वाधिक विश्वसनीय एवं सटीक ज्योतिषी' से सम्मानित। गुरुदेव जी.डी. वशिष्ठ जी एवं श्री अरुण बंसल जी द्वारा वैदिक उत्कृष्टता सम्मान प्राप्त।",
+    aboutBioText1: "ज्योतिषी अजय कुमार अग्रवाल 12 से अधिक वर्षों के अनुभव के साथ वैदिक, के.पी. और लाल किताब ज्योतिष के अग्रणी विशेषज्ञ हैं। क्रिकेट लीजेंड श्री नयन मोंगिया जी द्वारा राष्ट्रीय मंच पर सम्मानित, उन्होंने 28 से अधिक देशों के 12,500 से अधिक जातकों को सही राह दिखाई है।",
     aboutBioText2: "उनकी भविष्यवाणियां पराशरी सिद्धांतों की सटीकता, के.पी. उप-नक्षत्र गणित और बिना भय के सरल व चमत्कारी लाल किताब उपायों पर आधारित हैं।",
     awardsSectionTitle: "राष्ट्रीय पुरस्कार एवं सम्मान",
     dignitariesSectionTitle: "विशिष्ट अतिथि एवं सम्मानीय जातक",
 
     // Reviews Page
     reviewsHeroTitle: "सत्यापित जातकों की समीक्षाएं",
-    reviewsHeroSub: "28 से अधिक देशों में 12,500+ से अधिक जातक आचार्य स्वाति पांडे के मार्गदर्शन से अपने जीवन में सकारात्मक बदलाव ला चुके हैं।",
+    reviewsHeroSub: "28 से अधिक देशों में 12,500+ से अधिक जातक आचार्य अजय कुमार अग्रवाल के मार्गदर्शन से अपने जीवन में सकारात्मक बदलाव ला चुके हैं।",
     scorecardHeading: "जातक संतुष्टि स्कोरकार्ड",
     scorecardReviewsCount: "12,500+ सत्यापित परामर्शों पर आधारित",
     writeReviewBtn: "अपनी समीक्षा लिखें",
@@ -725,7 +725,7 @@ export const translations: Record<Language, Translations> = {
     confirmOrderBtn: "ऑर्डर कन्फर्म करें (₹3,999/-)",
 
     // Footer
-    footerDesc: "भविष्यफल ज्योतिष संस्थान — आचार्य स्वाति पांडे द्वारा संचालित। वैदिक, के.पी. एवं लाल किताब ज्योतिषीय परामर्श और सिद्ध यंत्रों का विश्वसनीय केंद्र।",
+    footerDesc: "भविष्यफल ज्योतिष संस्थान — आचार्य अजय कुमार अग्रवाल द्वारा संचालित। वैदिक, के.पी. एवं लाल किताब ज्योतिषीय परामर्श और सिद्ध यंत्रों का विश्वसनीय केंद्र।",
     quickLinksTitle: "महत्वपूर्ण लिंक्स",
     consultationsTitle: "परामर्श सेवाएं",
     yantrasServicesTitle: "सिद्ध यंत्र एवं लॉकेट",
@@ -734,11 +734,11 @@ export const translations: Record<Language, Translations> = {
     contactOffice: "परामर्श कार्यालय",
     bookingBadge: "सत्यापित परामर्श केंद्र",
     bookingTitle: "ज्योतिषीय परामर्श बुक करें",
-    bookingSub: "गहन कुंडली विश्लेषण एवं सटीक वैदिक उपायों हेतु आचार्य स्वाति पांडे से सीधे संपर्क करें।",
+    bookingSub: "गहन कुंडली विश्लेषण एवं सटीक वैदिक उपायों हेतु आचार्य अजय कुमार अग्रवाल से सीधे संपर्क करें।",
     heroCtaBook: "परामर्श बुक करें",
     aboutBadge: "ज्योतिषाचार्य परिचय",
-    aboutTitle: "आचार्य स्वाति पांडे",
-    aboutBio1: "12+ वर्षों के अनुभव के साथ वैदिक एवं के.पी. ज्योतिष में प्रतिष्ठित, विश्वभर के जातकों को सही दिशा दिखाती हैं।",
+    aboutTitle: "आचार्य अजय कुमार अग्रवाल",
+    aboutBio1: "12+ वर्षों के अनुभव के साथ वैदिक एवं के.पी. ज्योतिष में प्रतिष्ठित, विश्वभर के जातकों को सही दिशा दिखाते हैं।",
     aboutBio2: "पूर्व भारतीय क्रिकेटर नयन मोंगिया जी द्वारा राष्ट्रीय पुरस्कार से सम्मानित।",
     aboutFeature1Title: "12,500+ जातक",
     aboutFeature1Desc: "28+ देशों में जातकों को सटीक मार्गदर्शन।",
@@ -746,7 +746,7 @@ export const translations: Record<Language, Translations> = {
     aboutFeature2Desc: "मोस्ट ट्रस्टेड एस्ट्रोलॉजर ऑफ द ईयर से सम्मानित।",
     aboutFeature3Title: "प्राण प्रतिष्ठित उपाय",
     aboutFeature3Desc: "सिद्ध वैदिक यंत्र एवं व्यावहारिक समाधान।",
-    aboutCta: "स्वाति जी से परामर्श बुक करें",
+    aboutCta: "अजय जी से परामर्श बुक करें",
     servicesBadge: "ज्योतिषीय सेवाएं",
     servicesTitle: "वैदिक एवं के.पी. परामर्श सेवाएं",
     servicesSub: "आपकी जन्मपत्रिका के अनुरूप सटीक एवं व्यावहारिक समाधान।",

@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bhavishyaphalastro.online"),
   title: `${SITE_CONFIG.name} | ${SITE_CONFIG.founderTitle}`,
   description:
-    "India's leading Vedic astrology platform by Astrologer Swati Pandey. Accurate birth-chart readings, Kundli matching, KP astrology, Vastu, Palmistry, and energized Sacred Yantras.",
+    "India's leading Vedic astrology platform by Astrologer Ajay Kumar Agarwal. Accurate birth-chart readings, Kundli matching, KP astrology, Vastu, Palmistry, and energized Sacred Yantras.",
   keywords: [
     "Astrology",
     "Vedic Astrology",
-    "Astrologer Swati Pandey",
+    "Astrologer Ajay Kumar Agarwal",
     "Bhavishyaphal",
     "Kundli",
     "Kundli Milan",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_CONFIG.name,
-    description: "Vedic Astrology & Sacred Yantras by Astrologer Swati Pandey",
+    description: "Vedic Astrology & Sacred Yantras by Astrologer Ajay Kumar Agarwal",
     images: ["/images/WhatsApp-Image-2026-08-05-at-2.30.52-PM_33.jpeg"],
   },
   icons: {

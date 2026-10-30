@@ -176,7 +176,7 @@ export default function YantrasPage() {
                 </button>
 
                 <a
-                  href={`https://wa.me/919116055424?text=${encodeURIComponent(`Hello Astrologer Swati Pandey! I want to order consecrated: ${item.title} (₹3,999)`)}`}
+                  href={`https://wa.me/919116055424?text=${encodeURIComponent(language === "hi" ? `नमस्कार आचार्य अजय कुमार अग्रवाल जी! मैं सिद्ध यंत्र मंगाना चाहता हूँ: ${item.title} (₹3,999)` : `Hello Astrologer Ajay Kumar Agarwal! I want to order consecrated: ${item.title} (₹3,999)`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-2.5 px-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 transition-colors flex items-center justify-center"
@@ -197,7 +197,7 @@ export default function YantrasPage() {
           <p className="text-xs sm:text-sm text-stone-600 text-center max-w-2xl mx-auto mb-8 font-medium">
             {language === "hi"
               ? "हमारे यहां बिना प्राण-प्रतिष्ठा के कोई भी यंत्र नहीं भेजा जाता। प्रत्येक यंत्र आपके नाम और गोत्र से सिद्ध होकर सकारात्मक ऊर्जा प्रसारित करता है।"
-              : "Every sacred instrument undergoes an authentic 3-day Vedic consecration ritual led by learned scholars under the supervision of Astrologer Swati Pandey."}
+              : "Every sacred instrument undergoes an authentic 3-day Vedic consecration ritual led by learned scholars under the supervision of Astrologer Ajay Kumar Agarwal."}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

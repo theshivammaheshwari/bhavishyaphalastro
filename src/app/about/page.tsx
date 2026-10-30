@@ -91,7 +91,7 @@ export default function AboutPage() {
             <div className="relative aspect-[3/4] max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-stone-200 shadow-xl group bg-white">
               <Image
                 src="/images/WhatsApp-Image-2026-08-07-at-2.12.58-PM-2_38.jpeg"
-                alt="Astrologer Swati Pandey"
+                alt={language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                 fill
                 priority
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -104,7 +104,7 @@ export default function AboutPage() {
                   <span>{t.nationalAwardee}</span>
                 </div>
                 <h3 className="text-stone-950 font-serif font-bold text-base sm:text-lg">
-                  Astrologer Swati Pandey
+                  {language === "hi" ? "आचार्य अजय कुमार अग्रवाल" : "Astrologer Ajay Kumar Agarwal"}
                 </h3>
                 <p className="text-stone-600 text-xs mt-0.5 font-medium">
                   {language === "hi" ? "भारत की सर्वाधिक विश्वसनीय एवं सटीक भविष्यवक्ता" : "India's Most Trusted & Accurate Astrologer of the Year"}

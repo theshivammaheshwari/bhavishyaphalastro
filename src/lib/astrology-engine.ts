@@ -439,7 +439,7 @@ export function calculateGunaMilan(
       "Chant Swayamvara Parvathi Mantra daily for emotional harmony.",
       "Install a consecrated Shri Yantra in the North-East of your joint residence.",
       "Donate yellow sweets or lentils on Thursdays to bless marital peace.",
-      "Schedule a 1-on-1 session with Astrologer Swati Pandey for Muhurat and personalized remedial guidance.",
+      "Schedule a 1-on-1 session with Astrologer Ajay Kumar Agarwal for Muhurat and personalized remedial guidance.",
     ],
   };
 }
